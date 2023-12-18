@@ -62,9 +62,10 @@ watch(route, async () => {
                 <!-- Logo -->
                 <a href="/"
                    class="absolute overflow-visible top-4 md:top-10">
-                    <NuxtImg src="/images/logos/top.webp"
+                    <img src="/images/logos/icon.svg"
                                  alt="Logo"
-                                 sizes="112px 112px" />
+                                 height="112px"
+                                 width="112px" />
                 </a>
             </div>
 

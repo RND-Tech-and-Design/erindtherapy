@@ -96,7 +96,7 @@ const currentYear = new Date().getFullYear()
     <footer class="footer footer-center px-10 py-4 border-t bg-secondary border-base-300 text-neutral-content">
         <aside class="items-center">
             <div class=" h-12 w-12 flex justify-center items-center rounded-full shadow">
-                <nuxt-img src="/images/logos/icon.svg" alt="ErinDTherapy" class="h-32 w-32" />
+                <img src="/images/logos/icon.svg" alt="ErinDTherapy" width="128px" height="128px" class="h-32 w-32" />
             </div>
             <p> &copy; ErinDTherapy {{ currentYear }}</p>
         </aside>
