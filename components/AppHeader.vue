@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
-import { watch, ref } from 'vue';
+import { watch, ref, onMounted } from 'vue';
+import autoAnimate from "@formkit/auto-animate"
 import { useRoute } from 'vue-router';
 import { useNavigation } from '~/composables/navigation';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/solid';
@@ -17,6 +18,13 @@ watch(route, async () => {
     navigationLinks.value = await generateNavigation();
 }, { immediate: true });
 
+
+const navItem = ref() 
+
+onMounted(() => {
+    autoAnimate(navItem.value) 
+})
+
 </script>
 
 <template>
@@ -29,7 +37,7 @@ watch(route, async () => {
                 <!-- Menu -->
                 <ul class="menu menu-horizontal disable-active px-1 hidden -mt-10 md:flex z-10">
                     <template v-for="link in navigationLinks" :key="link.path">
-                        <li v-if="!link.children || link.children?.length === 0"
+                        <li ref="navItem" v-if="!link.children || link.children?.length === 0"
                             :class="`${link.active ? 'ease-in duration-100 border-t-[3px]' : 'pt-[3px]'}`">
                             <NuxtLink :to="link.path">
                                 {{ link.name }}
@@ -37,7 +45,7 @@ watch(route, async () => {
                         </li>
                     </template>
                     <template v-for="link in navigationLinks" :key="link.path">
-                        <li v-if="link.children && link.children?.length > 0"
+                        <li ref="navItem" v-if="link.children && link.children?.length > 0"
                             :class="`${link.active ? 'ease-in duration-100 border-t-[3px]' : 'pt-[3px]'}`">
 
                             <details>
@@ -63,9 +71,9 @@ watch(route, async () => {
                 <a href="/"
                    class="absolute overflow-visible top-4 md:top-10">
                     <img src="/images/logos/icon.svg"
-                                 alt="Logo"
-                                 height="112px"
-                                 width="112px" />
+                         alt="Logo"
+                         height="112px"
+                         width="112px" />
                 </a>
             </div>
 
@@ -76,7 +84,6 @@ watch(route, async () => {
                         <ArrowTopRightOnSquareIcon class="h-6 w-6" />
                     </span>
                 </NuxtLink>
-
                 <slot />
             </div>
         </nav>
