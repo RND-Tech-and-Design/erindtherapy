@@ -3,6 +3,9 @@ import { resolve } from 'path'
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
+    image: {
+        format: ['webp'],
+    },
     alias: {
         "@": resolve(__dirname, "./src"),
     },
@@ -11,7 +14,6 @@ export default defineNuxtConfig({
         "nuxt-lodash",
         '@nuxt/image',
     ],
-    image: {},
     postcss: {
         plugins: {
             tailwindcss: {},
