@@ -4,7 +4,7 @@ import { resolve } from 'path'
 export default defineNuxtConfig({
     devtools: { enabled: true },
     image: {
-        format: ['webp'],
+        provider: "ipx"
     },
     alias: {
         "@": resolve(__dirname, "./src"),
