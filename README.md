@@ -1,6 +1,11 @@
-# Nuxt 3 Minimal Starter
+# Erin D therapy
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+
+    - Hosting Platform: Netlify
+    - Framework: Nuxt.js
+    - Styling: Tailwind CSS
+    - Reusable Components: DaisyUI
 
 ## Setup
 
