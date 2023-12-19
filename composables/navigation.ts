@@ -24,7 +24,6 @@ const getCapitalizedRouteName = (route: RouteRecordNormalized) => {
 }
 
 export const useNavigation = () => {
-    const nuxtApp: NuxtApp = useNuxtApp();
 
     // Create a state to cache the navigation links
     const navigationState = useState<{ name: string; path: string; }[]>('navigation-links', () => []);
@@ -45,7 +44,7 @@ export const useNavigation = () => {
                 path: route.path,
                 active: router.currentRoute.value?.path === route.path,
                 name: getCapitalizedRouteName(route),
-                order: route.meta?.order as number,
+                order: route.meta?.navOrder as number,
             }))
             .reduce((groups, page) => {
                 // Skip creating URL object if the path is not present
@@ -85,7 +84,6 @@ export const useNavigation = () => {
                         });
                     }
                 } else {
-                    // Directly add pages that do not belong in a group
                     groups.array.push({
                         name: page.name,
                         path: page.path,

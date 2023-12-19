@@ -7,9 +7,9 @@ definePageMeta({
 
 <template>
     <div>
-        <HomeHero/>
+        <HomeHero />
         <AppAlert>
-             Currently Accepting New Clients!
+            Currently Accepting New Clients!
         </AppAlert>
     </div>
 </template>

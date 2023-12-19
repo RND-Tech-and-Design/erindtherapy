@@ -26,6 +26,7 @@ export default {
                 text_neutral: '#ffffff',
 
                 soft: '#6FA9BC',
+                soft_yellow: `#ffeaba`,
 
                 complementary_primary: '#466f6a', // Complementary to soft, muted pink
                 complementary_secondary: '#ef8973', // Complementary to deep teal
@@ -56,7 +57,7 @@ export default {
                 erindtherapy_theme: {
                     primary: '#b99095', // Soft, muted pink
                     secondary: '#10768c', // Deep teal
-                    accent: '#b5e5cf', // Light mint green
+                    accent: '#97c1a9', // Light mint green
                     neutral: '#3d4451', // Dark slate gray
                     'base-100': '#f5f5f2', // Very light gray
 

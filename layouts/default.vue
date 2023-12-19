@@ -34,14 +34,16 @@ watch(route, async () => {
         <div class="drawer-side">
             <label for="main-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
 
-            <ul class="menu p-4 w-80 min-h-full backdrop-blur-md bg-gray-500 bg-opacity-50 text-text_secondary">
-                <div class=" mt-5 mb-5 h-12 w-12 flex justify-center items-center self-center">
-                    <img src="/images/logos/icon.svg" alt="ErinDTherapy" width="128px" height="128px" class="h-32 w-32" />
+            <ul
+                class="menu p-4 w-80 min-h-full backdrop-blur-md bg-opacity-50 text-text_secondary">
+                <div class=" mt-5 mb-5 h-20 w-20 flex justify-center items-center self-center">
+                    <img src="/images/logos/icon.svg" alt="ErinDTherapy" width="128px" height="128px" class="h-20 w-20" />
                 </div>
                 <template v-for="link in navigationLinks" :key="link.path">
                     <li v-if="!link.children || link.children?.length === 0">
                         <NuxtLink :to="link.path"
-                                  :class="`text-text_secondary focus:text-text_secondary ${link.active ? 'ease-in duration-100 bg-gray-400/50 text-text_secondary' : ''}`">
+                                  :class="`text-text_secondary focus:text-text_secondary 
+                                  ${link.active ? 'ease-in duration-100 bg-gray-400/50 text-text_secondary' : ''}`">
                             {{ link.name }}
                         </NuxtLink>
                     </li>
@@ -50,3 +52,14 @@ watch(route, async () => {
         </div>
     </div>
 </template>
+
+<style lang="scss" scoped>
+
+.drawer-side {
+    display: none;
+}
+.drawer-toggle:checked ~ .drawer-side {
+    display: grid;
+}
+
+</style>
