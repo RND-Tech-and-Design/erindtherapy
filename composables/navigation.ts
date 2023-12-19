@@ -1,10 +1,9 @@
-import { useNuxtApp } from '#app';
-import type { NuxtApp } from 'nuxt/app';
-import type { RouteRecordNormalized } from 'vue-router';
-import { useState } from '#app';
-import startCase from 'lodash/startCase'
-import toLower from 'lodash/toLower';
 import isEmpty from 'lodash/isEmpty';
+import startCase from 'lodash/startCase';
+import toLower from 'lodash/toLower';
+import type { NuxtApp } from 'nuxt/app';
+import { useNuxtApp, useRouter, useState } from 'nuxt/app';
+import type { RouteRecordNormalized } from 'vue-router';
 
 export type NavLink = {
     name: string;
@@ -31,18 +30,20 @@ export const useNavigation = () => {
     const navigationState = useState<{ name: string; path: string; }[]>('navigation-links', () => []);
 
     const generateNavigation = async (): Promise<NavLink[]> => {
+
+        const router = useRouter()
         // Use cached navigation links if available
         if (!isEmpty(navigationState.value)) {
             return navigationState.value.map(page => ({
                 ...page,
-                active: nuxtApp.$router.currentRoute.value?.path === page.path
+                active: router.currentRoute.value?.path === page.path
             }));
         }
 
-        const pages = nuxtApp.$router.getRoutes()
+        const pages = router.getRoutes()
             .map(route => ({
                 path: route.path,
-                active: nuxtApp.$router.currentRoute.value?.path === route.path,
+                active: router.currentRoute.value?.path === route.path,
                 name: getCapitalizedRouteName(route),
                 order: route.meta?.order as number,
             }))

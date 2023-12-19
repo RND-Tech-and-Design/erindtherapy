@@ -1,7 +1,6 @@
 <script setup lang="ts">
 
-import { watch, ref, onMounted } from 'vue';
-import autoAnimate from "@formkit/auto-animate"
+import { watch, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useNavigation } from '~/composables/navigation';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/solid';
@@ -19,12 +18,6 @@ watch(route, async () => {
 }, { immediate: true });
 
 
-const navItem = ref() 
-
-onMounted(() => {
-    autoAnimate(navItem.value) 
-})
-
 </script>
 
 <template>
@@ -37,7 +30,7 @@ onMounted(() => {
                 <!-- Menu -->
                 <ul class="menu menu-horizontal disable-active px-1 hidden -mt-10 md:flex z-10">
                     <template v-for="link in navigationLinks" :key="link.path">
-                        <li ref="navItem" v-if="!link.children || link.children?.length === 0"
+                        <li v-if="!link.children || link.children?.length === 0"
                             :class="`${link.active ? 'ease-in duration-100 border-t-[3px]' : 'pt-[3px]'}`">
                             <NuxtLink :to="link.path">
                                 {{ link.name }}
@@ -45,7 +38,7 @@ onMounted(() => {
                         </li>
                     </template>
                     <template v-for="link in navigationLinks" :key="link.path">
-                        <li ref="navItem" v-if="link.children && link.children?.length > 0"
+                        <li v-if="link.children && link.children?.length > 0"
                             :class="`${link.active ? 'ease-in duration-100 border-t-[3px]' : 'pt-[3px]'}`">
 
                             <details>
@@ -54,8 +47,8 @@ onMounted(() => {
                                 </summary>
                                 <ul class="p-2 bg-secondary rounded-t-none">
                                     <template v-for="child in link.children">
-                                        <li>
-                                            <NuxtLink :to="child.path" class="link">
+                                        <li >
+                                            <NuxtLink :to="child.path" class="link whitespace-nowrap">
                                                 {{ child.name }}
                                             </NuxtLink>
                                         </li>
