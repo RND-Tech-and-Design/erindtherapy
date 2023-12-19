@@ -7,8 +7,8 @@ import { ArrowRightIcon } from '@heroicons/vue/24/solid'
     <div class="hero min-h-screen"
          style="background-image: url(/images/banner/home.webp);">
         <div class="hero-overlay bg-opacity-60"></div>
-        <div class="hero-content text-center text-neutral-content">
-            <div class="max-w-md -mt-32 md:max-w-2xl text-left md:-ml-32 md:-mt-64 ">
+        <div class="hero-content text-center text-neutral-content mt-32 ">
+            <div class="max-w-md -mt-64 h-96 md:max-w-2xl text-left md:-ml-32 md:-mt-64 ">
                 <h1 class="mb-5 text-3xl font-bold">A NEW CHAPTER?</h1>
                 <h2 class="mb-5 text-5xl font-bold ">
                     Don’t just face it,
@@ -38,3 +38,10 @@ import { ArrowRightIcon } from '@heroicons/vue/24/solid'
         </div>
     </div>
 </template>
+
+<style lang="scss" scoped>
+.min-h-screen-50 {
+
+    min-height: 75vh;
+}
+</style>

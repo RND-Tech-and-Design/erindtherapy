@@ -32,7 +32,7 @@ const hasDescription = ref<boolean>(!!props.description);
 
 
 <template>
-    <div class="hero min-h-screen-minus-50"
+    <div class="hero min-h-screen-50"
          :style="{ backgroundImage: `url(${heroImage})` }">
         <div v-if="enableOverlay" class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content pt-12">
@@ -50,7 +50,7 @@ const hasDescription = ref<boolean>(!!props.description);
 </template>
 
 <style lang="scss" scoped>
-.min-h-screen-minus-50 {
+.min-h-screen-50 {
     min-height: 50vh;
 }
 </style>

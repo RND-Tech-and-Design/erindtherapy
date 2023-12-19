@@ -25,7 +25,7 @@ onUnmounted(() => {
     <transition name="fade">
         <div v-if="showAlert" class="toast toast-start ease-in duration-100">
             <div class="alert">
-                <ExclamationCircleIcon class="h-6 w-6 invisible md:visible" />
+                <ExclamationCircleIcon class="h-6 w-6 hidden md:inline-flex" />
                 <span>
                     <slot />
                 </span>

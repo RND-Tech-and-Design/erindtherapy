@@ -36,9 +36,8 @@ watch(route, async () => {
 
             <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                 <template v-for="link in navigationLinks" :key="link.path">
-                    <li v-if="!link.children || link.children?.length === 0"
-                        :class="`${link.active ? 'ease-in duration-100 border-secondary border-t-[3px]' : 'pt-[3px]'}`">
-                        <NuxtLink :to="link.path">
+                    <li v-if="!link.children || link.children?.length === 0">
+                        <NuxtLink :to="link.path" :class="`${link.active ? 'ease-in duration-100 bg-gray-400/50' : ''}`">
                             {{ link.name }}
                         </NuxtLink>
                     </li>
