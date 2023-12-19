@@ -32,7 +32,7 @@ watch(route, async () => {
                     <template v-for="link in navigationLinks" :key="link.path">
                         <li v-if="!link.children || link.children?.length === 0"
                             :class="`${link.active ? 'ease-in duration-100 border-t-[3px]' : 'pt-[3px]'}`">
-                            <NuxtLink :to="link.path">
+                            <NuxtLink :to="link.path" class=" focus:text-text_secondary">
                                 {{ link.name }}
                             </NuxtLink>
                         </li>
@@ -47,8 +47,9 @@ watch(route, async () => {
                                 </summary>
                                 <ul class="p-2 bg-secondary rounded-t-none">
                                     <template v-for="child in link.children">
-                                        <li >
-                                            <NuxtLink :to="child.path" class="link whitespace-nowrap">
+                                        <li>
+                                            <NuxtLink :to="child.path"
+                                                      class="link whitespace-nowrap  focus:text-text_secondary">
                                                 {{ child.name }}
                                             </NuxtLink>
                                         </li>
