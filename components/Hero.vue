@@ -18,6 +18,11 @@ const props = defineProps({
         required: false,
         default: true,
     },
+    overlayClass: {
+        type: String,
+        required: false,
+        default: '',
+    },
     heroImage: {
         type: String,
         required: true,
@@ -29,15 +34,13 @@ const hasDescription = ref<boolean>(!!props.description);
 
 </script>
 
-
-
 <template>
     <div class="hero min-h-screen-50"
          :style="{ backgroundImage: `url(${heroImage})` }">
-        <div v-if="enableOverlay" class="hero-overlay bg-opacity-60"></div>
+        <div v-if="enableOverlay" :class="`hero-overlay ${overlayClass} bg-opacity-60`"></div>
         <div class="hero-content text-center text-neutral-content pt-12">
             <div class="max-w-xlg">
-                <h1 class="text-5xl font-bold">
+                <h1 class="text-5xl font-bold text-white">
                     {{ headline }}
                 </h1>
                 <p v-if="hasDescription" class="py-6">

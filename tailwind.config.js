@@ -27,6 +27,7 @@ export default {
 
                 soft: '#6FA9BC',
                 soft_yellow: `#ffeaba`,
+                soft_off_white: 'FAFAFA',
 
                 complementary_primary: '#466f6a', // Complementary to soft, muted pink
                 complementary_secondary: '#ef8973', // Complementary to deep teal

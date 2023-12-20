@@ -8,3 +8,11 @@ export interface PriceCard {
     btnClass: string;
     hoverClass: string;
 }
+
+export interface PaymentCard {
+    figureBackgroundClass: string,
+    iconName: string,
+    title: string,
+    description: string,
+    extraContentTemplates?: string[],
+}
