@@ -1,12 +1,25 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted, watch } from 'vue';
 import rawQuotes from '~/assets/json/quotes.json';
 import { defineProps } from 'vue';
+import { interval } from 'rxjs';
+import { startWith, switchMap, takeUntil  } from 'rxjs/operators';
 import { QuoteType, type Quote } from '~/types/quote';
+import { Subject } from 'rxjs';
 
 const props = defineProps({
-    quote: String,
-    author: String,
-    handle: String,
+    quote: {
+        type: String,
+        default: '',
+    },
+    author: {
+        type: String,
+        default: '',
+    },
+    handle: {
+        type: String,
+        default: '',
+    },
     randomQuote: Boolean,
     randomQuoteTypes: {
         type: Array as () => QuoteType[],
@@ -17,38 +30,46 @@ const props = defineProps({
         ],
     },
 });
+
 const quoteBlock = ref<Quote | null>(null);
+const destroy$ = new Subject<boolean>();
 
-const getRandomQuote = (quotes: Quote[]) => {
-    if (!props.randomQuote) {
-        return {
-            quote: props.quote ?? '',
-            author: props.author ?? '',
-            handle: props.handle ?? '',
-            quoteType: QuoteType.marriageCounseling,
-        };
-    }
+function getRandomQuote(quotes: Quote[]): Quote {
+    const applicableQuotes = props.randomQuote
+        ? quotes.filter(quote => props.randomQuoteTypes.includes(quote.quoteType))
+        : quotes;
 
-    const filteredQuotes = quotes.filter((quote: Quote) => props.randomQuoteTypes.includes(quote.quoteType));
-    const randomQuote = filteredQuotes[Math.floor(Math.random() * filteredQuotes.length)];
+    const randomIndex = Math.floor(Math.random() * applicableQuotes.length);
+    return applicableQuotes[randomIndex] || { quote: props.quote, author: props.author, handle: props.handle, quoteType: QuoteType.marriageCounseling };
+}
 
-    return {
-        quote: randomQuote.quote,
-        author: randomQuote.author,
-        handle: randomQuote.handle,
-        quoteType: randomQuote.quoteType,
-    };
-};
-
-onMounted(async () => {
-    if (props.randomQuote) {
-        const response = await fetch('/assets/json/quotes.json');
+watch(() => props.randomQuote, (newValue) => {
+    if (newValue) {
         const quotes: Quote[] = rawQuotes as Quote[];
         quoteBlock.value = getRandomQuote(quotes);
     }
 });
 
+onMounted(() => {
+    if (props.randomQuote) {
+        interval(45000)
+            .pipe(
+                startWith(0),
+                switchMap(async () => getRandomQuote(rawQuotes as Quote[])),
+                takeUntil(destroy$)
+            )
+            .subscribe(quote => {
+                quoteBlock.value = quote;
+            });
+    }
+});
+
+onUnmounted(() => {
+    destroy$.next(true);
+    destroy$.complete();
+});
 </script>
+
 
 <template>
     <div class="bg-gray-200 flex items-center justify-center px-5 py-5 pt-16">
@@ -64,7 +85,7 @@ onMounted(async () => {
             </div>
             <div class="w-full">
                 <p class="text-md text-gray-600 font-bold text-center">{{ quoteBlock && quoteBlock.author }}</p>
-                <p class="text-xs text-gray-500 text-center">{{ quoteBlock && quoteBlock.handle }}</p>
+                <!-- <p class="text-xs text-gray-500 text-center">{{ quoteBlock && quoteBlock.handle }}</p> -->
             </div>
         </div>
     </div>

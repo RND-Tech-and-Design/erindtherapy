@@ -4,6 +4,9 @@ import { resolve } from 'path'
 export default defineNuxtConfig({
     devtools: { enabled: true },
     webVitals: {},
+    build: {
+        transpile: ["rxjs"],
+    },
     alias: {
         "@": resolve(__dirname, "./src"),
     },

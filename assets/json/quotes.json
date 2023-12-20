@@ -94,5 +94,185 @@
         "author": "Eckhart Tolle",
         "handle": "",
         "quoteType": "individualCounseling"
+    },
+    {
+        "quote": "One does not become enlightened by imagining figures of light, but by making the darkness conscious.",
+        "author": "Carl Gustav Jung",
+        "handle": "",
+        "quoteType": "psychology"
+    },
+    {
+        "quote": "The greatest discovery of any generation is that a human can alter his life by altering his attitude.",
+        "author": "William James",
+        "handle": "",
+        "quoteType": "psychology"
+    },
+    {
+        "quote": "Don't become a mere recorder of facts, but try to penetrate the mystery of their origin.",
+        "author": "Ivan Pavlov",
+        "handle": "",
+        "quoteType": "psychology"
+    },
+    {
+        "quote": "Empathy is like giving someone a psychological hug.",
+        "author": "Lawrence J. Cohen",
+        "handle": "",
+        "quoteType": "individualCounseling"
+    },
+    {
+        "quote": "The privilege of a lifetime is to become who you truly are.",
+        "author": "Carl Gustav Jung",
+        "handle": "",
+        "quoteType": "individualCounseling"
+    },
+    {
+        "quote": "Feelings are much like waves, we can't stop them from coming but we can choose which one to surf.",
+        "author": "Jonatan Mårtensson",
+        "handle": "",
+        "quoteType": "individualCounseling"
+    },
+    {
+        "quote": "The greatest weapon against stress is our ability to choose one thought over another.",
+        "author": "William James",
+        "handle": "",
+        "quoteType": "psychology"
+    },
+    {
+        "quote": "The only normal people are the ones you don't know very well.",
+        "author": "Alfred Adler",
+        "handle": "",
+        "quoteType": "psychology"
+    },
+    {
+        "quote": "The best way out is always through.",
+        "author": "Robert Frost",
+        "handle": "",
+        "quoteType": "individualCounseling"
+    },
+    {
+        "quote": "A good marriage is one which allows for change and growth in the individuals and in the way they express their love.",
+        "author": "Pearl S. Buck",
+        "handle": "",
+        "quoteType": "marriageCounseling"
+    },
+    {
+        "quote": "Sometimes the most important thing in a whole day is the rest we take between two deep breaths.",
+        "author": "Etty Hillesum",
+        "handle": "",
+        "quoteType": "individualCounseling"
+    },
+    {
+        "quote": "To understand another person, you must swim in the same waters that drowned them.",
+        "author": "Sigmund Freud",
+        "handle": "",
+        "quoteType": "marriageCounseling"
+    },
+    {
+        "quote": "The meeting of two personalities is like the contact of two chemical substances: if there is any reaction, both are transformed.",
+        "author": "Carl Gustav Jung",
+        "handle": "",
+        "quoteType": "marriageCounseling"
+    },
+    {
+        "quote": "Stigma and self-stigma are some of the most significant barriers surrounding mental health.",
+        "author": "Peter Haugen, Aileen McCrillis, Geert Smid, & Mirjam Nijdam",
+        "handle": "2017",
+        "quoteType": "psychology"
+    },
+    {
+        "quote": "It takes ten times as long to put yourself back together as it does to fall apart.",
+        "author": "Suzanne Collins",
+        "handle": "2010",
+        "quoteType": "individualCounseling"
+    },
+    {
+        "quote": "Mental pain is less dramatic than physical pain, but it is more common and also more hard to bear.",
+        "author": "C.S. Lewis",
+        "handle": "1940",
+        "quoteType": "psychology"
+    },
+    {
+        "quote": "There is such an extreme stigma about mental health issues, and I can’t make heads or tails of why it exists.",
+        "author": "Kristen Bell",
+        "handle": "",
+        "quoteType": "psychology"
+    },
+    {
+        "quote": "My dark days made me stronger. Or maybe I already was strong, and they made me prove it.",
+        "author": "Emery Lord",
+        "handle": "",
+        "quoteType": "individualCounseling"
+    },
+    {
+        "quote": "Your mental health is a priority. Your happiness is a priority. Your self-care is a priority. Your existence is a priority.",
+        "author": "Sonya Parker",
+        "handle": "",
+        "quoteType": "individualCounseling"
+    },
+    {
+        "quote": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+        "author": "Nelson Mandela",
+        "handle": "",
+        "quoteType": "psychology"
+    },
+    {
+        "quote": "Being able to be your true self is one of the strongest components of good mental health.",
+        "author": "Dr. Lauren Fogel Mersy",
+        "handle": "",
+        "quoteType": "psychology"
+    },
+    {
+        "quote": "Just because no one else can heal or do your inner work for you doesn’t mean you can, should, or need to do it alone.",
+        "author": "Lisa Olivera",
+        "handle": "",
+        "quoteType": "individualCounseling"
+    },
+    {
+        "quote": "What if you moved through the world as if you were easy to be loved? Because I promise you, you are easy to love.",
+        "author": "Sonalee Rashatwar, LCSW",
+        "handle": "",
+        "quoteType": "individualCounseling"
+    },
+    {
+        "quote": "No amount of support or generosity justifies someone treating you badly. This includes parents.",
+        "author": "Sarah Crosby",
+        "handle": "",
+        "quoteType": "individualCounseling"
+    },
+    {
+        "quote": "The pain of severe depression is quite unimaginable to those who have not suffered it, and it kills in many instances because its anguish can no longer be borne.",
+        "author": "William Styron",
+        "handle": "",
+        "quoteType": "psychology"
+    },
+    {
+        "quote": "So many people look at [my depression] as me being ungrateful, but that is not it — I can’t help it.",
+        "author": "Miley Cyrus",
+        "handle": "",
+        "quoteType": "individualCounseling"
+    },
+    {
+        "quote": "Happiness can be found even in the darkest of times, if one only remembers to turn on the light.",
+        "author": "J.K. Rowling",
+        "handle": "2015",
+        "quoteType": "psychology"
+    },
+    {
+        "quote": "You are not a failure for struggling with your mental health. You are a warrior for continuing to fight.",
+        "author": "Unknown",
+        "handle": "",
+        "quoteType": "psychology"
+    },
+    {
+        "quote": "Mental health is not a destination, but a journey. It's okay to take detours and seek help along the way.",
+        "author": "Unknown",
+        "handle": "",
+        "quoteType": "psychology"
+    },
+    {
+        "quote": "The strongest people are not those who show strength in front of the world but those who fight and win battles that others do not know anything about.",
+        "author": "Jonathan Harnisch",
+        "handle": "",
+        "quoteType": "individualCounseling"
     }
 ]
