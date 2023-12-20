@@ -132,60 +132,6 @@ const providerQuestions: string[] = [
         </InfoCard>
     </div>
 
-    <!-- <div class="max-w-4xl mx-auto p-6 flex flex-col gap-8 items-center md:mt-16 ">
-
-        <div class="card w-5/6  bg-soft_off_white shadow-xl">
-            <figure class="p-24 relative">
-                <div class="figure-background-cards"></div>
-                <Icon name="bi:credit-card-2-front" color="white" size="8em" class="z-10" />
-            </figure>
-            <div class="card-body">
-                <h3 class="text-3xl font-semibold">Payments</h3>
-                <p class="text-xl">I accept all major credit and debit cards as forms of payment.</p>
-            </div>
-        </div>
-
-        <div class="card w-5/6 bg-soft_off_white shadow-xl">
-            <figure class="p-24 relative">
-                <div class="figure-background-hsa"></div>
-                <Icon name="streamline:insurance-hand" color="white" size="8em" class="z-10" />
-            </figure>
-            <div class="card-body">
-                <h3 class="text-3xl font-semibold">HSA</h3>
-                <p class="text-xl">I accept all Healthcare Savings Account debit cards as forms of payment.</p>
-            </div>
-        </div>
-
-        <div class="card w-5/6 bg-soft_off_white  shadow-xl ">
-            <figure class="p-24 relative">
-                <div class="figure-background-insurance"></div>
-                <Icon name="streamline:good-health-and-well-being" color="white" size="8em" class="z-10" />
-            </figure>
-            <div class="card-body">
-                <h3 class="text-3xl font-semibold">Medical Insurance</h3>
-                <p>
-                    <strong>I do not take insurance directly.</strong>
-                    <br />
-                    <br />
-                    However, depending on your current health
-                    insurance provider, it is possible for services to be covered in full or in part. Please contact
-                    your provider to verify how your plan compensates you for psychotherapy services.
-                </p>
-                <br />
-                <p class="text-xl">
-                    <strong>
-                        A reimbursement superbill can be provided for free!
-                    </strong>
-                </p>
-
-                <button class="mt-2 btn btn-primary text-white" onclick="provider_questions_modal.showModal()">Provider
-                    Questions
-                    <Icon name="material-symbols:help-center-rounded" color="white" size="2em" />
-                </button>
-            </div>
-        </div>
-    </div> -->
-
     <dialog id="provider_questions_modal" class="modal">
         <div class="modal-box w-11/12 max-w-7xl">
             <form method="dialog">
