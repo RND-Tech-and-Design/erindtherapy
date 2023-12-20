@@ -1,8 +1,7 @@
 import isEmpty from 'lodash/isEmpty';
 import startCase from 'lodash/startCase';
 import toLower from 'lodash/toLower';
-import type { NuxtApp } from 'nuxt/app';
-import { useNuxtApp, useRouter, useState } from 'nuxt/app';
+import { useRouter, useState } from 'nuxt/app';
 import type { RouteRecordNormalized } from 'vue-router';
 
 export type NavLink = {

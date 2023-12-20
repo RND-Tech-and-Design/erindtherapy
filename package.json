@@ -10,6 +10,7 @@
         "postinstall": "nuxt prepare"
     },
     "devDependencies": {
+        "@headlessui/vue": "^1.7.16",
         "@heroicons/vue": "^2.0.18",
         "@nuxt/devtools": "^1.0.6",
         "@nuxt/types": "^2.17.2",

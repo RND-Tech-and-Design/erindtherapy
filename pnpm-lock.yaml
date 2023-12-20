@@ -16,6 +16,9 @@ dependencies:
     version: 1.69.5
 
 devDependencies:
+  '@headlessui/vue':
+    specifier: ^1.7.16
+    version: 1.7.16(vue@3.3.11)
   '@heroicons/vue':
     specifier: ^2.0.18
     version: 2.0.18(vue@3.3.11)
@@ -919,6 +922,15 @@ packages:
   /@formkit/auto-animate@0.8.1:
     resolution: {integrity: sha512-0/Z2cuNXWVVIG/l0SpcHAWFhGdvLJ8DRvEfRWvmojtmRWfEy+LWNwgDazbZqY0qQYtkHcoEK3jBLkhiZaB/4Ig==}
     dev: false
+
+  /@headlessui/vue@1.7.16(vue@3.3.11):
+    resolution: {integrity: sha512-nKT+nf/q6x198SsyK54mSszaQl/z+QxtASmgMEJtpxSX2Q0OPJX0upS/9daDyiECpeAsvjkoOrm2O/6PyBQ+Qg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      vue: 3.3.11(typescript@5.3.3)
+    dev: true
 
   /@heroicons/vue@2.0.18(vue@3.3.11):
     resolution: {integrity: sha512-BcTC9nq2TkwNSfQuqo96J7ehx4etezypc2YeTq7KsXWxrcrerhkgjLrxGRBnStN0wrXo0Gv4BInybqz5uBG6Cw==}
