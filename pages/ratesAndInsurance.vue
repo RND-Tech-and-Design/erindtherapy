@@ -74,7 +74,6 @@ const providerQuestions: string[] = [
     'What specific documents, if any, does my counselor need to provide for insurance purposes?',
 ];
 
-
 </script>
 
 <template>
@@ -146,8 +145,8 @@ const providerQuestions: string[] = [
                 </p>
                 <div class="py-4 ml-2">
                     <div v-for="(question, index) in providerQuestions" :key="index" class="pt-2 pl-2 flex">
-                        <icon name="fluent:chat-bubbles-question-16-regular" size="2em"></icon>
-                        <span class=" pl-2 ">
+                        <icon name="fluent:chat-bubbles-question-16-regular" size="2em" class="flex-none min-w-8"></icon>
+                        <span class="flex-auto pl-2 pt-1">
                             {{ question }}
                         </span>
                     </div>
