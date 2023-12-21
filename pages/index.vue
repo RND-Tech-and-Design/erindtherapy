@@ -8,9 +8,10 @@ definePageMeta({
 <template>
     <div>
         <HomeHero />
-        <QuoteBlock :randomQuote="true"/>
+        <QuoteBlock :randomQuote="true" />
         <AppAlert>
             Currently Accepting New Clients!
         </AppAlert>
+
     </div>
 </template>
