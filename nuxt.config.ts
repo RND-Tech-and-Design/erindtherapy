@@ -3,6 +3,9 @@ import { resolve } from 'path'
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
+    site: {
+        url: 'https://erindtherapy.com',
+    },
     build: {
         transpile: ["rxjs"],
     },

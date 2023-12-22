@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
     layout: 'default',
+    title: 'Policies',
     navOrder: 5,
 })
 </script>

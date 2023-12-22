@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
     layout: 'default',
+    title: 'Home',
     navOrder: 1,
 })
 </script>

@@ -4,6 +4,7 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/solid';
 
 definePageMeta({
     layout: 'default',
+    title: 'Contact',
     navOrder: 3,
 })
 </script>
