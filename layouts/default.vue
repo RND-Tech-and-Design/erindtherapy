@@ -22,13 +22,13 @@ watch(route, async () => {
     <div class="drawer drawer-end">
         <input id="main-drawer" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content">
-            <AppHeader>
+            <AppHeader :navigationLinks="navigationLinks">
                 <label for="main-drawer" class="drawer-button btn btn-square btn-ghost md:hidden">
                     <Bars3Icon class="h-6 w-6" />
                 </label>
             </AppHeader>
             <slot />
-            <AppFooter />
+            <AppFooter :navigationLinks="navigationLinks" />
         </div>
         <div class="drawer-side">
             <label for="main-drawer" aria-label="close sidebar" class="drawer-overlay"></label>

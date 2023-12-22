@@ -1,22 +1,15 @@
 <script setup lang="ts">
 
-import { watch, ref } from 'vue';
-import { useRoute } from 'vue-router';
-import { useNavigation } from '~/composables/navigation';
+import { type NavLink } from '~/composables/navigation';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/solid';
 
-const { generateNavigation } = useNavigation();
-const navigationLinks = ref<NavLink[]>([]);
-
-// Initial population of navigation links
-generateNavigation().then(links => navigationLinks.value = links);
-
-const route = useRoute();
-
-watch(route, async () => {
-    navigationLinks.value = await generateNavigation();
-}, { immediate: true });
-
+defineProps({
+    navigationLinks: {
+        type: Array as () => NavLink[],
+        default: () => [],
+        required: true,
+    },
+});
 
 </script>
 
@@ -64,7 +57,7 @@ watch(route, async () => {
 
                 <!-- Logo -->
                 <a href="/"
-                   class="absolute overflow-visible top-4 md:top-10">
+                   class="absolute overflow-visible -top-4 md:top-6 ">
                     <img src="/images/logos/icon.svg"
                          alt="Logo"
                          height="112px"

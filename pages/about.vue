@@ -7,7 +7,8 @@ definePageMeta({
 </script>
 
 <template>
-    <Hero headline="About" hero-image="/images/banner/about.webp" />
+    <Hero headline="About"
+          hero-image="/images/banner/about.webp" />
 
     <section>
         <p>This page will be displayed at the /about route.</p>

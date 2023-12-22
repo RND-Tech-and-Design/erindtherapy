@@ -72,7 +72,7 @@ onUnmounted(() => {
 
 <template>
     <section>
-        <div class="bg-gray-200 flex items-center justify-center px-5 py-5 pt-16">
+        <div class="bg-gray-200 flex items-center justify-center px-5 py-16 ">
             <div class="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-10 text-gray-800"
                  style="max-width: 500px">
                 <div class="w-full mb-10">
