@@ -14,6 +14,7 @@ generateNavigation().then(links => navigationLinks.value = links);
 
 watch(route, async () => {
     metaTitle.value = `${route.meta?.title}`;
+    navigationLinks.value = await generateNavigation();
 }, { immediate: true });
 
 </script>
