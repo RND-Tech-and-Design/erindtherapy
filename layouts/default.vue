@@ -28,7 +28,9 @@ watch(route, async () => {
                     <Bars3Icon class="h-6 w-6" />
                 </label>
             </AppHeader>
-            <slot />
+            <div itemscope itemtype=”https://schema.org/Psychiatric”>
+                <slot />
+            </div>
             <AppFooter :navigationLinks="navigationLinks" />
         </div>
         <div class="drawer-side">
@@ -65,9 +67,7 @@ watch(route, async () => {
                         </template>
                     </ul>
                 </template>
-
             </ul>
-
         </div>
     </div>
 </template>

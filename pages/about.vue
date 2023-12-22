@@ -3,6 +3,8 @@ definePageMeta({
     layout: 'default',
     title: 'About',
     navOrder: 2,
+    description: `Experienced Marriage and Family Therapist with a MA from Seattle University, offering expertise in communication, 
+    connection, and conflict management, trained at The Gottman Institute.`
 })
 </script>
 

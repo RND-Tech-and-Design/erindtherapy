@@ -5,8 +5,11 @@ import type { PriceCard, PaymentCard } from '~/types/card';
 definePageMeta({
     layout: 'default',
     title: 'Rates & Insurance',
-    navOrder: 4
+    navOrder: 4,
+    description: `Affordable, results-oriented therapy: Specializing in marathon couples therapy, individual counseling. 
+    Flexible rates, personalized care. Expert therapist.`
 })
+
 
 const priceCards: PriceCard[] = [
     {
@@ -135,8 +138,8 @@ const providerQuestions: string[] = [
         <div class="modal-box w-11/12 max-w-7xl">
             <form method="dialog">
                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                     <icon name="material-symbols:close" size="2em" class="flex-none min-w-8"></icon>
-                    
+                    <icon name="material-symbols:close" size="2em" class="flex-none min-w-8"></icon>
+
                 </button>
             </form>
             <h3 class="font-bold text-lg py-4 ">Questions for your provider</h3>
