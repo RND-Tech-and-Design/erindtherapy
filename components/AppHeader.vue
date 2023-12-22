@@ -32,7 +32,8 @@ watch(route, async () => {
                     <template v-for="link in navigationLinks" :key="link.path">
                         <li v-if="!link.children || link.children?.length === 0"
                             :class="`${link.active ? 'ease-in duration-100 border-t-[3px]' : 'pt-[3px]'}`">
-                            <NuxtLink :to="link.path" class=" focus:text-text_secondary">
+                            <NuxtLink :to="link.path"
+                                      class=" focus:text-text_secondary">
                                 {{ link.name }}
                             </NuxtLink>
                         </li>
@@ -72,7 +73,8 @@ watch(route, async () => {
             </div>
 
             <div class="navbar-end">
-                <NuxtLink class="btn btn-primary hidden text-text_secondary md:flex mr-2 ">
+                <NuxtLink to="https://erindtherapy.clientsecure.me/sign-in"
+                          class="btn btn-primary hidden text-text_secondary md:flex mr-2 ">
                     <span class="flex items-center">
                         <span class="mr-2">Client Portal</span>
                         <ArrowTopRightOnSquareIcon class="h-6 w-6" />

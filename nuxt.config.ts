@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     css: ['~/assets/css/main.scss'],
     modules: [
         'nuxt-simple-sitemap', // https://nuxt.com/modules/simple-sitemap
-        'nuxt-icon', // https://nuxt.com/modules/icon
+        'nuxt-icon', // https://nuxt.com/modules/icon https://icones.js.org/
         'nuxt-simple-robots', // https://nuxtseo.com/robots/getting-started/installation //! TODO preview set NUXT_SITE_ENV=production when deployed
         'nuxt-gtag', //https://nuxt.com/modules/gtag
         "nuxt-lodash",

@@ -81,7 +81,7 @@ const providerQuestions: string[] = [
           hero-image="/images/banner/rates.webp"
           overlayClass="bg-primary" />
 
-    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 bg-base-100">
+    <section class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 bg-base-100">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div v-for="(priceCard, index) in priceCards" :key="priceCard.id"
                  :class="priceCard.bgClass + ' text-center p-6 rounded-lg card card-compact shadow-xl animate-fade-in'"
@@ -98,11 +98,11 @@ const providerQuestions: string[] = [
                 </NuxtLink>
             </div>
         </div>
-    </div>
+    </section>
 
     <hr class="my-4">
 
-    <div class="max-w-4xl mx-auto p-6 flex flex-col gap-8 items-center md:mt-16 ">
+    <section class="max-w-4xl mx-auto p-6 flex flex-col gap-8 items-center md:mt-16 ">
         <InfoCard
                   v-for="(card, index) in paymentCards"
                   :key="index"
@@ -123,18 +123,21 @@ const providerQuestions: string[] = [
                     </strong>
                 </p>
 
-                <button class="mt-2 btn btn-primary text-white" onclick="provider_questions_modal.showModal()">Provider
-                    Questions
+                <button class="mt-2 btn btn-primary text-white" onclick="provider_questions_modal.showModal()">
+                    Provider Questions
                     <Icon name="material-symbols:help-center-rounded" color="white" size="2em" />
                 </button>
             </template>
         </InfoCard>
-    </div>
+    </section>
 
     <dialog id="provider_questions_modal" class="modal">
         <div class="modal-box w-11/12 max-w-7xl">
             <form method="dialog">
-                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                     <icon name="material-symbols:close" size="2em" class="flex-none min-w-8"></icon>
+                    
+                </button>
             </form>
             <h3 class="font-bold text-lg py-4 ">Questions for your provider</h3>
             <div>

@@ -2,7 +2,7 @@
 import { ref, onMounted, onUnmounted, watch } from 'vue';
 import rawQuotes from '~/assets/json/quotes.json';
 import { interval } from 'rxjs';
-import { startWith, switchMap, takeUntil  } from 'rxjs/operators';
+import { startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { QuoteType, type Quote } from '~/types/quote';
 import { Subject } from 'rxjs';
 
@@ -71,21 +71,24 @@ onUnmounted(() => {
 
 
 <template>
-    <div class="bg-gray-200 flex items-center justify-center px-5 py-5 pt-16">
-        <div class="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-10 text-gray-800" style="max-width: 500px">
-            <div class="w-full mb-10">
-                <div class="text-3xl text-secondary text-left leading-tight h-3">
-                    <icon name="bxs:quote-left" size="1em" class="flex-none min-w-8"></icon>
+    <section>
+        <div class="bg-gray-200 flex items-center justify-center px-5 py-5 pt-16">
+            <div class="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-10 text-gray-800"
+                 style="max-width: 500px">
+                <div class="w-full mb-10">
+                    <div class="text-3xl text-secondary text-left leading-tight h-3">
+                        <icon name="bxs:quote-left" size="1em" class="flex-none min-w-8"></icon>
+                    </div>
+                    <p class="text-sm text-gray-600 text-center px-8">{{ quoteBlock && quoteBlock.quote }}</p>
+                    <div class="text-3xl text-secondary text-right leading-tight h-3 -mt-3">
+                        <icon name="bxs:quote-right" size="1em" class="flex-none min-w-8"></icon>
+                    </div>
                 </div>
-                <p class="text-sm text-gray-600 text-center px-8">{{ quoteBlock && quoteBlock.quote }}</p>
-                <div class="text-3xl text-secondary text-right leading-tight h-3 -mt-3">
-                    <icon name="bxs:quote-right" size="1em" class="flex-none min-w-8"></icon>
+                <div class="w-full">
+                    <p class="text-md text-gray-600 font-bold text-center">{{ quoteBlock && quoteBlock.author }}</p>
+                    <!-- <p class="text-xs text-gray-500 text-center">{{ quoteBlock && quoteBlock.handle }}</p> -->
                 </div>
-            </div>
-            <div class="w-full">
-                <p class="text-md text-gray-600 font-bold text-center">{{ quoteBlock && quoteBlock.author }}</p>
-                <!-- <p class="text-xs text-gray-500 text-center">{{ quoteBlock && quoteBlock.handle }}</p> -->
             </div>
         </div>
-    </div>
+    </section>
 </template>
