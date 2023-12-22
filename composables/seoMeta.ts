@@ -56,6 +56,7 @@ export const populateHeader = ({ meta, fullPath }: RouteLocationNormalizedLoaded
         .replace(/(\r\n|\n|\r)|\s+/gm, " ");
 
     const image = `${domain}/${meta?.ogImage ?? 'og-image.png'}`;
+    const tileLogo = `${domain}/${meta?.tileLogo ?? 'tile-logo.webp'}`;
     const url = `${domain}${fullPath}`;
 
     const head = {
@@ -82,7 +83,7 @@ export const populateHeader = ({ meta, fullPath }: RouteLocationNormalizedLoaded
         fbAppId: '105123268480886',
         generator: 'NuxtJS',
         mobileWebAppCapable: 'yes',
-        msapplicationTileImage: image,
+        msapplicationTileImage: tileLogo,
         ogDescription: description,
         ogImage: image,
         ogImageHeight: 630,
