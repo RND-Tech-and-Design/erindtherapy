@@ -4,17 +4,16 @@ import { watch, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useNavigation } from '~/composables/navigation';
 
-
 const { generateNavigation } = useNavigation();
 const navigationLinks = ref<NavLink[]>([]);
+const route = useRoute();
+const metaTitle = ref<string>(`${route.meta?.title}`);
 
 // Initial population of navigation links
 generateNavigation().then(links => navigationLinks.value = links);
 
-const route = useRoute();
-
 watch(route, async () => {
-    navigationLinks.value = await generateNavigation();
+    metaTitle.value = `${route.meta?.title}`;
 }, { immediate: true });
 
 </script>
@@ -48,11 +47,11 @@ watch(route, async () => {
                     </li>
                 </template>
 
-                  <template v-for="link in navigationLinks" :key="link.path">
+                <template v-for="link in navigationLinks" :key="link.path">
                     <ul v-if="link.children && link.children?.length > 0"
                         class="menu p-4 w-80 min-h-full backdrop-blur-md bg-opacity-50 text-text_secondary">
                         <div class="footer-title">
-                           {{ link.name }}
+                            {{ link.name }}
                         </div>
                         <template v-for="childLink in link.children" :key="link.path">
                             <li>
@@ -65,9 +64,9 @@ watch(route, async () => {
                         </template>
                     </ul>
                 </template>
-            
+
             </ul>
-          
+
         </div>
     </div>
 </template>

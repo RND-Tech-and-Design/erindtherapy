@@ -1,7 +1,5 @@
 <script setup lang="ts">
 
-import { defineProps } from 'vue'
-
 const _props = defineProps({
     title: {
         type: String,

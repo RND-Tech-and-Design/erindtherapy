@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, watch } from 'vue';
 import rawQuotes from '~/assets/json/quotes.json';
-import { defineProps } from 'vue';
 import { interval } from 'rxjs';
 import { startWith, switchMap, takeUntil  } from 'rxjs/operators';
 import { QuoteType, type Quote } from '~/types/quote';

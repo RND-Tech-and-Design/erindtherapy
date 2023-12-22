@@ -13,7 +13,7 @@ export type NavLink = {
 };
 
 const getCapitalizedRouteName = (route: RouteRecordNormalized) => {
-    const name = route.meta?.name || (route.name === 'index' ? 'home' : route.name);
+    const name = route.meta?.title || (route.name === 'index' ? 'home' : route.name);
     if (typeof name === 'string') {
         return name
             .toLowerCase()

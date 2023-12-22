@@ -1,6 +1,8 @@
 {
-    "name": "nuxt-app",
+    "name": "erindtherapy.com",
     "private": true,
+    "version": "1.0.0",
+    "description": "erindtherapy.com website", 
     "type": "module",
     "scripts": {
         "build": "nuxt build",

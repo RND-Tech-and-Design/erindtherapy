@@ -15,7 +15,6 @@ const route = useRoute();
 
 watch(route, async () => {
     navigationLinks.value = await generateNavigation();
-    console.log("🚀 ~ file: AppFooter.vue:18 ~ watch ~ navigationLinks.value :", navigationLinks.value);
 }, { immediate: true });
 
 

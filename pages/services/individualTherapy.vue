@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
     layout: 'default',
-    name: 'Individual Therapy'
+    title: 'Individual Therapy'
 })
 </script>
 

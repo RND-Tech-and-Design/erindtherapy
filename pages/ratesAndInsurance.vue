@@ -4,7 +4,7 @@ import type { PriceCard, PaymentCard } from '~/types/card';
 
 definePageMeta({
     layout: 'default',
-    name: 'Rates & Insurance',
+    title: 'Rates & Insurance',
     navOrder: 4
 })
 
