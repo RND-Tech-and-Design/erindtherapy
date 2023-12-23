@@ -10,7 +10,8 @@ definePageMeta({
 
 <template>
     <Hero headline="About"
-          hero-image="/images/banner/about.webp" />
+          hero-image="/images/banner/about.webp"
+          overlayClass="bg-complementary_accent" />
 
     <section>
         <p>This page will be displayed at the /about route.</p>

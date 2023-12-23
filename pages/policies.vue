@@ -7,7 +7,9 @@ definePageMeta({
 </script>
 
 <template>
-    <Hero headline="Policies" hero-image="/images/banner/about.webp" />
+    <Hero headline="Policies"
+          hero-image="/images/banner/about.webp"
+          overlayClass="bg-complementary_primary" />
 
     <section>
         <p>This page will be displayed at the /policies route.</p>
