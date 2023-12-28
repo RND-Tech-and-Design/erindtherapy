@@ -24,9 +24,11 @@ defineProps({
                 <ul class="menu menu-horizontal disable-active px-1 hidden -mt-10 md:flex z-10">
                     <template v-for="link in navigationLinks" :key="link.path">
                         <li v-if="!link.children || link.children?.length === 0"
-                            :class="`${link.active ? 'ease-in duration-100 border-t-[3px]' : 'pt-[3px]'}`">
+                            :class="`join-item text-text_secondary ${link.active ? 'ease-in duration-100 border-t-[3px]' : 'pt-[3px]'}`"
+                            style="color: white !important;">
                             <NuxtLink :to="link.path"
-                                      class=" focus:text-text_secondary">
+                                      class="join-item text-text_secondary"
+                                      style="color: white !important;">
                                 {{ link.name }}
                             </NuxtLink>
                         </li>
@@ -50,7 +52,6 @@ defineProps({
                                     </template>
                                 </ul>
                             </details>
-
                         </li>
                     </template>
                 </ul>
@@ -68,8 +69,8 @@ defineProps({
             <div class="navbar-end">
                 <NuxtLink to="https://erindtherapy.clientsecure.me/sign-in"
                           class="btn btn-primary hidden text-text_secondary md:flex mr-2 ">
-                    <span class="flex items-center">
-                        <span class="mr-2">Client Portal</span>
+                    <span class="flex items-center ">
+                        <span class="mr-2 text-text_secondary">Client Portal</span>
                         <ArrowTopRightOnSquareIcon class="h-6 w-6" />
                     </span>
                 </NuxtLink>

@@ -13,6 +13,7 @@ definePageMeta({
         <AppAlert>
             Currently Accepting New Clients!
         </AppAlert>
+        <Cta></Cta>
 
     </div>
 </template>
