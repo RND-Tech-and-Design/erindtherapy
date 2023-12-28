@@ -3,7 +3,7 @@ import type { RouteLocationNormalizedLoaded } from 'vue-router';
 export const therapyTitle = "Erin Dierickx, LMFT";
 export const site_name = "ErinDTherapy";
 export const domain = "https://erindtherapy.com";
-export const titleTail = `${site_name} - ${therapyTitle}`
+export const titleTail = `${site_name} | ${therapyTitle}`
 export const video = 'https://player.vimeo.com/video/555906424';
 
 export const defaultDescription = `Expert Couples Therapy, Depression, Anxiety, Intensive Marathon Therapy treatment, 
@@ -20,7 +20,11 @@ const keywords: string[] = [
 
 export const generateMetaTags = () => {
     return [
-        { hid: 'keywords', name: 'keywords', content: keywords.join(', ') },
+        {
+            hid: 'keywords',
+            name: 'keywords',
+            content: keywords.join(', ')
+        },
     ];
 }
 
@@ -52,7 +56,7 @@ export const populateHeader = ({ meta, fullPath }: RouteLocationNormalizedLoaded
 
     // Compute the values
     const title = meta?.title ? `${meta.title} - ${titleTail}` : titleTail;
-    const description = (meta?.description ? `${meta.description} | ${titleTail}` : defaultDescription)
+    const description = (meta?.description ? `${meta.description} - ${titleTail}` : defaultDescription)
         .replace(/(\r\n|\n|\r)|\s+/gm, " ");
 
     const image = `${domain}/${meta?.ogImage ?? 'og-image.png'}`;
