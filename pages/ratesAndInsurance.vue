@@ -126,13 +126,15 @@ const providerQuestions: string[] = [
                     </strong>
                 </p>
 
-                <button class="mt-2 btn btn-primary text-white" onclick="provider_questions_modal.showModal()">
+                <button class="mt-2 btn btn-secondary text-white" onclick="provider_questions_modal.showModal()">
                     Provider Questions
                     <Icon name="material-symbols:help-center-rounded" color="white" size="2em" />
                 </button>
             </template>
         </InfoCard>
     </section>
+    
+    <Cta></Cta>
 
     <dialog id="provider_questions_modal" class="modal">
         <div class="modal-box w-11/12 max-w-7xl">

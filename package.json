@@ -2,7 +2,7 @@
     "name": "erindtherapy.com",
     "private": true,
     "version": "1.0.0",
-    "description": "erindtherapy.com website", 
+    "description": "erindtherapy.com website",
     "type": "module",
     "scripts": {
         "build": "nuxt build",
@@ -23,7 +23,7 @@
         "autoprefixer": "^10.4.16",
         "daisyui": "^4.4.19",
         "eslint": "^8.56.0",
-        "nuxt": "^3.8.2",
+        "nuxt": "^3.9.0",
         "nuxt-gtag": "^1.1.1",
         "nuxt-icon": "^0.6.7",
         "nuxt-lodash": "^2.5.3",

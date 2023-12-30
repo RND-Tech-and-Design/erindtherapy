@@ -35,7 +35,8 @@ defineProps({
                     </template>
                     <template v-for="link in navigationLinks" :key="link.path">
                         <li v-if="link.children && link.children?.length > 0"
-                            :class="`${link.active ? 'ease-in duration-100 border-t-[3px]' : 'pt-[3px]'}`">
+                            :class="`${link.active ? 'ease-in duration-100 border-t-[3px]' : 'pt-[3px]'}`"
+                            style="color: white !important;">
 
                             <details>
                                 <summary>
@@ -45,8 +46,15 @@ defineProps({
                                     <template v-for="child in link.children">
                                         <li>
                                             <NuxtLink :to="child.path"
-                                                      class="link whitespace-nowrap  focus:text-text_secondary">
-                                                {{ child.name }}
+                                                      class="link whitespace-nowrap  focus:text-text_secondary "
+                                                      style="color: white !important;">
+                                                <Icon v-if="child.active"
+                                                      name="ph:dot-outline-fill"
+                                                      color="white"
+                                                      size="1.5em" />
+                                                <span :class="`${child.active ? '-ml-3' : 'ml-4'}`">
+                                                    {{ child.name }}
+                                                </span>
                                             </NuxtLink>
                                         </li>
                                     </template>
