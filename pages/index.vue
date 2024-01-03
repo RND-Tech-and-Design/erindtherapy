@@ -7,7 +7,7 @@ definePageMeta({
 </script>
 
 <template>
-    <>
+    <div>
         <HomeHero />
         <AboutBox />
         <QuoteBlock :randomQuote="true" />
