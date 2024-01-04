@@ -29,6 +29,7 @@
         "nuxt-lodash": "^2.5.3",
         "nuxt-simple-robots": "4.0.0-rc.2",
         "nuxt-simple-sitemap": "^4.1.17",
+        "pnpm": "^8.14.0",
         "postcss": "^8.4.32",
         "postcss-nesting": "^12.0.1",
         "tailwindcss": "^3.3.6",
