@@ -8,9 +8,27 @@ dependencies:
   '@formkit/auto-animate':
     specifier: ^0.8.1
     version: 0.8.1
+  '@fortawesome/fontawesome-free':
+    specifier: ^6.5.1
+    version: 6.5.1
+  '@fortawesome/fontawesome-svg-core':
+    specifier: ^6.5.1
+    version: 6.5.1
+  '@fortawesome/free-regular-svg-icons':
+    specifier: ^6.5.1
+    version: 6.5.1
+  '@fortawesome/free-solid-svg-icons':
+    specifier: ^6.5.1
+    version: 6.5.1
+  '@fortawesome/vue-fontawesome':
+    specifier: ^3.0.5
+    version: 3.0.5(@fortawesome/fontawesome-svg-core@6.5.1)(vue@3.4.0)
   '@nuxt/image':
     specifier: ^1.1.0
     version: 1.1.0
+  '@nuxtjs/fontawesome':
+    specifier: ^1.1.2
+    version: 1.1.2(vue@3.4.0)
   rxjs:
     specifier: ^7.8.1
     version: 7.8.1
@@ -734,6 +752,76 @@ packages:
     resolution: {integrity: sha512-0/Z2cuNXWVVIG/l0SpcHAWFhGdvLJ8DRvEfRWvmojtmRWfEy+LWNwgDazbZqY0qQYtkHcoEK3jBLkhiZaB/4Ig==}
     dev: false
 
+  /@fortawesome/fontawesome-common-types@0.2.36:
+    resolution: {integrity: sha512-a/7BiSgobHAgBWeN7N0w+lAhInrGxksn13uK7231n2m8EDPE3BMCl9NZLTGrj9ZXfCmC6LM0QLqXidIizVQ6yg==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dev: false
+
+  /@fortawesome/fontawesome-common-types@6.5.1:
+    resolution: {integrity: sha512-GkWzv+L6d2bI5f/Vk6ikJ9xtl7dfXtoRu3YGE6nq0p/FFqA1ebMOAWg3XgRyb0I6LYyYkiAo+3/KrwuBp8xG7A==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dev: false
+
+  /@fortawesome/fontawesome-free@6.5.1:
+    resolution: {integrity: sha512-CNy5vSwN3fsUStPRLX7fUYojyuzoEMSXPl7zSLJ8TgtRfjv24LOnOWKT2zYwaHZCJGkdyRnTmstR0P+Ah503Gw==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dev: false
+
+  /@fortawesome/fontawesome-svg-core@1.2.36:
+    resolution: {integrity: sha512-YUcsLQKYb6DmaJjIHdDWpBIGCcyE/W+p/LMGvjQem55Mm2XWVAP5kWTMKWLv9lwpCVjpLxPyOMOyUocP1GxrtA==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 0.2.36
+    dev: false
+
+  /@fortawesome/fontawesome-svg-core@6.5.1:
+    resolution: {integrity: sha512-MfRCYlQPXoLlpem+egxjfkEuP9UQswTrlCOsknus/NcMoblTH2g0jPrapbcIb04KGA7E2GZxbAccGZfWoYgsrQ==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.5.1
+    dev: false
+
+  /@fortawesome/free-regular-svg-icons@6.5.1:
+    resolution: {integrity: sha512-m6ShXn+wvqEU69wSP84coxLbNl7sGVZb+Ca+XZq6k30SzuP3X4TfPqtycgUh9ASwlNh5OfQCd8pDIWxl+O+LlQ==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.5.1
+    dev: false
+
+  /@fortawesome/free-solid-svg-icons@6.5.1:
+    resolution: {integrity: sha512-S1PPfU3mIJa59biTtXJz1oI0+KAXW6bkAb31XKhxdxtuXDiUIFsih4JR1v5BbxY7hVHsD1RKq+jRkVRaf773NQ==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.5.1
+    dev: false
+
+  /@fortawesome/vue-fontawesome@0.1.10(@fortawesome/fontawesome-svg-core@1.2.36)(vue@3.4.0):
+    resolution: {integrity: sha512-b2+SLF31h32LSepVcXe+BQ63yvbq5qmTCy4KfFogCYm2bn68H5sDWUnX+U7MBqnM2aeEk9M7xSoqGnu+wSdY6w==}
+    peerDependencies:
+      '@fortawesome/fontawesome-svg-core': '>= 1.2.0 < 1.3'
+      vue: ~2
+    dependencies:
+      '@fortawesome/fontawesome-svg-core': 1.2.36
+      vue: 3.4.0(typescript@5.3.3)
+    dev: false
+
+  /@fortawesome/vue-fontawesome@3.0.5(@fortawesome/fontawesome-svg-core@6.5.1)(vue@3.4.0):
+    resolution: {integrity: sha512-isZZ4+utQH9qg9cWxWYHQ9GwI3r5FeO7GnmzKYV+gbjxcptQhh+F99iZXi1Y9AvFUEgy8kRpAdvDlbb3drWFrw==}
+    peerDependencies:
+      '@fortawesome/fontawesome-svg-core': ~1 || ~6
+      vue: '>= 3.0.0 < 4'
+    dependencies:
+      '@fortawesome/fontawesome-svg-core': 6.5.1
+      vue: 3.4.0(typescript@5.3.3)
+    dev: false
+
   /@headlessui/vue@1.7.16(vue@3.4.0):
     resolution: {integrity: sha512-nKT+nf/q6x198SsyK54mSszaQl/z+QxtASmgMEJtpxSX2Q0OPJX0upS/9daDyiECpeAsvjkoOrm2O/6PyBQ+Qg==}
     engines: {node: '>=10'}
@@ -1407,6 +1495,15 @@ packages:
       - eslint-import-resolver-webpack
       - supports-color
     dev: true
+
+  /@nuxtjs/fontawesome@1.1.2(vue@3.4.0):
+    resolution: {integrity: sha512-QAfo7hdc6hiCOohdR861oNQ+riKW/kD22bYyvaC++xXiiC1hBQcrRQ6xXd5gln+6SKCwT09+C4kGjzTgrwtr7w==}
+    dependencies:
+      '@fortawesome/fontawesome-svg-core': 1.2.36
+      '@fortawesome/vue-fontawesome': 0.1.10(@fortawesome/fontawesome-svg-core@1.2.36)(vue@3.4.0)
+    transitivePeerDependencies:
+      - vue
+    dev: false
 
   /@parcel/watcher-android-arm64@2.3.0:
     resolution: {integrity: sha512-f4o9eA3dgk0XRT3XhB0UWpWpLnKgrh1IwNJKJ7UJek7eTYccQ8LR7XUWFKqw6aEq5KUNlCcGvSzKqSX/vtWVVA==}
@@ -2645,14 +2742,12 @@ packages:
       entities: 4.5.0
       estree-walker: 2.0.2
       source-map-js: 1.0.2
-    dev: true
 
   /@vue/compiler-dom@3.4.0:
     resolution: {integrity: sha512-E957uOhpoE48YjZGWeAoLmNYd3UeU4oIP8kJi8Rcsb9l2tV8Z48Jn07Zgq1aW0v3vuhlmydEKkKKbhLpADHXEA==}
     dependencies:
       '@vue/compiler-core': 3.4.0
       '@vue/shared': 3.4.0
-    dev: true
 
   /@vue/compiler-sfc@3.4.0:
     resolution: {integrity: sha512-PWE0mE2yW7bJS7PmaCrVDEG6KPaDJo0pb4AKnCxJ5lRRDO4IwL/fswBGhCpov+v/c+N/e+hQHpXNwvqU9BtUXg==}
@@ -2666,14 +2761,12 @@ packages:
       magic-string: 0.30.5
       postcss: 8.4.32
       source-map-js: 1.0.2
-    dev: true
 
   /@vue/compiler-ssr@3.4.0:
     resolution: {integrity: sha512-+oXKy105g9DIYQKDi3Gwung0xqQX5gJHr0GR+Vf7yK/WkNDM6q61ummcKmKAB85EIst8y3vj2PA9z9YU5Oc4DQ==}
     dependencies:
       '@vue/compiler-dom': 3.4.0
       '@vue/shared': 3.4.0
-    dev: true
 
   /@vue/devtools-api@6.5.1:
     resolution: {integrity: sha512-+KpckaAQyfbvshdDW5xQylLni1asvNSGme1JFs8I1+/H5pHEhqUKMEQD/qn3Nx5+/nycBq11qAEi8lk+LXI2dA==}
@@ -2683,14 +2776,12 @@ packages:
     resolution: {integrity: sha512-X6BvQjNcgKKHWPQzlRJjZvIu72Kkn8xJSv6VNptqWh8dToMknD0Hch1l4N7llKgVt6Diq4lMeUnErbZFvuGlAA==}
     dependencies:
       '@vue/shared': 3.4.0
-    dev: true
 
   /@vue/runtime-core@3.4.0:
     resolution: {integrity: sha512-NYrj/JgMMqnSWcIud8lLzDQrBLu+EVEeQ56QE9DYJeKG2eFrnQy8o/h57R9nCprafHs0uImKL3xsdXjHseYVxw==}
     dependencies:
       '@vue/reactivity': 3.4.0
       '@vue/shared': 3.4.0
-    dev: true
 
   /@vue/runtime-dom@3.4.0:
     resolution: {integrity: sha512-1ZoHEsA5l77qbx2F+SWo/hQdBksPuOmww1t/jznidDG+xMB/iidafEFvo2ZTtZii0JfTIrlDhjshfYUvQC17wQ==}
@@ -2698,7 +2789,6 @@ packages:
       '@vue/runtime-core': 3.4.0
       '@vue/shared': 3.4.0
       csstype: 3.1.3
-    dev: true
 
   /@vue/server-renderer@3.4.0(vue@3.4.0):
     resolution: {integrity: sha512-GuOVCyLDlWPu8nKo5AUxb8B+iB/Ik4I1WwqAlBqf5+y48z6D6rvKshp7KR3cJea+pte1tdTsb0+Ja82KizMZOw==}
@@ -2708,11 +2798,9 @@ packages:
       '@vue/compiler-ssr': 3.4.0
       '@vue/shared': 3.4.0
       vue: 3.4.0(typescript@5.3.3)
-    dev: true
 
   /@vue/shared@3.4.0:
     resolution: {integrity: sha512-Nhh3ed3G1R6HDAWiG6YYFt0Zmq/To6u5vjzwa9TIquGheCXPY6nEdIAO8ZdlwXsWqC2yNLj700FOvShpYt5CEA==}
-    dev: true
 
   /@vueuse/core@10.7.1(vue@3.4.0):
     resolution: {integrity: sha512-74mWHlaesJSWGp1ihg76vAnfVq9NTv1YT0SYhAQ6zwFNdBkkP+CKKJmVOEHcdSnLXCXYiL5e7MaewblfiYLP7g==}
@@ -3771,7 +3859,6 @@ packages:
 
   /csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
-    dev: true
 
   /culori@3.3.0:
     resolution: {integrity: sha512-pHJg+jbuFsCjz9iclQBqyL3B2HLCBF71BwVNujUYEvCeQMvV97R59MNK3R2+jgJ3a1fcZgI9B3vYgz8lzr/BFQ==}
@@ -6074,7 +6161,6 @@ packages:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
-    dev: true
 
   /nanoid@4.0.2:
     resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
@@ -7372,7 +7458,6 @@ packages:
       nanoid: 3.3.7
       picocolors: 1.0.0
       source-map-js: 1.0.2
-    dev: true
 
   /prebuild-install@7.1.1:
     resolution: {integrity: sha512-jAXscXWMcCK8GgCoHOfIr0ODh5ai8mj63L2nWrjuAgXE6tDyYGnx4/8o/rCgU+B4JSyZBKbeZqzhtwtC3ovxjw==}
@@ -8565,7 +8650,6 @@ packages:
     resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /ufo@1.3.2:
     resolution: {integrity: sha512-o+ORpgGwaYQXgqGDwd+hkS4PuZ3QnmqMMxRuajK/a38L6fTpcE5GPIfrf+L/KemFzfUpeUQc1rRS1iDBozvnFA==}
@@ -9141,7 +9225,6 @@ packages:
       '@vue/server-renderer': 3.4.0(vue@3.4.0)
       '@vue/shared': 3.4.0
       typescript: 5.3.3
-    dev: true
 
   /watchpack@2.4.0:
     resolution: {integrity: sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg==}

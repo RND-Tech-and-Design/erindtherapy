@@ -7,6 +7,11 @@ definePageMeta({
     connection, and conflict management, trained at The Gottman Institute.`,
 });
 
+const pageStyle = {
+  margins: "mx-10 md:mx-20 xl:mx-80",
+  backgroundColor: "bg-complementary_neutral bg-opacity-10"
+}
+
 const pageData = {
   aboutMe: {
     section: "About Me",
@@ -61,7 +66,7 @@ const pageData = {
       {
         title: "License",
         text: "I am a Washington State licensed Marriage and Family Therapist: MG61143094",
-        icon: "fa-regular fa-id-badge",
+        icon: " fa-id-badge",
       },
       {
         title: "Training",
@@ -89,32 +94,29 @@ const pageData = {
 </script>
 
 <template>
-  <Hero
-    headline="About"
-    hero-image="/images/banner/about.webp"
-    overlayClass="bg-complementary_accent"
-  />
+  <Hero headline="About" hero-image="/images/banner/about.webp" overlayClass="bg-complementary_accent" />
   <div class="flex flex-col">
-    <AboutMePageIntro :data="pageData.aboutMe" />
-    <div class="bg-lime-100 bg-opacity-10">
-      <AboutMePageSection :data="pageData.background" />
-    </div>
-    <div>
-      <AboutMePageSection :data="pageData.qualifications" />
-      <div class="flex flex-col md:flex-row md:justify-around">
-        <div
-          v-for="(qualification, index) in pageData.qualifications
-            .qualifications"
-          :key="index"
-          class="block mb-7 text-text_primary bg-clip-text font-sans text-base leading-relaxed antialiased"
-        >
+
+    <section :class="pageStyle.margins">
+      <AboutMePageIntro :data="pageData.aboutMe" />
+    </section>
+
+    <section :class="pageStyle.backgroundColor">
+      <AboutMePageSection :data="pageData.background" :class="pageStyle.margins" />
+    </section>
+
+    <section>
+      <AboutMePageSection :data="pageData.qualifications" :class="pageStyle.margins" />
+      <div class=" sm:flex-row md:flex mb-20" :class="pageStyle.margins">
+        <div v-for="(qualification, index) in pageData.qualifications.qualifications" :key="index" class="md:w-1/3 mb-7">
           <AboutMePageQualification :data="qualification" />
         </div>
       </div>
-    </div>
-    <div class="bg-lime-100 bg-opacity-10">
-      <AboutMePageSection :data="pageData.homeAndHobbies" />
-    </div>
+    </section>
+
+    <section :class="pageStyle.backgroundColor">
+      <AboutMePageSection :data="pageData.homeAndHobbies" class=" mx-10 md:mx-20 xl:mx-80" />
+    </section>
   </div>
 
   <Cta></Cta>

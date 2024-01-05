@@ -6,9 +6,7 @@ const props = defineProps({ data: Object });
 </script>
 
 <template>
-  <section
-    class="flex flex-col mt-10 mb-10 items-center justify-center mx-10 md:mx-20 xl:mx-80"
-  >
+  <section class="flex flex-col mt-20 mb-10 items-center justify-center ">
     <div class="uppercase tracking-tight font-bold text-secondary mt-2">
       <h3>{{ data.section }}</h3>
     </div>
@@ -16,12 +14,9 @@ const props = defineProps({ data: Object });
       <h3>{{ data.title }}</h3>
     </div>
     <div class="mt-5 text-base">
-      <p
-        v-for="(paragraph, index) in data.paragraphs"
-        :key="index"
+      <p v-for="(paragraph, index) in data.paragraphs" :key="index"
         class="block mb-7 text-text_primary bg-clip-text font-sans text-base leading-relaxed antialiased"
-        :class="[paragraph.styleType]"
-      >
+        :class="[paragraph.styleType]">
         {{ paragraph.text }}
       </p>
     </div>
