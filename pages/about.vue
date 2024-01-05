@@ -30,15 +30,17 @@ const pageData = {
       { text: "I knew I needed to do something else." },
       {
         text: "Before I was able to make that decision, I had to grapple with guilt for leaving the profession I believed I was meant for. It took several years to permit myself the freedom to consider other careers. Leaping into a new career and leaving a profession so closely tied to my identity was unthinkable.",
-        styleType: "",
       },
-      { text: "I struggled immensely.", styleType: "" },
+      {
+        styleType: "font-bold italic text-xl",
+        text: "I struggled immensely.",
+      },
       {
         text: "But with help, guidance, patience, and support, I decided to focus on my dream of becoming a therapist. And that decision has been one of the best I’ve ever made.",
       },
       {
+        styleType: "font-bold ",
         text: "I hope to be a support for you as you navigate this exciting and daunting chapter.",
-        styleType: "",
       },
     ],
   },
@@ -48,6 +50,23 @@ const pageData = {
     paragraphs: [
       {
         text: "Before starting my practice, I was a therapist at Twin Lakes Counseling in Federal Way. I am currently a researcher at The Gottman Institute in Seattle where I review the current literature to uncover opportunities for future research as well as monitor current research studies on the science of relationships.",
+      },
+    ],
+    qualifications: [
+      {
+        title: "Education",
+        text: "I earned my MA in Couples and Family Therapy from Seattle University and my BA in Psychology from Western Washington University. ",
+        icon: "fa-solid fa-university",
+      },
+      {
+        title: "License",
+        text: "I am a Washington State licensed Marriage and Family Therapist: MG61143094",
+        icon: "fa-regular fa-id-badge",
+      },
+      {
+        title: "Training",
+        text: "I have completed all 3 levels of the Gottman Training, which has prepared me to assist couples with communication, connection, and conflict management. ",
+        icon: "fa-solid fa-certificate",
       },
     ],
   },
@@ -75,38 +94,27 @@ const pageData = {
     hero-image="/images/banner/about.webp"
     overlayClass="bg-complementary_accent"
   />
-  <div class="mx-auto lg:mx-20 xl:mx-60 flex flex-col">
-    <section class="flex flex-col md:flex-row items-center justify-center">
-      <div class="flex flex-col md:flex-col items-center md:items-start">
-        <!-- Updated this line -->
-        <AboutPageBox :boxData="pageData.aboutMe" />
-        <NuxtLink to="/contact" class="mt-2 btn btn-secondary text-white">
-          Let's Connect!
-        </NuxtLink>
+  <div class="flex flex-col">
+    <AboutMePageIntro :data="pageData.aboutMe" />
+    <div class="bg-lime-100 bg-opacity-10">
+      <AboutMePageSection :data="pageData.background" />
+    </div>
+    <div>
+      <AboutMePageSection :data="pageData.qualifications" />
+      <div class="flex flex-col md:flex-row md:justify-around">
+        <div
+          v-for="(qualification, index) in pageData.qualifications
+            .qualifications"
+          :key="index"
+          class="block mb-7 text-text_primary bg-clip-text font-sans text-base leading-relaxed antialiased"
+        >
+          <AboutMePageQualification :data="qualification" />
+        </div>
       </div>
-
-      <div
-        class="md:mb-2 rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg flex items-center overflow-hidden"
-      >
-        <img
-          class=""
-          src="/images/content/aboutme.webp"
-          alt="profile-picture"
-        />
-      </div>
-    </section>
-
-    <section
-      class="flex flex-col md:flex-row bg-green-100 bg-opacity-20 items-center"
-    >
-      <AboutPageBox :boxData="pageData.background" />
-    </section>
-    <section class="flex flex-col md:flex-row">
-      <AboutPageBox :boxData="pageData.qualifications" />
-    </section>
-    <section class="flex flex-col md:flex-row bg-green-100 bg-opacity-20">
-      <AboutPageBox :boxData="pageData.homeAndHobbies" />
-    </section>
+    </div>
+    <div class="bg-lime-100 bg-opacity-10">
+      <AboutMePageSection :data="pageData.homeAndHobbies" />
+    </div>
   </div>
 
   <Cta></Cta>

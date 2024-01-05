@@ -2,6 +2,7 @@
 import { resolve } from 'path'
 
 export default defineNuxtConfig({
+
     devtools: { enabled: true },
     site: {
         url: 'https://erindtherapy.com',
@@ -12,7 +13,7 @@ export default defineNuxtConfig({
     alias: {
         "@": resolve(__dirname, "./src"),
     },
-    css: ['~/assets/css/main.scss'],
+    css: ['~/assets/css/main.scss', '@fortawesome/fontawesome-svg-core/styles.css'],
     modules: [
         'nuxt-simple-sitemap', // https://nuxt.com/modules/simple-sitemap
         'nuxt-icon', // https://nuxt.com/modules/icon https://icones.js.org/
