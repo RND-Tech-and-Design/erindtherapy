@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     alias: {
         "@": resolve(__dirname, "./src"),
     },
-    css: ['~/assets/css/main.scss', '@fortawesome/fontawesome-svg-core/styles.css'],
+    css: ['~/assets/css/main.scss'],
     modules: [
         'nuxt-simple-sitemap', // https://nuxt.com/modules/simple-sitemap
         'nuxt-icon', // https://nuxt.com/modules/icon https://icones.js.org/
