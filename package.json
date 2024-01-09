@@ -29,6 +29,7 @@
         "nuxt-lodash": "^2.5.3",
         "nuxt-simple-robots": "4.0.0-rc.2",
         "nuxt-simple-sitemap": "^4.1.17",
+        "pnpm": "^8.14.0",
         "postcss": "^8.4.32",
         "postcss-nesting": "^12.0.1",
         "tailwindcss": "^3.3.6",
@@ -37,7 +38,13 @@
     },
     "dependencies": {
         "@formkit/auto-animate": "^0.8.1",
+        "@fortawesome/fontawesome-free": "^6.5.1",
+        "@fortawesome/fontawesome-svg-core": "^6.5.1",
+        "@fortawesome/free-regular-svg-icons": "^6.5.1",
+        "@fortawesome/free-solid-svg-icons": "^6.5.1",
+        "@fortawesome/vue-fontawesome": "^3.0.5",
         "@nuxt/image": "^1.1.0",
+        "@nuxtjs/fontawesome": "^1.1.2",
         "rxjs": "^7.8.1",
         "sass": "^1.69.5"
     }
