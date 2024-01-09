@@ -2,8 +2,8 @@
 import { defineProps } from "vue";
 
 const props = defineProps({
-  section: { type: String, default: "" },
-  title: { type: String, default: "" },
+  title1: { type: String, default: "" },
+  title2: { type: String, default: "" },
   paragraphs: { type: Array<{ text: String; styleType: String }>, default: [{ text: "", styleType: "" }] }
 });
 
@@ -12,10 +12,10 @@ const props = defineProps({
   <section class="flex flex-col sm:flex-row mt-20 mb-20 ">
     <div class="flex flex-1 flex-col mr-0 sm:mr-20 lg:mr-40">
       <div class="uppercase tracking-tight font-bold text-secondary mt-10">
-        <h3>{{ props.section }}</h3>
+        <h3>{{ props.title1 }}</h3>
       </div>
       <div class="mt-5 mb-5 font-bold text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl">
-        <h3>{{ props.title }}</h3>
+        <h3>{{ props.title2 }}</h3>
       </div>
       <div class="mt-7 text-base">
         <p v-for="(paragraph, index) in props.paragraphs" :key="index"

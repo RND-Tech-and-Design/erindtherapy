@@ -14,8 +14,8 @@ const pageStyle = {
 
 const pageData = {
   aboutMe: {
-    section: "About Me",
-    title: "I consider it an honor to connect with you",
+    title1: "About Me",
+    title2: "I consider it an honor to connect with you",
     paragraphs: [
       {
         styleType: "",
@@ -28,8 +28,8 @@ const pageData = {
     ],
   },
   background: {
-    section: "background",
-    title: "Finding My Career",
+    title1: "background",
+    title2: "Finding My Career",
     paragraphs: [
       {
         styleType: "",
@@ -58,8 +58,8 @@ const pageData = {
     ],
   },
   qualifications: {
-    section: "Qualifications",
-    title: "Education and Experience",
+    title1: "Qualifications",
+    title2: "Education and Experience",
     paragraphs: [
       {
         styleType: "",
@@ -85,8 +85,8 @@ const pageData = {
     ],
   },
   homeAndHobbies: {
-    section: "Home & Hobbies",
-    title: "Life Outside My Practice",
+    title1: "Home & Hobbies",
+    title2: "Life Outside My Practice",
     paragraphs: [
       {
         styleType: "",
