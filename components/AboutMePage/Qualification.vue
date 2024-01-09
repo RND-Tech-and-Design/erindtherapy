@@ -29,7 +29,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="mx-4 ">
+  <section class="mx-4 mb-12 sm:mb-0  ">
     <div class="flex items-center justify-center text-center" :class="iconColor">
       <Icon :name="iconName" :size="iconSize" :color="iconColor" />
     </div>

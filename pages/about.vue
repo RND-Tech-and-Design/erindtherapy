@@ -8,7 +8,7 @@ definePageMeta({
 });
 
 const pageStyle = {
-  margins: "mx-10 md:mx-20 xl:mx-80",
+  margins: " mx-10 md:mx-auto md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg ",
   backgroundColor: "bg-complementary_neutral bg-opacity-10"
 }
 
@@ -107,7 +107,7 @@ const pageData = {
 
 <template>
   <Hero headline="About" hero-image="/images/banner/about.webp" overlayClass="bg-complementary_accent" />
-  <div class="flex flex-col">
+  <div class="flex flex-col align-center">
 
     <section :class="pageStyle.margins">
       <AboutMePageIntro v-bind="pageData.aboutMe" />
