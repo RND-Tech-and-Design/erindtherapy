@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const paragraphs = [
-    'I am a Licensed Marriage and Family Therapist in Washington State, I extend my services through teletherapy, focusing on guiding individuals through pivotal career shifts, managing anxiety and depression, and mending relationship dynamics. My approach is to create a warm, empathetic sanctuary for you to freely examine your thoughts and emotions without fear of judgment.',
-    'Embrace the ease and comfort of teletherapy, where personalized mental health care meets the privacy of your home. I offer compassionate counseling via secure video conferencing, ensuring you receive the support you need, when you need it.',
-    'I also specialize in couples therapy, providing a path to stronger relationships, and offer intensive marathon therapy sessions for deeper exploration and rapid progress.',
-    'I\'m committed to helping you face life\'s hurdles with resilience. Don\'t let stress dictate your life—take the first step with me today toward a more healed and hopeful future.',
+    'As a Licensed Marriage and Family Therapist in Washington State, I offer my expertise through teletherapy. My primary focus is assisting individuals in navigating significant career changes, managing symptoms of anxiety and depression, and improving relationship dynamics. I create a nurturing, empathetic environment for you to explore thoughts and feelings without fear of judgment.',
+    'Teletherapy brings the convenience and comfort of mental health care into your home. I provide compassionate counseling through secure video conferencing, ensuring access to support when needed.',
+    'I also specialize in couples therapy, guiding partners towards stronger bonds, and conduct intensive marathon therapy sessions for deeper insight and swift progress.',
+    'Dedicated to helping you overcome life\'s challenges with strength and resilience, I invite you to take the first step with me today towards a more healing and hopeful future.'
 ]
 
 </script>
@@ -18,15 +18,15 @@ const paragraphs = [
                     How I can help
                 </h3>
                 <p
-                   class="block mb-3 text-text_primary text bg-clip-text font-sans text-2xl font-medium leading-relaxed text-transparent antialiased">
+                   class="block mb-3 text-text_primary text bg-clip-text font-sans text-2xl font-medium leading-relaxed  antialiased">
                     My clients struggle like you.
                 </p>
                 <p
                    v-for="(paragraph, index) in paragraphs"
                    :key="index"
-                   class="block mt-3 text-text_primary bg-clip-text font-sans text-base font-medium leading-relaxed text-transparent antialiased">
+                   class="block mt-3 text-text_primary bg-clip-text font-sans text-base font-medium leading-relaxed antialiased">
                     {{ paragraph }}
-                    
+
                 </p>
             </div>
         </div>
@@ -45,13 +45,13 @@ const paragraphs = [
                         Erin Dierickx
                     </h4>
                     <p
-                       class="block text-primary bg-clip-text font-sans text-base font-medium leading-relaxed text-transparent antialiased">
+                       class="block text-primary bg-clip-text font-sans text-base font-medium leading-relaxed antialiased">
                         Licensed Marriage and Family Therapist in Washington State
 
                     </p>
                     <br />
                     <p
-                       class="block text-primary bg-clip-text font-sans text-base font-medium leading-relaxed text-transparent antialiased">
+                       class="block text-primary bg-clip-text font-sans text-base font-medium leading-relaxed antialiased">
                         Level III Gottman Institute Trained Therapist
                     </p>
                     <NuxtLink to="/about"
