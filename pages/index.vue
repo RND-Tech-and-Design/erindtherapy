@@ -30,6 +30,13 @@ const carouselItems: CarouselItem[] = [
         title: "Marathon Therapy",
         description: "I offer flexible, intensive marathon therapy sessions designed to quickly deepen your understanding of relationship dynamics and strengthen your connection with your partner, ideal for couples seeking rapid progress.",
         link: "/services/marathonCouplesTherapy"
+    },
+    {
+        image: "/images/content/eft_hands.webp",
+        altText: "heart",
+        title: "Emotionally Focused Therapy",
+        description: "Emotionally Focused Therapy (EFT) is a highly effective, evidence-based approach that focuses on building and strengthening emotional bonds to foster healthier relationships and improve emotional well-being.",
+        link: "/services/emotionallyFocusedTherapy"
     }
 ]
 
