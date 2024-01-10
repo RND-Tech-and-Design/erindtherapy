@@ -5,11 +5,12 @@ definePageMeta({
 })
 
 const pageStyle = {
-    margins: " mx-10 md:mx-auto md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg ",
-    backgroundColor: "bg-complementary_neutral bg-opacity-10"
+    sectionMargins: 'my-10 mx-5 xl:mx-auto  xl:max-w-screen-lg 2xl:max-w-screen-xl',
+    backgroundColor: "bg-complementary_neutral bg-opacity-10",
+    FAQLinkColor: "text-secondary",
 }
 
-const FAQLinkColor = "text-sky-800"
+
 
 
 
@@ -29,47 +30,52 @@ const pageData = {
         ],
     },
     section2: {
-        title1: "Session Breakdown",
-        title2: "What does my first session look like?",
-        paragraphs: [
-            {
-                styleType: "",
-                text: "During your first session, we’ll work on your intake paperwork, sign releases, and collaborate on your goals for therapy.",
+        main: {
+            title1: "Session Breakdown",
+            title2: "What does my first session look like?",
+            paragraphs: [
+                {
+                    styleType: "",
+                    text: "During your first session, we’ll work on your intake paperwork, sign releases, and collaborate on your goals for therapy.",
+                },
+                {
+                    styleType: "",
+                    text: "Every session will be 50 minutes, and I recommend in the beginning we meet once a week for the first several weeks to keep up the momentum we see in each session. Payment is collected at the end of your session via credit card",
+                }
+            ],
+        },
+        list: {
+            columnBreakIndex: 3,
+            textStyle: "group-hover:text-primary font-bold",
+            listDiscStyle: 'w-5 h-5 bg-accent rounded-full mr-2 group-hover:bg-primary',
+            bulletPoints: [{
+                link: '/policies',
+                text: 'All sessions are virtual'
             },
             {
-                styleType: "",
-                text: "Every session will be 50 minutes, and I recommend in the beginning we meet once a week for the first several weeks to keep up the momentum we see in each session. Payment is collected at the end of your session via credit card",
-            }
-        ],
-        bulletPoints: [{
-            link: '/policies',
-            text: 'All sessions are virtual'
-        },
-        {
-            link: '/ratesAndInsurance',
-            text: 'All 50-minute sessions are $175',
-            color: `${FAQLinkColor}`
-        },
-        {
-            link: '/ratesAndInsurance',
-            text: 'All 90-minute sessions are $250',
-            color: `${FAQLinkColor}`
-        },
-        {
-            link: '/policies',
-            text: 'Insurance not accepted'
-        },
-        {
-            link: '/policies',
-            text: 'Reimbursement superbill provided'
-        },
-        {
-            link: '/policies',
-            text: 'Sliding rates offered based on need'
+                link: '/ratesAndInsurance',
+                text: 'All 50-minute sessions are $175',
+                color: `${pageStyle.FAQLinkColor}`
+            },
+            {
+                link: '/ratesAndInsurance',
+                text: 'All 90-minute sessions are $250',
+                color: `${pageStyle.FAQLinkColor}`
+            },
+            {
+                link: '/policies',
+                text: 'Insurance not accepted'
+            },
+            {
+                link: '/policies',
+                text: 'Reimbursement superbill provided'
+            },
+            {
+                link: '/policies',
+                text: 'Sliding rates offered based on need'
+            }]
 
         }
-
-        ]
     },
     section3: {
         title1: "Free Consultation",
@@ -90,41 +96,50 @@ const pageData = {
 
 </script>
 
+
 <template>
     <Hero headline="Individual Therapy" hero-image="/images/banner/about.webp" />
 
     <div class="flex flex-col align-center">
+        <section>
+            <div :class="pageStyle.sectionMargins">
+                <div class="flex flex-col md:flex-row items-center justify-center">
+                    <IndividualTherapySection v-bind="pageData.section1" class="flex-1 " />
+                    <div
+                        class="flex-1 mt-10 md:mt-0 ml-0 md:ml-10 lg:ml-20 xl:ml-40  max-w-96 lg:max-w-screen-sm rounded-xl bg-clip-border text-gray-700 shadow-lg">
+                        <img class="object-cover object-center w-full h-full rounded-xl text-gray-700 shadow-lg"
+                            src="/images/content/beach_footsteps.webp" alt="beach-footsteps" />
+                    </div>
+                </div>
+            </div>
 
-
+        </section>
 
         <section :class="pageStyle.backgroundColor">
-            <div :class="pageStyle.margins">
-                <IndividualTherapySection v-bind="pageData.section2" :class="pageStyle.margins" />
-                <p :class="pageStyle.margins">
+            <div :class="pageStyle.sectionMargins">
+                <IndividualTherapySection v-bind="pageData.section2.main" />
+                <p class="mt-10 mb-10">
                     Have additional questions? Review the <NuxtLink to="/policies"
                         class="text-secondary font-bold underline">FAQs
                     </NuxtLink> for more info
                 </p>
-
-
-                <ul class="mt-10">
-                    <li v-for="(bulletPoint, index) in pageData.section2.bulletPoints" :key="index"
-                        class="block mb-7 text-text_primary bg-clip-text font-sans text-base leading-relaxed antialiased">
-                        <NuxtLink :to="bulletPoint.link" :class="[bulletPoint.color]" class="font-bold"> {{
-                            bulletPoint.text
-                        }}
-                        </NuxtLink>
-                    </li>
-                </ul>
-
+                <BulletPointList v-bind="pageData.section2.list" />
             </div>
         </section>
 
 
-        <section :class="pageStyle.backgroundColor">
-            <IndividualTherapySection v-bind="pageData.section3" :class="pageStyle.margins" />
+        <section>
+            <IndividualTherapySection v-bind="pageData.section3" :class="pageStyle.sectionMargins" />
         </section>
     </div>
+
+    <section>
+        The process
+
+        <div>
+            <CardGlass />
+        </div>
+    </section>
 
     <Cta></Cta>
 </template>
