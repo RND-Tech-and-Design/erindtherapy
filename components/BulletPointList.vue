@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
+import type { BulletPointList } from '~/types/bulletPointList';
 
-const props = defineProps({
-    columnBreakIndex: { type: Number },
-    textStyle: { type: String, default: "" },
-    listDiscStyle: { type: String, default: "" },
-    bulletPoints: { type: Array<{ text: String; link: String, color: String }>, default: [{ text: "", link: "", color: "" }] }
-})
+defineProps<{
+    bulletPointList: BulletPointList
+}>()
+
+
 
 
 
@@ -16,11 +15,11 @@ const props = defineProps({
     <section class="md:flex md:flex-col md:grid md:grid-cols-2">
         <!-- First Column -->
         <ul class="block">
-            <li v-for="(bulletPoint, index) in props.bulletPoints.slice(0, props.columnBreakIndex)" :key="index"
-                class="mt-7  bg-clip-text font-sans text-base leading-relaxed antialiased">
-                <NuxtLink :to="bulletPoint.link" class="group">
-                    <div class="inline-flex items-center" :class="[bulletPoint.color, props.textStyle]">
-                        <div :class="props.listDiscStyle"></div>
+            <li v-for="(bulletPoint, index) in bulletPointList.bulletPoints.slice(0, bulletPointList.columnBreakIndex)"
+                :key="index" class="mt-7  bg-clip-text font-sans text-base leading-relaxed antialiased">
+                <NuxtLink :to="bulletPoint?.link" class="group">
+                    <div class="inline-flex items-center" :class="[bulletPoint.color, bulletPointList.textStyle]">
+                        <div :class="bulletPointList.listDiscStyle"></div>
                         {{ bulletPoint.text }}
                     </div>
                 </NuxtLink>
@@ -29,11 +28,11 @@ const props = defineProps({
 
         <!-- Second Column -->
         <ul class="block">
-            <li v-for="(bulletPoint, index) in props.bulletPoints.slice(props.columnBreakIndex)" :key="index"
-                class="mt-7  bg-clip-text font-sans text-base leading-relaxed antialiased">
-                <NuxtLink :to="bulletPoint.link" class="group">
-                    <div class="inline-flex items-center" :class="[bulletPoint.color, props.textStyle]">
-                        <div :class="props.listDiscStyle"></div>
+            <li v-for="(bulletPoint, index) in bulletPointList.bulletPoints.slice(bulletPointList.columnBreakIndex)"
+                :key="index" class="mt-7  bg-clip-text font-sans text-base leading-relaxed antialiased">
+                <NuxtLink :to="bulletPoint?.link" class="group">
+                    <div class="inline-flex items-center" :class="[bulletPoint.color, bulletPointList.textStyle]">
+                        <div :class="bulletPointList.listDiscStyle"></div>
                         {{ bulletPoint.text }}
                     </div>
                 </NuxtLink>
