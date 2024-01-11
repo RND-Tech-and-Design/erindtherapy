@@ -9,7 +9,7 @@ definePageMeta({
 })
 
 const pageStyle = {
-    sectionMargins: 'my-10 mx-5 xl:mx-auto  xl:max-w-screen-lg 2xl:max-w-screen-xl',
+    sectionMargins: 'py-20 mx-5 xl:mx-auto  xl:max-w-screen-lg 2xl:max-w-screen-xl',
     backgroundColor: "bg-complementary_neutral bg-opacity-10",
     FAQLinkColor: "text-secondary",
 }
@@ -162,7 +162,7 @@ const responsiveCard: ResponsiveCard[] = [
 
 
         <section>
-            <IndividualTherapySection v-bind="pageData.section3" :class="pageStyle.sectionMargins" class="pb-10" />
+            <IndividualTherapySection v-bind="pageData.section3" :class="pageStyle.sectionMargins" class="" />
         </section>
     </div>
 
@@ -183,7 +183,7 @@ const responsiveCard: ResponsiveCard[] = [
     </section>
 
     <section :class="pageStyle.backgroundColor">
-        <div class="flex flex-col items-center pt-20" :class="pageStyle.sectionMargins">
+        <div class="flex flex-col items-center pb-0" :class="pageStyle.sectionMargins">
             <IndividualTherapyResponsiveCard v-for="(card, index) in  responsiveCard" :key="index" :responsiveCard="card"
                 class=" max-w-[80%] sm:max-w-[70%] md:max-w-[100%] md:w-full md:h-60 mx-10 mb-20" />
 
