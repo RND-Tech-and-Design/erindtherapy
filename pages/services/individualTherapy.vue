@@ -54,22 +54,36 @@ const bulletPointList: BulletPointList =
 const section4Props: ResponsiveCard[] = [
     {
         title: "Mindfulness",
-        backgroundColor: 'bg-primary bg-opacity-50',
+        titleColor: 'text-pink-100',
+        subheading: "Mindfulness Techniques",
+        subheadingColor: 'text-pink-950',
+        cardColor: 'bg-primary bg-opacity-50',
         imageURL: "/images/content/ind_therapy_mindfulness.webp",
         imageAlt: "Mindfulness",
-        paragraphs: ['I incorporate exercises centered around body awareness and mindfulness.', 'This may include breathing techniques, body scans, meditations, or yoga to name a few.']
+        imageColor: 'bg-black bg-opacity-30',
+        paragraphs: ['In my approach, I focus on integrating practices that enhance body awareness and mindfulness.', 'This typically involves a variety of techniques such as breathwork, body scanning exercises, guided meditations, and yoga practices, among others. These methods are designed to cultivate mindfulness and improve overall well-being.']
     },
     {
-        title: "Metaphor", backgroundColor: 'bg-secondary bg-opacity-50',
+        title: "Metaphor",
+        titleColor: 'text-teal-100',
+        subheading: "Exploring Metaphors",
+        subheadingColor: 'text-teal-950',
+        cardColor: 'bg-secondary bg-opacity-50',
         imageURL: "/images/content/ind_therapy_metaphor.webp",
         imageAlt: "Metaphor",
-        paragraphs: ['We often speak in metaphors and when they do arise, I might invite you to describe it in further detail or even draw it out.', 'This helps us separate the issue from ourselves and can be a powerful technique toward healing.']
+        imageColor: 'bg-black bg-opacity-40',
+        paragraphs: ['Our conversations frequently utilize metaphors, and when these arise, I encourage a deeper exploration, either through detailed description or by visually drawing them out.', 'This approach allows for a clearer distinction between the issue and the individual, serving as an effective tool in the journey towards healing.']
     },
     {
-        title: "Strengths", backgroundColor: 'bg-accent bg-opacity-50',
+        title: "Strengths",
+        titleColor: 'text-green-100',
+        subheading: "Emphasizing Strengths",
+        subheadingColor: 'text-green-950',
+        cardColor: 'bg-accent bg-opacity-60',
         imageURL: "/images/content/ind_therapy_strengths.webp",
         imageAlt: "Strengths",
-        paragraphs: ['My approach is strengths-based, meaning I am going to help you identify the areas you shine the most.', 'This may be uncomfortable, and you might not be used to hearing about what makes you amazing.']
+        imageColor: 'bg-black bg-opacity-70',
+        paragraphs: ['My methodology is rooted in a strengths-based perspective, aimed at helping you recognize and appreciate your most exceptional qualities.', "This process can sometimes feel unfamiliar or uncomfortable, especially if you're not accustomed to acknowledging and embracing your own remarkable attributes."]
     },
 ]
 
@@ -146,13 +160,13 @@ const pageData = {
     },
 
     section4: {
-        backgroundColor: 'bg-rose-50 opacity-50',
+        backgroundColor: pageStyle.generalBgColor,
         banner: {
             title1: "The Process",
             title2: "What will the therapeutic process be like for me?",
             bannerImageURL: '/images/banner/ind_therapy_banner2.webp',
             bannerImageAlt: "Section 4 Banner",
-            bannerBgColor: "bg-black opacity-60",
+            bannerBgColor: "bg-black opacity-70",
         },
         props: section4Props
 
@@ -204,6 +218,7 @@ const pageData = {
     </div>
 
     <!-- Section4 -->
+
     <section class="pb-0">
         <!-- Section4 Banner -->
         <div class="relative bg-cover bg-no-repeat bg-center text-center"
@@ -212,7 +227,8 @@ const pageData = {
             <div class="absolute inset-0" :class="pageData.section4.banner.bannerBgColor"></div>
             <div class=" px-4 py-32 relative">
                 <div class="text-white">
-                    <h2 class="uppercase tracking-tight  font-bold text-accent">{{ pageData.section4.banner.title1 }}</h2>
+                    <h2 class="uppercase tracking-tight  font-bold text-accent">{{ pageData.section4.banner.title1 }}
+                    </h2>
                     <p class="mt-5 lg:text-4xl text-3xl font-medium">
                         {{ pageData.section4.banner.title2 }}
                     </p>
@@ -225,9 +241,10 @@ const pageData = {
     <section :class="pageData.section4.backgroundColor">
         <div class="flex flex-col items-center pb-0" :class="pageStyle.sectionMargins">
             <IndividualTherapyResponsiveCard v-for="(card, index) in  pageData.section4.props" :key="index"
-                :responsiveCard="card" class=" max-w-[80%] sm:max-w-[70%] md:max-w-[100%] md:w-full md:h-60 mx-10 mb-20" />
+                :responsiveCard="card" class=" sm:max-w-[70%] md:max-w-[100%] md:w-full   mb-20" />
         </div>
     </section>
+
     <!-- Section5 -->
     <SectionCard :content="section5Props" />
 

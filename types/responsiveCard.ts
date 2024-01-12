@@ -1,8 +1,12 @@
 export interface ResponsiveCard {
     title: string,
+    titleColor: string,
+    subheading: string,
+    subheadingColor: string,
     imageURL: string,
     imageAlt: string,
-    backgroundColor: string,
+    imageColor: string,
+    cardColor: string,
     paragraphs: string[]
 }
 
