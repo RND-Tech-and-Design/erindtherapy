@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-const _props = defineProps({
+defineProps({
     title: {
         type: String,
         required: false,
@@ -17,7 +17,7 @@ const _props = defineProps({
 </script>
 
 <template>
-    <div :class="`card glass text-neutral`" >
+    <div :class="`card glass text-neutral`">
         <div class="card-body text-left">
             <h2 class="card-title" v-if="!!title">
                 {{ title }}

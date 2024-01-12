@@ -1,14 +1,19 @@
 <script setup lang="ts">
 import type { CarouselItem } from '~/types/carouselItem';
 
-defineProps<{
-    carouselItem: CarouselItem
+const props = defineProps<{
+    carouselItem: CarouselItem,
+    itemIndex: number,
 }>()
+
+const getCarouselItemId = (index: number) => `carousel-item-${index}`;
+
+const carouselItemId = getCarouselItemId(props.itemIndex);
 
 </script>
 
 <template>
-    <div class="carousel-item">
+    <div :id="carouselItemId" class="carousel-item">
         <div class="card w-96 bg-secondary shadow-xl image-full">
             <figure>
                 <img :src="carouselItem?.image"
@@ -30,5 +35,6 @@ defineProps<{
                 </div>
             </div>
         </div>
+        
     </div>
 </template>
