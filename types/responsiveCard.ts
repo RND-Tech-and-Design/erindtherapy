@@ -1,6 +1,7 @@
 export interface ResponsiveCard {
     title: string,
-    image: string,
+    imageURL: string,
+    imageAlt: string,
     backgroundColor: string,
     paragraphs: string[]
 }

@@ -1,12 +1,19 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
 
+interface Paragraph {
+    text: string;
+    styleType?: string | null;
+}
+
 const props = defineProps({
     title1: { type: String, default: "" },
     title2: { type: String, default: "" },
-    paragraphs: { type: Array<{ text: String; styleType: String }>, default: [{ text: "", styleType: "" }] }
+    paragraphs: {
+        type: Array as () => Paragraph[], // Explicitly specify the type for paragraphs
+        default: () => [{ text: "", styleType: null }]
+    }
 });
-
 
 </script>
 
