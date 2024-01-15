@@ -7,7 +7,7 @@ const props = defineProps({
     },
     subtitle: {
         type: String,
-        default: 'Schedule your free 15 minute consultation today!',
+        default: 'Schedule your free 20 minute consultation today!',
     },
     buttonText: {
         type: String,
