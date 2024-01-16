@@ -5,8 +5,10 @@ export interface BulletPoint {
 }
 
 export interface BulletPointList {
-    columnBreakIndex: number;
+    colNum: number;
+    singleColSize: string;
     textStyle: string;
     listDiscStyle: string;
     bulletPoints: BulletPoint[];
 }
+

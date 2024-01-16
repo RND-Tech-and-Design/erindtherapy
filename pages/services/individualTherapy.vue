@@ -18,7 +18,9 @@ const pageStyle = {
 
 const bulletPointList: BulletPointList =
 {
-    columnBreakIndex: 3,
+    colNum: 2,
+    singleColSize: 'md',
+
     textStyle: "group-hover:text-primary font-bold",
     listDiscStyle: 'w-5 h-5 bg-accent rounded-full mr-2 group-hover:bg-primary',
     bulletPoints: [{
@@ -150,7 +152,7 @@ const pageData = {
             title2: "Find your best fit",
             paragraphs: [
                 {
-                    text: "Every therapist is unique, and finding a clinician that is a good fit for you is essential. For this reason, I provide a single <b>free 15-minute phone consultation. </b>",
+                    text: "Every therapist is unique, and finding a clinician that is a good fit for you is essential. For this reason, I provide a single <b>free 20-minute phone consultation. </b>",
                 },
                 {
                     text: "This gives you an opportunity to ask any questions you may have about my approach to therapy or the therapeutic process. It also gives both of us a chance to determine if we are a good fit. If you were better served by another clinician, I will provide you with referrals.",
