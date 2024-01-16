@@ -13,6 +13,7 @@ definePageMeta({
 const pageStyle = {
     sectionMargins: 'py-32 mx-5 xl:mx-auto  xl:max-w-screen-lg 2xl:max-w-screen-xl',
     generalBgColor: "bg-complementary_neutral bg-opacity-10",
+    bulletListSpacing: "my-6"
 }
 
 
@@ -20,8 +21,8 @@ const pageStyle = {
 
 const section3Props: SectionContent = {
     title: 'Conflict gets in the way of life',
-    paragraphs: ['Their conflict and disconnection get in the way of the life they want in so many ways. They aren’t the partner they want to be. Many feel they’re failing in their relationship, and they lack confidence that things will improve.', 
-    'Before they came to see me, often, one partner was interested in therapy while the other was still warming up to it. They feared that therapy was an automatic indicator of divorce. And they were confident their relationship was “too far gone” for any positive change to happen. Patience and hope were running out.'],
+    paragraphs: ['Their conflict and disconnection get in the way of the life they want in so many ways. They aren’t the partner they want to be. Many feel they’re failing in their relationship, and they lack confidence that things will improve.',
+        'Before they came to see me, often, one partner was interested in therapy while the other was still warming up to it. They feared that therapy was an automatic indicator of divorce. And they were confident their relationship was “too far gone” for any positive change to happen. Patience and hope were running out.'],
 
     backgroundImage: '/images/banner/couple-banner2.webp'
 }
@@ -30,7 +31,7 @@ const section3Props: SectionContent = {
 const section5Props: SectionContent = {
     title: 'Your relationship deserves happiness and meaning',
     paragraphs: ["Like the couples I work with, you deserve to have the kind of relationship you both want. A relationship that brings you happiness, connection, and meaning. Managing inevitable conflict is not out of your reach. If you want to feel hopeful about your future together I’d love to help you get there",
-"You don’t have to stay stuck, and neither does your relationship. I can help."],
+        "You don’t have to stay stuck, and neither does your relationship. I can help."],
     backgroundImage: '/images/banner/couple-banner3.webp'
 }
 
@@ -42,7 +43,7 @@ const pageData = {
     hero: {
         props: {
             title: "Couples Therapy",
-            imageURL:  '/images/banner/couple-banner1.webp',
+            imageURL: '/images/banner/couple-banner1.webp',
             imageAlt: "Hero Image",
             backgroundColor: "bg-primary"
         }
@@ -71,17 +72,16 @@ const pageData = {
         {
             title1: "What to expect",
             title2: "What does our session look like?",
-            paragraphs: [  ],
+            paragraphs: [],
         },
         bulletList:
-            [{type:"default", text:"Session 1: Couples intake session ( 90 min )"},
-            {type:"indent", text:"After Session Exercise: Each partner is invited to take the Gottman Relationship Assessment"},
-            {type:"default", text:"Sessions 2 and 3: Separate individual sessions ( 60 min)"},
-            {type:"default", text:"Session 4: Couples session to discuss assessment results and develop goals for therapy ( 90 min )"},
-            {type:"default", text:"Session 5 and on: Couples sessions (individual sessions as needed)"}
+            [{ style: pageStyle.bulletListSpacing, text: "Session 1: Couples intake session ( 90 min )" },
+            { style: "ml-8  my-9", text: "After Session Exercise: Each partner is invited to take the Gottman Relationship Assessment" },
+            { style: pageStyle.bulletListSpacing, text: "Sessions 2 and 3: Separate individual sessions ( 60 min)" },
+            { style: pageStyle.bulletListSpacing, text: "Session 4: Couples session to discuss assessment results and develop goals for therapy ( 90 min )" },
+            { style: pageStyle.bulletListSpacing, text: "Session 5 and on: Couples sessions (individual sessions as needed)" },
             ]
 
-        
     },
 
     section3: {
@@ -95,22 +95,24 @@ const pageData = {
         {
             title1: "How can I help?",
             title2: "Managing the inevitable",
-            paragraphs: [{ text:
-                "Couples therapy can be a unique space to build upon the strengths already present in your relationship and focus on the areas that might need some touching up.",
-            },
-            { text:"Despite therapy having a reputation for talking about our problems, I believe therapy is equally a space to celebrate the strengths of your relationship and to have fun!  I help couples not just manage conflict, but also connect through it."
+            paragraphs: [{
+                text:
+                    "Couples therapy can be a unique space to build upon the strengths already present in your relationship and focus on the areas that might need some touching up.",
             },
             {
-                text: "I have completed Levels 1 and 2 of the Gottman Method training and incorporate these research-based interventions into our work to provide positive and efficient support."  
+                text: "Despite therapy having a reputation for talking about our problems, I believe therapy is equally a space to celebrate the strengths of your relationship and to have fun!  I help couples not just manage conflict, but also connect through it."
+            },
+            {
+                text: "I have completed Levels 1 and 2 of the Gottman Method training and incorporate these research-based interventions into our work to provide positive and efficient support."
             }]
-            
-    },
-    section5: {
-        backgroundColor: pageStyle.generalBgColor,
-        props: section5Props
-    },
 
-}
+        },
+        section5: {
+            backgroundColor: pageStyle.generalBgColor,
+            props: section5Props
+        },
+
+    }
 }
 
 
@@ -141,13 +143,14 @@ const pageData = {
         <!-- Section2 -->
         <section :class="pageStyle.generalBgColor">
             <div :class="pageStyle.sectionMargins">
-                <CouplesTherapySection v-bind="pageData.section2.props"  />
-                <div>
-                <p v-for="(bulletPoint, index) in pageData.section2.bulletList" :key="index" class="">
-   {{ bulletPoint.text }}
-        </p>
-    </div>
-    </div>
+                <CouplesTherapySection v-bind="pageData.section2.props" />
+                <ul class="mt-7 list-disc ml-5">
+                    <li v-for="(bulletPoint, index) in  pageData.section2.bulletList " :key="index"
+                        :class="bulletPoint.style">
+                        {{ bulletPoint.text }}
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <!-- Section3 -->
@@ -157,13 +160,13 @@ const pageData = {
     </div>
 
     <!-- Section4 -->
-    <section >
-                <CouplesTherapySection v-bind="pageData.section4.props"  :class="pageStyle.sectionMargins"/>
-        </section>
+    <section>
+        <CouplesTherapySection v-bind="pageData.section4.props" :class="pageStyle.sectionMargins" />
+    </section>
 
     <!-- Section5 -->
-<div>
-    <SectionCard :content="section5Props" />
-</div>
+    <div>
+        <SectionCard :content="section5Props" />
+    </div>
     <Cta></Cta>
 </template>
