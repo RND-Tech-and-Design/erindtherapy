@@ -29,11 +29,11 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="mx-4 mb-12 sm:mb-0  ">
-    <div class="flex items-center justify-center text-center" :class="iconColor">
+  <section class="mx-4">
+    <div class="flex mr-10 items-center justify-center text-center" :class="iconColor">
       <Icon :name="iconName" :size="iconSize" :color="iconColor" />
     </div>
-    <div class="mt-5 mb-5 lg:text-4xl lg:mb-5 text-2xl font-medium text-center">
+    <div class="mt-2 mr-10 mb-5 lg:text-4xl lg:mb-5 text-2xl font-medium text-center">
       {{ title }}
     </div>
     <div>{{ text }}</div>

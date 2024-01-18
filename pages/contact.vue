@@ -23,8 +23,7 @@ definePageMeta({
 
                         <template #action>
                             <NuxtLink to="https://erindtherapy.clientsecure.me/widget/service?channel=sp_website"
-                                      class="btn btn-primary text-text_secondary flex items-center"
-                                      target="_blank">
+                                class="btn btn-primary text-text_secondary flex items-center" target="_blank">
                                 <span class="mr-2">Request Appointment</span>
                                 <ArrowTopRightOnSquareIcon class="h-6 w-6" />
                             </NuxtLink>
@@ -41,8 +40,7 @@ definePageMeta({
 
                         <template #action>
                             <NuxtLink to="https://erindtherapy.clientsecure.me/sign-in"
-                                      class="btn btn-primary text-text_secondary flex items-center"
-                                      target="_blank">
+                                class="btn btn-primary text-text_secondary flex items-center" target="_blank">
                                 <span class="mr-2">Open Client Portal </span>
                                 <ArrowTopRightOnSquareIcon class="h-6 w-6" />
                             </NuxtLink>
@@ -60,8 +58,7 @@ definePageMeta({
 
                     <template #action>
                         <NuxtLink to="https://erindtherapy.clientsecure.me/sign-in"
-                                  class="btn btn-primary text-text_secondary flex items-center"
-                                  target="_blank">
+                            class="btn btn-primary text-text_secondary flex items-center" target="_blank">
                             <span class="mr-2">Submit</span>
                         </NuxtLink>
                     </template>
