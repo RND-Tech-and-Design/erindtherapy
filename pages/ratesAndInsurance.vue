@@ -16,7 +16,7 @@ const priceCards: PriceCard[] = [
         id: 1,
         title: 'Phone Consultation',
         price: 'FREE',
-        duration: '15-minute phone call',
+        duration: '20-minute phone call',
         items: ['Share your story', 'Ask questions about services', 'Discover compatibility', 'Schedule intake'],
         bgClass: 'bg-primary bg-opacity-50',
         btnClass: 'mt-8 btn btn-primary',
