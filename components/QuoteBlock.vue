@@ -30,7 +30,9 @@ const props = defineProps({
     },
 });
 
-const quoteBlock = ref<Quote | null>(null);
+const quoteBlock =
+    ref<Quote | null>(null);
+
 const destroy$ = new Subject<boolean>();
 
 function getRandomQuote(quotes: Quote[]): Quote {
@@ -39,7 +41,12 @@ function getRandomQuote(quotes: Quote[]): Quote {
         : quotes;
 
     const randomIndex = Math.floor(Math.random() * applicableQuotes.length);
-    return applicableQuotes[randomIndex] || { quote: props.quote, author: props.author, handle: props.handle, quoteType: QuoteType.marriageCounseling };
+    return applicableQuotes[randomIndex] || {
+        quote: props.quote,
+        author: props.author,
+        handle: props.handle,
+        quoteType: QuoteType.marriageCounseling
+    };
 }
 
 watch(() => props.randomQuote, (newValue) => {
@@ -67,26 +74,42 @@ onUnmounted(() => {
     destroy$.next(true);
     destroy$.complete();
 });
+
 </script>
 
 
 <template>
     <section>
-        <div class="bg-gray-200 flex items-center justify-center px-5 py-16 ">
+        <div class="bg-secondary flex items-center justify-center px-5 py-16 ">
             <div class="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-10 text-gray-800"
                  style="max-width: 500px">
                 <div class="w-full mb-10">
                     <div class="text-3xl text-secondary text-left leading-tight h-3">
-                        <icon name="bxs:quote-left" size="1em" class="flex-none min-w-8"></icon>
+                        <icon name="bxs:quote-left"
+                              size="1em"
+                              class="flex-none min-w-8">
+                        </icon>
                     </div>
-                    <p class="text-sm text-gray-600 text-center px-8">{{ quoteBlock && quoteBlock.quote }}</p>
+                    <p class="text-sm text-gray-600 text-center px-8">
+                        {{
+                            quoteBlock &&
+                            quoteBlock.quote
+                        }}
+                    </p>
                     <div class="text-3xl text-secondary text-right leading-tight h-3 -mt-3">
-                        <icon name="bxs:quote-right" size="1em" class="flex-none min-w-8"></icon>
+                        <icon name="bxs:quote-right"
+                              size="1em"
+                              class="flex-none min-w-8">
+                        </icon>
                     </div>
                 </div>
                 <div class="w-full">
-                    <p class="text-md text-gray-600 font-bold text-center">{{ quoteBlock && quoteBlock.author }}</p>
-                    <!-- <p class="text-xs text-gray-500 text-center">{{ quoteBlock && quoteBlock.handle }}</p> -->
+                    <p class="text-md text-gray-600 font-bold text-center">
+                        {{
+                            quoteBlock &&
+                            quoteBlock.author
+                        }}
+                    </p>
                 </div>
             </div>
         </div>

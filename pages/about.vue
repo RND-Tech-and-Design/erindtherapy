@@ -79,7 +79,7 @@ const pageData = {
       },
       {
         title: "Training",
-        text: "I have completed all 3 levels of the Gottman Training and the Emotionally Focused Couples Therapy Externship. Both of these trainings have prepared me to assist couples with communication, connection, and conflict management.",
+  text: "I have completed all 3 levels of the Gottman Training and the Emotionally Focused Couples Therapy Externship. Both of these trainings have prepared me to assist couples with communication, connection, and conflict management.",
         iconName: "material-symbols:award-star",
       },
     ],
@@ -127,7 +127,7 @@ const pageData = {
     </section>
 
     <section :class="pageStyle.backgroundColor">
-      <AboutMePageSection v-bind="pageData.homeAndHobbies" :class="pageStyle.margins" />
+ <AboutMePageSection v-bind="pageData.homeAndHobbies" :class="pageStyle.margins" />
     </section>
   </div>
 
