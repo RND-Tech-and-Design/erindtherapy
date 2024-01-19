@@ -4,6 +4,7 @@ import GeneralSection from '~/components/GeneralSection.vue'
 import SubSection from '~/components/SubSection.vue';
 
 
+
 definePageMeta({
     layout: 'default',
     title: 'Marathon Couples Therapy',
@@ -28,15 +29,15 @@ const pageData = {
     hero: {
         props: {
             title: "Marathon Couples Therapy",
-            imageURL: '/images/banner/about.webp',
+            imageURL: '/images/banner/marathon-therapy-banner.webp',
             imageAlt: "Hero Image",
             backgroundColor: "bg-primary"
         }
     },
 
     section1: {
-        imageURL: '/images/banner/about.webp',
-        imageAlt: "footsteps",
+        imageURL: '/images/content/marathon-couple-sitting.webp',
+        imageAlt: "couple-sitting",
         props: {
             title1: "Invest in Communication",
             title2: "Build Strong Habits",
@@ -59,36 +60,41 @@ const pageData = {
             paragraphs: []
 
         },
-        tabView: {
+
+        tabs: {
             content: [{
                 tabName: "Convenient",
                 heading: "It Fits Your Schedule",
                 paragraphs: ["Marathon Therapy has the benefit of allowing you to schedule your therapy in a single large block of time. This is great for people who find it hard to commit to a weekly appointment due to busy or variable schedules."],
-                imageURL: '/images/banner/about.webp',
-                imageAlt: "footsteps",
+                imageURL: '/images/content/marathon-couple-convienent.webp',
+                imageAlt: "convenient",
+                backgroudnColor: pageStyle.generalBgColor
             },
             {
                 tabName: "Depth",
                 heading: "Time to Process",
                 paragraphs: ["You may need to get through a lot of material quickly if your relationship or marriage is in trouble.",
                     "Intensive Marathon Therapy may be especially helpful with having time to process past injuries that never healed or if there has been a recent affair. It may be more convenient to take a few days and “knock it out,” as opposed to scheduling multiple appointments."],
-                imageURL: '/images/banner/about.webp',
-                imageAlt: "footsteps",
+                imageURL: '/images/content/marathon-couple-depth.webp',
+                imageAlt: "depth",
+                backgroudnColor: pageStyle.generalBgColor
             },
             {
                 tabName: "Efficient",
                 heading: "It Helps You See Results Sooner",
                 paragraphs: ["Many couples schedule individual sessions schedule weekly, every two weeks, or monthly. It can take a long time to see the lasting benefits of using this schedule. Couples go to therapy and walk out feeling great, only to revert to old patterns as soon as they get home.",
                     "Marathon Therapy allows more time for what you learn to be cemented as habits in your relationship."],
-                imageURL: '/images/banner/about.webp',
-                imageAlt: "footsteps",
+                imageURL: '/images/content/marathon-couple-efficient.webp',
+                imageAlt: "efficient",
+                backgroudnColor: pageStyle.generalBgColor
             },
             {
                 tabName: "Practice",
                 heading: "Time To Practice What You Learn",
                 paragraphs: ["You get a lot of time to practice new communication skills, build shared meaning, and boost your friendship. Guided practice allows you to explore communication under the supervision of a Gottman trained therapist."],
-                imageURL: '/images/banner/about.webp',
-                imageAlt: "footsteps",
+                imageURL: '/images/content/marathon-couple-practice.webp',
+                imageAlt: "practice",
+                backgroudnColor: pageStyle.generalBgColor
             },
 
 
@@ -148,6 +154,7 @@ const pageData = {
         }]
     },
     section4: {
+
         props: {
             title1: "are we a good fit?",
             title2: "Is Marathon Therapy For us?",
@@ -237,8 +244,10 @@ const pageData = {
 
         <!-- Section2 -->
         <section>
-            <GeneralSection v-bind="pageData.section2.props" :class="pageStyle.sectionMargins" />
-
+            <div :class="pageStyle.sectionMargins">
+                <GeneralSection v-bind="pageData.section2.props" />
+                <TabsTabList :tabsContent="pageData.section2.tabs.content" class="mt-10" />
+            </div>
         </section>
 
         <!-- Section3 -->
@@ -254,15 +263,21 @@ const pageData = {
         </section>
 
         <!-- Section4 -->
-        <section>
-            <div :class="pageStyle.sectionMargins">
-                <GeneralSection v-bind="pageData.section4.props" />
-                <CheckList v-bind="pageData.section4.subSection1" />
-                <SubSection v-bind="pageData.section4.subSection2" />
+        <section class="container flex items-center justify-center  m-auto  bg-fixed bg-center bg-cover  custom-img  ">
+
+
+            <div class=" my-24 p-5 bg-white bg-opacity-90  " :class="pageStyle.sectionMargins">
+                <div class="mt-0">
+                    <GeneralSection v-bind="pageData.section4.props" />
+                    <CheckList v-bind="pageData.section4.subSection1" />
+                    <SubSection v-bind="pageData.section4.subSection2" />
+                </div>
             </div>
 
-
         </section>
+
+
+
 
         <!-- Section5 -->
         <section>
@@ -278,3 +293,24 @@ const pageData = {
     </div>
     <Cta></Cta>
 </template>
+
+
+
+<style scoped>
+.custom-img {
+    background-image: url("/images/content/marathon-therapy-bg.webp");
+
+}
+
+/* Overlay for the background image */
+&::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    /* Adjust opacity as needed */
+}
+</style>
