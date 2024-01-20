@@ -63,8 +63,8 @@ const pageData = {
     paragraphs: [
       {
         styleType: "",
-        text: "Before starting my practice, I was a therapist at Twin Lakes Counseling in Federal Way. I am currently a researcher at The Gottman Institute in Seattle where I review the current literature to uncover opportunities for future research as well as monitor current research studies on the science of relationships.",
-      },
+        text: "Before starting my practice, I was a therapist at Twin Lakes Counseling in Federal Way. I was also a researcher at The Gottman Institute in Seattle from 2019-2022, where I reviewed the literature to uncover opportunities for future research and monitored research studies on the science of relationships."
+      }
     ],
     qualifications: [
       {
@@ -74,12 +74,12 @@ const pageData = {
       },
       {
         title: "License",
-        text: "I am a Washington State licensed Marriage and Family Therapist: MG61143094",
+        text: "I am a Washington State licensed Marriage and Family Therapist: LF61479632",
         iconName: "material-symbols:assignment-ind-outline-sharp",
       },
       {
         title: "Training",
-        text: "I have completed all 3 levels of the Gottman Training, which has prepared me to assist couples with communication, connection, and conflict management. ",
+  text: "I have completed all 3 levels of the Gottman Training and the Emotionally Focused Couples Therapy Externship. Both of these trainings have prepared me to assist couples with communication, connection, and conflict management.",
         iconName: "material-symbols:award-star",
       },
     ],
@@ -119,15 +119,15 @@ const pageData = {
 
     <section>
       <AboutMePageSection v-bind="pageData.qualifications" :class="pageStyle.margins" />
-      <div class=" sm:flex-row md:flex mb-20" :class="pageStyle.margins">
-        <div v-for="(qualification, index) in pageData.qualifications.qualifications" :key="index" class="">
+      <div class=" sm:flex-row md:flex mb-20 sm:mb-20" :class="pageStyle.margins">
+        <div v-for="(qualification, index) in pageData.qualifications.qualifications" :key="index" class="mb-10 md:mb-0">
           <AboutMePageQualification v-bind="qualification" />
         </div>
       </div>
     </section>
 
     <section :class="pageStyle.backgroundColor">
-      <AboutMePageSection v-bind="pageData.homeAndHobbies" class=" mx-10 md:mx-20 xl:mx-80" />
+ <AboutMePageSection v-bind="pageData.homeAndHobbies" :class="pageStyle.margins" />
     </section>
   </div>
 
