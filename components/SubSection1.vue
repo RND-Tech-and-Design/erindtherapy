@@ -17,7 +17,7 @@ const props = defineProps<{
 <template>
     <section class="flex flex-col mt-5">
 
-        <div class="mt-5 lg:text-4xl text-3xl font-medium">
+        <div class="mt-5 lg:text-4xl text-2xl  font-medium">
             <h3>{{ props.heading }}</h3>
         </div>
         <ul :class="[props.listDisc ? 'list-disc ml-5' : '']">

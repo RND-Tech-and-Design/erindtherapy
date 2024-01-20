@@ -1,12 +1,9 @@
+
+
 export interface TabContent {
-    tabName: string,
-    heading: string,
-    backgroudnColor: string,
-    imageURL: string,
-    imageAlt: string,
-    imageStyle: string,
-    paragraphs: string[]
+    itemName: string;
+    backgroundColor: string;
+    itemBodyContent: Object;
 }
 
-
-export type TabsContentArray = TabContent[];
+export type TabListContentArray = TabContent[]
