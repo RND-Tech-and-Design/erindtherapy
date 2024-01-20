@@ -55,7 +55,7 @@ const paragraphs = [
                         Level III Gottman Institute Trained Therapist
                     </p>
                     <NuxtLink to="/about"
-                              class="mt-2 btn btn-secondary text-white">
+                              class="mt-8 btn btn-secondary text-white">
                         About Me
                     </NuxtLink>
 

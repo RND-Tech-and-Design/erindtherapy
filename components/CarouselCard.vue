@@ -14,14 +14,14 @@ const carouselItemId = getCarouselItemId(props.itemIndex);
 
 <template>
     <div :id="carouselItemId" class="carousel-item">
-        <div class="card w-96 bg-secondary shadow-xl image-full">
+        <div class="card w-64 md:w-96 bg-secondary shadow-xl image-full">
             <figure>
                 <img :src="carouselItem?.image"
                      :alt="carouselItem?.altText" />
             </figure>
             <div class="card-body">
                 <h2 class="card-title">{{ carouselItem?.title }}</h2>
-                <p class="mt-16">
+                <p class="mt-8 md:mt-16">
                     {{ carouselItem?.description }}
                 </p>
                 <div class="card-actions justify-end">
