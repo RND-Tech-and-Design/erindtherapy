@@ -18,6 +18,8 @@ defineProps<{
                 <p class="mb-5" v-for="(paragraph, index) in content.paragraphs" :key="index">
                     {{ paragraph }}
                 </p>
+
+                             <slot></slot>
             </div>
         </div>
     </section>
