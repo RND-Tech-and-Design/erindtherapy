@@ -248,9 +248,16 @@ const pageData = {
     </section>
 
     <!-- Section5 -->
-    <SectionCard :content="section5Props" />
-
-    <Cta></Cta>
+    <SectionCard :content="section5Props">
+        <div class="flex flex-col items-center h-full w-full">
+            <div class="mt-4 ">
+                <NuxtLink to="/contact" class="btn btn-wide  btn-secondary text-white">
+                    Let's Connect!
+                    <Icon name="material-symbols:handshake-outline-rounded" size="2em" />
+                </NuxtLink>
+            </div>
+        </div>
+    </SectionCard>
 </template>
 
 
