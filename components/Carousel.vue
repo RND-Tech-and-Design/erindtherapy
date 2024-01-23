@@ -26,7 +26,6 @@ const updateButtonVisibility = () => {
     }
 }
 
-
 onMounted(() => {
     window.addEventListener('resize', updateButtonVisibility);
     if (carouselRef.value) {
@@ -46,13 +45,15 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <section class="py-10">
+    <section class="py-10 mx-2">
         <div class="flex justify-center items-center py-8">
             <transition name="fade">
-                <button :style="{ visibility: showLeftButton ? 'visible' : 'hidden' }" class="btn btn-circle btn-ghost" @click="scrollCarousel(-1)">
+                <button :style="{ visibility: showLeftButton ? 'visible' : 'hidden' }"
+                        class="btn btn-circle btn-ghost -ml-4 hover:bg-transparent"
+                        @click="scrollCarousel(-1)">
                     <icon name="material-symbols:chevron-left"
                           size="4em"
-                          class="flex-none -mt-1 mr-1">
+                          class="flex-none -mt-1">
                     </icon>
                 </button>
             </transition>
@@ -64,22 +65,27 @@ onUnmounted(() => {
 
             </div>
             <transition name="fade">
-            <button :style="{ visibility: showRightButton ? 'visible' : 'hidden' }" class="btn btn-circle btn-ghost" @click="scrollCarousel(1)">
-                <icon name="material-symbols:chevron-right"
-                      size="4em"
-                      class="flex-none -mt-1 ml-1">
-                </icon>
-            </button>
+                <button :style="{ visibility: showRightButton ? 'visible' : 'hidden' }"
+                        class="btn btn-circle btn-ghost -mr-4 hover:bg-transparent"
+                        @click="scrollCarousel(1)">
+                    <icon name="material-symbols:chevron-right"
+                          size="4em"
+                          class="flex-none -mt-1">
+                    </icon>
+                </button>
             </transition>
         </div>
     </section>
 </template>
 
 <style scoped>
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
     transition: opacity .5s;
 }
-.fade-enter, .fade-leave-to {
+
+.fade-enter,
+.fade-leave-to {
     opacity: 0;
 }
 </style>

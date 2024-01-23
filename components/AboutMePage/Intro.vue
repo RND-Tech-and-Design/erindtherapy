@@ -22,7 +22,7 @@ const props = defineProps({
           class="block mb-7 text-text_primary bg-clip-text font-sans text-base leading-relaxed antialiased">
           {{ paragraph.text }}
         </p>
-        <NuxtLink to="/contact" class="mt-10 btn btn-secondary text-white">
+        <NuxtLink to="/contact" class="mt-10 btn btn-secondary text-white mt-8">
           Let's Connect!
         </NuxtLink>
       </div>

@@ -30,7 +30,7 @@ const blogPosts = [
 <template>
     <section class="pt-20 pb-10 lg:pt-[120px] lg:pb-20">
         <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row -mx-4">
+            <div class="flex flex-col md:flex-row">
                 <template v-for="post in blogPosts">
                     <div class="w-full px-4 md:w-1/2 lg:w-1/3">
                         <div class="mx-auto mb-10 max-w-[370px]">
