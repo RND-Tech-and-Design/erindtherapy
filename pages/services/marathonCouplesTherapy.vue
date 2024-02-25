@@ -24,7 +24,13 @@ const pageStyle = {
         iconName: 'material-symbols:check',
         iconColor: 'text-accent',
         iconSize: '3em',
-    }
+    },
+    redX: {
+        iconName: 'material-symbols:close',
+        iconColor: 'text-red-400',
+        iconSize: '3em',
+    },
+
 
 }
 
@@ -186,7 +192,7 @@ const pageData = {
             paragraphs: []
 
         },
-        checkList: {
+        checkList1: {
             heading: 'Marathon Therapy is for you if:',
             checkMark: pageStyle.checkMark,
             list: {
@@ -197,11 +203,11 @@ const pageData = {
                 ]
             },
         },
-        subSection:
+        checkList2:
         {
             heading: 'Marathon Therapy is unsuitable when:',
-            listDisc: true,
-            paragraphs: {
+            checkMark: pageStyle.redX,
+            list: {
                 style: '',
                 text: ["There is active alcohol and/or drug addiction on the part of either or both partners, from either partner’s perspective",
                     "There is serious violence in your relationship, threats by one or both partners that serious violence might occur, or fear of such serious violence on the part of one or both partners",
@@ -245,6 +251,23 @@ const pageData = {
     }
 }
 
+let isLargeScreen = ref(false);
+
+const checkScreenSize = () => {
+    // Set isLargeScreen based on viewport width
+    isLargeScreen.value = window.innerWidth >= 768;
+}
+
+
+onMounted(() => {
+    window.addEventListener('resize', checkScreenSize);
+    checkScreenSize();
+});
+
+onUnmounted(() => {
+    window.removeEventListener('resize', checkScreenSize);
+
+});
 
 </script>
 
@@ -274,13 +297,13 @@ const pageData = {
             <div :class="pageStyle.sectionMargins">
                 <GeneralSection v-bind="pageData.section2.props" />
                 <div>
-                    <!-- TabsTabList: Show on all screens, hide on medium screens and smaller -->
-                    <TabsTabList :tabListContent="pageData.section2.tabs" :component="SubSection2"
-                        class="mt-10 hidden md:block " />
+                    <!-- Render TabsTabList only on large screens -->
+                    <TabsTabList v-if="isLargeScreen" :tabListContent="pageData.section2.tabs" :component="SubSection2"
+                        class="mt-10" />
 
-                    <!-- AccordianList: Show on medium screens and smaller, hide on large screens -->
-                    <AccordianList :accordianContent="pageData.section2.tabs" :component="SubSection2"
-                        class="mt-10 md:hidden " />
+                    <!-- Render AccordianList only on medium and smaller screens -->
+                    <AccordianList v-else :accordianContent="pageData.section2.tabs" :component="SubSection2"
+                        class="mt-10" />
                 </div>
 
 
@@ -300,10 +323,10 @@ const pageData = {
         </section>
 
         <!-- Section4 -->
-        <ParallaxBg :margins="pageStyle.sectionMargins" imageClass="custom-img" >
+        <ParallaxBg :margins="pageStyle.sectionMargins" imageClass="custom-img">
             <GeneralSection v-bind="pageData.section4.props" />
-            <CheckList v-bind="pageData.section4.checkList" />
-            <SubSection1 v-bind="pageData.section4.subSection" />
+            <CheckList v-bind="pageData.section4.checkList1" />
+            <CheckList v-bind="pageData.section4.checkList2" />
         </ParallaxBg>
 
 
