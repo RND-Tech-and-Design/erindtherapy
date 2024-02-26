@@ -64,7 +64,7 @@ const pageData = {
 
     section2: {
         props: {
-            title1: "intensive couples therapy",
+            title1: "Intensive Couples Therapy",
             title2: "Why Marathon Couples Therapy?",
             paragraphs: []
 
@@ -117,7 +117,7 @@ const pageData = {
                 itemName: "Practice",
                 backgroundColor: pageStyle.generalBgColor,
                 itemBodyContent: {
-                    heading: "Time To Practice What You Learn",
+                    heading: "Time to Practice What You Learn",
                     paragraphs: [
                         "You get a lot of time to practice new communication skills, build shared meaning, and boost your friendship. Guided practice allows you to explore communication under the supervision of a Gottman trained therapist.",
                     ],
@@ -136,8 +136,8 @@ const pageData = {
 
     section3: {
         props: {
-            title1: "What should we expect?",
-            title2: "What will Marathon Therapy Look Like?",
+            title1: "What Should We Expect?",
+            title2: "What Will Marathon Therapy Look Like?",
             paragraphs: [
                 {
                     text: 'Consultation: 20 minutes',
@@ -187,13 +187,13 @@ const pageData = {
     section4: {
 
         props: {
-            title1: "are we a good fit?",
-            title2: "Is Marathon Therapy For us?",
+            title1: "Are We a Good Fit?",
+            title2: "Is Marathon Therapy for Us?",
             paragraphs: []
 
         },
         checkList1: {
-            heading: 'Marathon Therapy is for you if:',
+            heading: 'Marathon Therapy Is for You If:',
             checkMark: pageStyle.checkMark,
             list: {
                 style: "",
@@ -205,7 +205,7 @@ const pageData = {
         },
         checkList2:
         {
-            heading: 'Marathon Therapy is unsuitable when:',
+            heading: 'Marathon Therapy Is Unsuitable When:',
             checkMark: pageStyle.redX,
             list: {
                 style: '',
