@@ -3,7 +3,12 @@ import { resolve } from 'path'
 
 export default defineNuxtConfig({
 
-    devtools: { enabled: true },
+    devtools: {
+        enabled: true
+    },
+    routeRules: {
+        '/contact': { prerender: true },
+    },
     site: {
         url: 'https://erindtherapy.com',
     },
