@@ -6,6 +6,9 @@ export default defineNuxtConfig({
     devtools: {
         enabled: true
     },
+    routeRules: {
+        '/contact': { prerender: true },
+    },
     site: {
         url: 'https://erindtherapy.com',
     },

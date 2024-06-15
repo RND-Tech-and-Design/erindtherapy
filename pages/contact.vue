@@ -21,37 +21,6 @@ watch(name, validateForm)
 
 validateForm()
 
-const handleSubmit = async (event: any): Promise<void> => {
-    event.preventDefault()
-    const myForm = event.target;
-    let formData = new FormData(myForm);
-    if (formIsValid.value) {
-        formData = formData || new FormData()
-        formData.set('email', email?.value)
-        formData.set('name', name?.value)
-        formData.set('service', service?.value)
-
-        formData.append('service', service?.value)
-        formData.append('browser', navigator.userAgent) // Browser information
-        formData.append('language', navigator.language) // Language information
-
-        const urlParams = new URLSearchParams();
-        for (const pair of urlParams) {
-            urlParams.append(pair[0], pair[1]);
-        }
-        try {
-            await fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: urlParams.toString(),
-            })
-            console.log('Form successfully submitted')
-        } catch (error) {
-            console.error('Error:', error)
-        }
-    }
-}
-
 definePageMeta({
     layout: 'default',
     title: 'Contact',
@@ -106,12 +75,12 @@ definePageMeta({
                         </p>
 
                         <form name="contact"
-                              @submit.prevent="handleSubmit"
+                              method="POST"
                               netlify
                               data-netlify-recaptcha="true"
                               netlify-honeypot="bot-field"
                               class="space-y-4">
-
+                            <input type="hidden" name="form-name" value="contact" />
                             <p class="hidden">
                                 <label>
                                     Whats up with stuff? <input name="bot-field" />
