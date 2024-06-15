@@ -75,7 +75,7 @@ definePageMeta({
 
                         <form name="contact"
                               method="POST"
-                              data-netlify="true"
+                              netlify
                               data-netlify-recaptcha="true"
                               netlify-honeypot="bot-field"
                               class="space-y-4">
