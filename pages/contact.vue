@@ -1,7 +1,25 @@
 <script setup lang="ts">
 
 import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/solid';
+import { ref, watch } from 'vue'
 
+const email = ref('')
+const name = ref('')
+const service = ref('')
+const formIsValid = ref<boolean>(false)
+const invalidEmail = ref<boolean>(false)
+
+const validateForm = () => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    const isValid = email.value.match(emailRegex) && name.value !== ''
+    formIsValid.value = !!isValid
+    invalidEmail.value = email.value !== '' && !isValid
+}
+
+watch(email, validateForm)
+watch(name, validateForm)
+
+validateForm()
 definePageMeta({
     layout: 'default',
     title: 'Contact',
@@ -23,7 +41,7 @@ definePageMeta({
 
                         <template #action>
                             <NuxtLink to="https://erindtherapy.clientsecure.me/widget/service?channel=sp_website"
-                                class="btn btn-primary text-text_secondary flex items-center" target="_blank">
+                                      class="btn btn-primary text-text_secondary flex items-center" target="_blank">
                                 <span class="mr-2">Request Appointment</span>
                                 <ArrowTopRightOnSquareIcon class="h-6 w-6" />
                             </NuxtLink>
@@ -40,7 +58,7 @@ definePageMeta({
 
                         <template #action>
                             <NuxtLink to="https://erindtherapy.clientsecure.me/sign-in"
-                                class="btn btn-primary text-text_secondary flex items-center" target="_blank">
+                                      class="btn btn-primary text-text_secondary flex items-center" target="_blank">
                                 <span class="mr-2">Open Client Portal </span>
                                 <ArrowTopRightOnSquareIcon class="h-6 w-6" />
                             </NuxtLink>
@@ -54,13 +72,85 @@ definePageMeta({
                         <p>
                             Send me a message with this secure form
                         </p>
+
+                        <form name="contact"
+                              method="post"
+                              data-netlify="true"
+                              data-netlify-recaptcha="true"
+                              class="space-y-4">
+
+                            <p class="hidden">
+                                <label>
+                                    Whats up with stuff? <input name="bot-field" />
+                                </label>
+                            </p>
+                            <label class="input input-bordered flex items-center gap-2">
+                                <Icon name="line-md:person"></Icon>
+                                <input type="text"
+                                       class="grow bg-transparent"
+                                       placeholder="Your Name"
+                                       name="name"
+                                       v-model="name" />
+                                <span v-if="name === ''" class="badge badge-warning">Required</span>
+                            </label>
+
+
+                            <label class="input input-bordered flex items-center gap-2">
+                                <Icon name="line-md:email-twotone"></Icon>
+                                <input type="text"
+                                       class="grow bg-transparent"
+                                       placeholder="Your Email"
+                                       name="email"
+                                       v-model="email" />
+                                <span v-if="email === ''" class="badge badge-warning">Required</span>
+                                <span v-if="invalidEmail" class="badge badge-error">Invalid Email</span>
+
+                            </label>
+
+                            <label class="form-control">
+                                <div class="label">
+                                    <span class="label-text">What service are you interested in?</span>
+                                </div>
+                                <select v-model="service"
+                                        class="form-select w-full max-w-full input input-bordered flex items-center gap-2">
+                                    <option disabled selected value="">Select a service</option>
+                                    <option value="individual">Individual Therapy</option>
+                                    <option value="couples">Couples Therapy</option>
+                                    <option value="family">Family Therapy</option>
+                                    <option value="family">Other</option>
+                                </select>
+                            </label>
+
+                            <label class="form-control">
+                                <div class="label">
+                                    <span class="label-text">Your Message</span>
+                                </div>
+                                <textarea class="textarea textarea-bordered w-full max-w-full h-32"
+                                          placeholder="Please do not share any confidential or sensitive medical information"></textarea>
+                            </label>
+
+                            <div data-netlify-recaptcha="true"></div>
+
+                            <div class="flex justify-end md:w-auto w-full">
+                                <button type="submit"
+                                        :disabled="!formIsValid"
+                                        class="btn btn-primary text-text_secondary flex items-center md:w-auto w-full md:text-sm text-base">
+                                    <span>
+                                        <span v-if="formIsValid" class="mr-2 text-lg">
+                                            <Icon name="line-md:confirm-circle"></Icon>
+                                        </span>
+                                        <span v-else class="mr-2 text-lg">
+                                            <Icon name="line-md:alert-circle-loop"></Icon>
+                                        </span>
+                                        Submit
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
                     </template>
 
                     <template #action>
-                        <NuxtLink to="https://erindtherapy.clientsecure.me/sign-in"
-                            class="btn btn-primary text-text_secondary flex items-center" target="_blank">
-                            <span class="mr-2">Submit</span>
-                        </NuxtLink>
+
                     </template>
                 </CardGlass>
             </div>

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 
-const props = defineProps({
+ defineProps({
     figureBackgroundClass: {
         type: String,
         required: true,
@@ -36,7 +35,7 @@ const props = defineProps({
     </div>
 </template>
 <style scoped lang="scss">
-$figure-backgrounds: 'cards', 'hsa', 'insurance';
+$figure-backgrounds: 'cards', 'hsa', 'insurance', 'cancel';
 
 @each $name in $figure-backgrounds {
     .figure-background-#{$name} {
