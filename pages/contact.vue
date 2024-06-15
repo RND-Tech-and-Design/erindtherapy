@@ -113,7 +113,8 @@ definePageMeta({
                                 <div class="label">
                                     <span class="label-text">What service are you interested in?</span>
                                 </div>
-                                <select v-model="service"
+                                <select name="service"
+                                        v-model="service"
                                         class="form-select w-full max-w-full input input-bordered flex items-center gap-2">
                                     <option disabled selected value="">Select a service</option>
                                     <option value="individual">Individual Therapy</option>
@@ -127,7 +128,8 @@ definePageMeta({
                                 <div class="label">
                                     <span class="label-text">Your Message</span>
                                 </div>
-                                <textarea class="textarea textarea-bordered w-full max-w-full h-32"
+                                <textarea name="message"
+                                          class="textarea textarea-bordered w-full max-w-full h-32"
                                           placeholder="Please do not share any confidential or sensitive medical information"></textarea>
                             </label>
 
