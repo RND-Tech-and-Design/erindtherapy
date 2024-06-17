@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
     layout: 'default',
-    title: 'Policies',
+    title: 'Policies & FAQs',
     navOrder: 5,
 })
 
@@ -46,7 +46,7 @@ const faqs = [
 </script>
 
 <template>
-    <Hero headline="Policies"
+    <Hero headline="Policies & FAQs"
           hero-image="/images/banner/policies.webp"
           overlayClass="bg-complementary_secondary" />
     <section class="max-w-4xl mx-auto p-6 flex flex-col gap-8 items-center md:mt-16 ">
@@ -55,14 +55,18 @@ const faqs = [
                   iconName="line-md:cancel"
                   title="Cancellation Policy"
                   description="">
-            <template>
-                <p>
-                    If you are unable to attend a session, please cancel at least <span class="font-extrabold">24
-                        hours</span>
-                    beforehand.
-                    Otherwise, you will be charged for the full rate of the session.
-                </p>
-            </template>
+
+            <p>
+                If you are unable to attend a session, please cancel at least <span class="font-extrabold">24
+                    hours</span>
+                beforehand.
+
+                Otherwise, you will be charged for the full rate of the session.
+                <br />
+                <br />
+                Recurring cancellations or no-shows may result in loss of time slot.
+            </p>
+
         </InfoCard>
 
         <hr class="my-4">

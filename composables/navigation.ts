@@ -15,7 +15,10 @@ export type NavLink = {
 
 const getCapitalizedRouteName = (route: RouteRecordNormalized) => {
     const name = route.meta?.title || (route.name === 'index' ? 'home' : route.name);
-    return typeof name === 'string' ? name.toLowerCase().replace(/\b\w/g, char => char.toUpperCase()) : '';
+    const title =  typeof name === 'string'
+        ? name.toLowerCase().replace(/\b\w/g, char => char.toUpperCase())
+        : '';
+    return title.replace(/Faq/g, 'FAQ');
 };
 
 const getNavLink = (route: RouteRecordNormalized, currentPath: string): NavLink => {
