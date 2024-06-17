@@ -74,7 +74,7 @@ definePageMeta({
                     <template #content>
                         <div v-if="!success">
                             <p>
-                                Send me a message with this secure form
+                                Send me a message with this secure form.
                             </p>
 
                             <form
