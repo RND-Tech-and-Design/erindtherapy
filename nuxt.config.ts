@@ -26,6 +26,7 @@ export default defineNuxtConfig({
         'nuxt-gtag', //https://nuxt.com/modules/gtag
         "nuxt-lodash",
         '@nuxt/image',
+        '@nuxt/content',
     ],
     postcss: {
         plugins: {
