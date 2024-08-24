@@ -14,8 +14,6 @@ const pageStyle = {
     FAQLinkColor: "text-secondary",
 }
 
-
-
 const bulletPointList: BulletPointList =
 {
     colNum: 2,
@@ -259,5 +257,3 @@ const pageData = {
         </div>
     </SectionCard>
 </template>
-
-

@@ -4,10 +4,6 @@ import GeneralSection from '~/components/GeneralSection.vue'
 import SubSection2 from '~/components/SubSection2.vue'
 
 
-
-
-
-
 definePageMeta({
     layout: 'default',
     title: 'Marathon Couples Therapy',
