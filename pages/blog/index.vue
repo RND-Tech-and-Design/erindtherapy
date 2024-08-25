@@ -1,8 +1,35 @@
+<script setup lang="ts">
+import { useFetch } from 'nuxt/app';
+import { extractTextWithoutAnchors } from '~/helpers/util';
+import type { Post } from '~/types/post';
+
+const { data: bpost, error } = await useFetch(
+    'https://www.erindtherapy.com/wp-json/wp/v2/posts'
+);
+
+if (error.value) {
+    console.error('Error fetching posts:', error.value);
+}
+
+const posts = bpost.value as Post[];
+
+// Function to extract text content that is not within anchor tags
+
+
+// Function to get the featured image URL or a placeholder
+function getFeaturedImage(post: Post) {
+    return (
+        post.jetpack_featured_media_url ||
+        'https://via.placeholder.com/600x400'
+    );
+}
+</script>
+
 <template>
     <div class="container mx-auto p-4">
         <h1 class="text-4xl font-bold mb-8 text-center mt-8">Blog</h1>
 
-        <div v-if="posts && posts.length">
+        <div v-if="posts && (posts as Post[]).length > 0">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <!-- Most Recent Post -->
@@ -19,10 +46,10 @@
                              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
                         <div class="p-4">
                             <h2 class="text-2xl font-bold mb-2 group-hover:underline">
-                                {{ posts[0].title.rendered }}
+                                {{ posts[0].title?.rendered }}
                             </h2>
                             <p class="text-gray-600">
-                                {{ extractTextWithoutAnchors(posts[0].excerpt.rendered) }}
+                                {{ extractTextWithoutAnchors(posts[0].excerpt?.rendered ?? "") }}
                             </p>
                         </div>
                     </NuxtLink>
@@ -40,10 +67,10 @@
                              class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
                         <div class="p-4">
                             <h2 class="text-xl font-bold mb-2 group-hover:underline">
-                                {{ post.title.rendered }}
+                                {{ post.title?.rendered }}
                             </h2>
                             <p class="text-gray-600">
-                                {{ extractTextWithoutAnchors(post.excerpt.rendered) }}
+                                {{ extractTextWithoutAnchors(post.excerpt?.rendered ?? "") }}
                             </p>
                         </div>
                     </NuxtLink>
@@ -57,39 +84,3 @@
         </div>
     </div>
 </template>
-
-<script setup>
-import { useFetch } from 'nuxt/app';
-
-const { data: posts, error } = await useFetch(
-    'https://www.erindtherapy.com/wp-json/wp/v2/posts'
-);
-
-if (error.value) {
-    console.error('Error fetching posts:', error.value);
-}
-
-// Function to extract text content that is not within anchor tags
-function extractTextWithoutAnchors(html) {
-    if (typeof window === 'undefined') {
-        // In SSR, fallback to simple regex-based approach
-        return html.replace(/<a\b[^>]*>(.*?)<\/a>/gi, '').replace(/<\/?[^>]+(>|$)/g, '');
-    }
-
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = html;
-
-    // Remove all anchor tags and their content
-    tempDiv.querySelectorAll('a').forEach(anchor => anchor.remove());
-
-    return tempDiv.textContent || tempDiv.innerText || '';
-}
-
-// Function to get the featured image URL or a placeholder
-function getFeaturedImage(post) {
-    return (
-        post.jetpack_featured_media_url ||
-        'https://via.placeholder.com/600x400'
-    );
-}
-</script>

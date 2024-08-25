@@ -1,63 +1,83 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+import { useFetch } from '#app';
+import { extractTextWithoutAnchors } from '~/helpers/util';
 
-// to be replaces by call to blog host API. This is just a dummy data
-const blogPosts = [
-    {
-        title: 'How to test a blog post',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id tincidunt dapibus, magna libero semper urna, id sodales nisi velit id elit. Sed euismod, diam id tincidunt dapibus, magna libero semper urna, id sodales nisi velit id elit.',
-        date: 'Dec 22, 2023',
-        image: 'https://cdn.tailgrids.com/2.0/image/application/images/blogs/blog-01/image-01.jpg',
-        link: 'javascript:void(0)',
-    },
-    {
-        title: 'This is a blog post',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id tincidunt dapibus, magna libero semper urna, id sodales nisi velit id elit. Sed euismod, diam id tincidunt dapibus, magna libero semper urna, id sodales nisi velit id elit.',
-        date: 'Mar 15, 2023',
-        image: 'https://cdn.tailgrids.com/2.0/image/application/images/blogs/blog-01/image-02.jpg',
-        link: 'javascript:void(0)',
-    },
-    {
-        title: 'Whats up with this blog post',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id tincidunt dapibus, magna libero semper urna, id sodales nisi velit id elit. Sed euismod, diam id tincidunt dapibus, magna libero semper urna, id sodales nisi velit id elit.',
-        date: 'Jan 05, 2023',
-        image: 'https://cdn.tailgrids.com/2.0/image/application/images/blogs/blog-01/image-03.jpg',
-        link: 'javascript:void(0)',
-    }
-];
+// Define the type for the 'posts' array
+type Post = {
+    title: string;
+    description: string;
+    date: string;
+    image: string;
+    link: string;
+    slug: string;
+};
 
+// Function to get the featured image or a placeholder
+function getFeaturedImage(post: any) {
+    return post.jetpack_featured_media_url || 'https://via.placeholder.com/600x400';
+}
+
+// Fetch the 3 most recent blog posts
+const { data: recentPosts, status, error } = await useFetch('https://www.erindtherapy.com/wp-json/wp/v2/posts', {
+    params: { per_page: 3 },
+});
+
+// Handle the loading and error states
+const isLoading = ref(true);
+const posts = ref<Post[]>([]); // Explicitly type the 'posts' array
+
+if (!error.value) {
+    posts.value = (recentPosts.value as Post[]).map((post: any) => ({
+        title: post.title.rendered,
+        description: extractTextWithoutAnchors(post.excerpt.rendered),
+        date: new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        image: getFeaturedImage(post),
+        link: post.link,
+        slug: post.slug
+    }));
+    isLoading.value = false;
+} else {
+    console.error('Failed to fetch recent posts:', error.value);
+}
 </script>
 
 <template>
     <section class="pt-20 pb-10 lg:pt-[120px] lg:pb-20">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row">
-                <template v-for="post in blogPosts">
-                    <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-                        <div class="mx-auto mb-10 max-w-[370px]">
-                            <div class="mb-8 overflow-hidden rounded">
-                                <img
-                                     :src="post.image"
-                                     alt="image"
-                                     class="w-full" />
-                            </div>
-                            <div>
-                                <span
-                                      class="bg-primary mb-5 inline-block rounded py-1 px-4 text-center text-xs font-semibold leading-loose text-white">
-                                    {{ post.date }}
-                                </span>
-                                <h3>
-                                    <a
-                                       href="javascript:void(0)"
-                                       class="text-dark hover:text-primary mb-4 inline-block text-xl font-semibold sm:text-2xl lg:text-xl xl:text-2xl">
-                                        {{ post.title }}
-                                    </a>
-                                </h3>
-                                <p class="text-body-color text-base">
-                                    {{ post.description }}
-                                </p>
+                <!-- Handle loading and error states -->
+                <template v-if="isLoading">
+                    <p>Loading...</p>
+                </template>
+                <template v-else-if="error">
+                    <p>Error loading posts. Please try again later.</p>
+                </template>
+                <template v-else>
+                    <template v-for="post in posts" :key="post.title">
+                        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+                            <div class="mx-auto mb-10 max-w-[370px]">
+                                <div class="mb-8 overflow-hidden rounded">
+                                    <img
+                                         :src="post.image"
+                                         alt="image"
+                                         class="w-full" />
+                                </div>
+                                <div>
+
+                                    <h3>
+                                        <NuxtLink :to="`/blog/${post.slug}`"
+                                                  class="text-dark hover:text-primary mb-4 inline-block text-xl font-semibold sm:text-2xl lg:text-xl xl:text-2xl">
+                                            {{ post.title }}
+                                        </NuxtLink>
+                                    </h3>
+                                    <p class="text-body-color text-base">
+                                        {{ post.description }}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </template>
                 </template>
             </div>
         </div>
