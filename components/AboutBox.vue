@@ -10,15 +10,17 @@ const paragraphs = [
 
 <template>
     <section class="flex flex-col md:flex-row">
-        <div class="flex justify-center py-20 relative bg-cover bg-center text-text_primary md:w-[65%]">
+        <!-- Left Section -->
+        <div
+             class="flex justify-center py-20 relative bg-cover bg-center text-text_primary md:w-[65%] px-4 md:px-6 lg:px-14">
             <div class="absolute inset-0 opacity-80"></div>
-            <div class="flex flex-col md:mx-6 lg:mx-14 relative z-10 text-text_primary mt-10 text-left">
+            <div class="flex flex-col relative z-10 text-text_primary mt-10 text-left">
                 <h3
                     class="mb-2 text-secondary block font-sans text-4xl font-semibold leading-snug tracking-normal antialiased text-left">
                     How I can help
                 </h3>
                 <p
-                   class="block mb-3 text-text_primary text bg-clip-text font-sans text-2xl font-medium leading-relaxed  antialiased">
+                   class="block mb-3 text-text_primary bg-clip-text font-sans text-2xl font-medium leading-relaxed antialiased">
                     My clients struggle like you.
                 </p>
                 <p
@@ -26,17 +28,17 @@ const paragraphs = [
                    :key="index"
                    class="block mt-3 text-text_primary bg-clip-text font-sans text-base font-medium leading-relaxed antialiased">
                     {{ paragraph }}
-
                 </p>
             </div>
         </div>
-        <div class="flex justify-center md:py-20 relative bg-cover bg-center text-text_secondary md:w-[35%]">
-            <div class="relative flex  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+
+        <!-- Right Section -->
+        <div
+             class="flex justify-center md:py-20 relative bg-cover bg-center text-text_secondary md:w-[35%] px-4 md:px-6 lg:px-14">
+            <div class="relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
                 <div
                      class="relative mx-4 mt-4 h-80 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                    <img
-                         class="w-full h-full object-cover"
-                         src="/images/content/profile-home.webp"
+                    <img class="w-full h-full object-cover" src="/images/content/profile-home.webp"
                          alt="profile-picture" />
                 </div>
                 <div class="p-6 text-center">
@@ -47,21 +49,17 @@ const paragraphs = [
                     <p
                        class="block text-primary bg-clip-text font-sans text-base font-medium leading-relaxed antialiased">
                         Licensed Marriage and Family Therapist in Washington State
-
                     </p>
                     <br />
                     <p
                        class="block text-primary bg-clip-text font-sans text-base font-medium leading-relaxed antialiased">
                         Level III Gottman Institute Trained Therapist
                     </p>
-                    <NuxtLink to="/about"
-                              class="mt-8 btn btn-secondary text-white">
+                    <NuxtLink to="/about" class="mt-8 btn btn-secondary text-white">
                         About Me
                     </NuxtLink>
-
                 </div>
             </div>
         </div>
-
     </section>
 </template>
