@@ -4,7 +4,7 @@ import { resolve } from 'path'
 export default defineNuxtConfig({
     runtimeConfig: {
         public: {
-            siteBaseUrl: process.env.NUXT_PUBLIC_SITE_BASE_URL || 'http://localhost:3000',
+            siteBaseUrl: process.env.NUXT_PUBLIC_SITE_BASE_URL || '',
         },
     },
     devtools: {
