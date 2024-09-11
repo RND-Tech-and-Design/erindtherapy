@@ -1,18 +1,9 @@
 <script setup lang="ts">
-import { useFetch } from 'nuxt/app';
 import { extractTextWithoutAnchors } from '~/helpers/util';
 import type { Post } from '~/types/post';
+import rawPosts from '~/assets/json/posts.json';
 
-const { data: bpost, error } = await useFetch(
-    'https://www.erindtherapy.com/wp-json/wp/v2/posts'
-);
-
-if (error.value) {
-    console.error('Error fetching posts:', error.value);
-}
-
-const posts = bpost.value as Post[];
-
+const posts = rawPosts as Post[];
 
 // Function to get the featured image URL or a placeholder
 function getFeaturedImage(post: Post) {
