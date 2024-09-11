@@ -38,8 +38,8 @@ const hasDescription = ref<boolean>(!!props.description);
     <div class="hero min-h-screen-50"
          :style="{ backgroundImage: `url(${heroImage})` }">
         <div v-if="enableOverlay" :class="`hero-overlay ${overlayClass} bg-opacity-60`"></div>
-        <div class="hero-content text-center text-neutral-content pt-12">
-            <div class="max-w-xlg">
+        <div class="hero-content text-center text-neutral-content pt-12 ">
+            <div class="max-w-sm md:max-w-none ">
                 <h1 class="text-5xl font-bold text-white">
                     {{ headline }}
                 </h1>

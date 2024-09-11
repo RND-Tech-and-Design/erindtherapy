@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { useFetch } from '#app';
 import { extractTextWithoutAnchors } from '~/helpers/util';
+import rawPosts from '~/assets/json/posts.json';
 
 // Define the type for the 'posts' array
 type Post = {
@@ -17,29 +18,30 @@ type Post = {
 function getFeaturedImage(post: any) {
     return post.jetpack_featured_media_url || 'https://via.placeholder.com/600x400';
 }
-
-// Fetch the 3 most recent blog posts
-const { data: recentPosts, status, error } = await useFetch('https://www.erindtherapy.com/wp-json/wp/v2/posts', {
-    params: { per_page: 3 },
-});
-
 // Handle the loading and error states
 const isLoading = ref(true);
 const posts = ref<Post[]>([]); // Explicitly type the 'posts' array
-
-if (!error.value) {
-    posts.value = (recentPosts.value as Post[]).map((post: any) => ({
-        title: post.title.rendered,
-        description: extractTextWithoutAnchors(post.excerpt.rendered),
-        date: new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-        image: getFeaturedImage(post),
-        link: post.link,
-        slug: post.slug
-    }));
+const error = ref(false);
+try {
+    posts.value = (rawPosts as unknown as Post[])
+        .slice(0, 3)
+        .map((post: any) => ({
+            title: post.title.rendered,
+            description: extractTextWithoutAnchors(post.excerpt.rendered),
+            date: new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+            image: getFeaturedImage(post),
+            link: post.link,
+            slug: post.slug
+        }));
     isLoading.value = false;
-} else {
-    console.error('Failed to fetch recent posts:', error.value);
+
 }
+catch (error) {
+    console.error(error);
+    error = true;
+}
+
+
 </script>
 
 <template>

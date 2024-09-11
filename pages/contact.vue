@@ -92,26 +92,31 @@ definePageMeta({
                                     </label>
                                 </p>
                                 <label class="input input-bordered flex items-center gap-2">
-                                    <Icon name="line-md:person"></Icon>
+                                    <Icon name="line-md:person" class="hidden md:block"></Icon>
                                     <input type="text"
                                            class="grow bg-transparent"
                                            placeholder="Your Name"
                                            name="name"
                                            v-model="name" />
-                                    <span v-if="name === ''" class="badge badge-warning">Required</span>
+                                    <span v-if="name === ''"
+                                          class="badge badge-warning text-base sm:text-sm p-2 sm:p-1 -ml-4">Required</span>
                                 </label>
 
 
                                 <label class="input input-bordered flex items-center gap-2">
-                                    <Icon name="line-md:email-twotone"></Icon>
+                                    <Icon name="line-md:email-twotone" class="hidden md:block"></Icon>
+
                                     <input type="text"
                                            class="grow bg-transparent"
                                            placeholder="Your Email"
                                            name="email"
                                            v-model="email" />
-                                    <span v-if="email === ''" class="badge badge-warning">Required</span>
-                                    <span v-if="invalidEmail" class="badge badge-error">Invalid Email</span>
-
+                                    <span v-if="email === ''"
+                                          class="badge badge-warning text-base sm:text-sm p-2 sm:p-1 -ml-4">Required
+                                    </span>
+                                    <span v-if="invalidEmail"
+                                          class="badge badge-error text-base sm:text-sm p-2 sm:p-1 -ml-4">Invalid
+                                    </span>
                                 </label>
 
                                 <label class="form-control">

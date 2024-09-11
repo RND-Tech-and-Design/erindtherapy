@@ -13,8 +13,6 @@ if (error.value) {
 
 const posts = bpost.value as Post[];
 
-// Function to extract text content that is not within anchor tags
-
 
 // Function to get the featured image URL or a placeholder
 function getFeaturedImage(post: Post) {

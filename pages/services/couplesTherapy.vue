@@ -8,16 +8,11 @@ definePageMeta({
     lasting emotional connection, effective communication, and conflict resolution with a Level 3 Gottman-certified therapist.`
 })
 
-
-
 const pageStyle = {
     sectionMargins: 'py-32 mx-5 xl:mx-auto  xl:max-w-screen-lg 2xl:max-w-screen-xl',
     generalBgColor: "bg-complementary_neutral bg-opacity-10",
     bulletListSpacing: "my-6"
 }
-
-
-
 
 const section3Props: SectionContent = {
     title: 'Conflict gets in the way of life',
@@ -26,7 +21,6 @@ const section3Props: SectionContent = {
 
     backgroundImage: '/images/banner/couple-banner2.webp'
 }
-
 
 const section5Props: SectionContent = {
     title: 'Your relationship deserves happiness and meaning',
@@ -65,8 +59,6 @@ const pageData = {
             ],
         }
     },
-
-
     section2: {
         props:
         {

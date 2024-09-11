@@ -17,6 +17,13 @@ watch(route, async () => {
     navigationLinks.value = await generateNavigation();
 }, { immediate: true });
 
+function closeSidebar() {
+    const mainDrawer = document.getElementById('main-drawer');
+    if (mainDrawer) {
+        mainDrawer.click();
+    }
+}
+
 </script>
 
 <template>
@@ -37,13 +44,15 @@ watch(route, async () => {
             <label for="main-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
 
             <ul class="menu p-4 w-80 min-h-full backdrop-blur-md bg-opacity-50 text-text_secondary">
-                <div class=" mt-5 mb-5 h-20 w-20 flex justify-center items-center self-center">
-                    <img src="/images/logos/icon.svg" alt="ErinDTherapy" width="128px" height="128px" class="h-20 w-20" />
+                <div class="mr-12 mt-5 mb-5 h-20 w-20 flex justify-center items-center self-center">
+                    <img src="/images/logos/icon.svg" alt="ErinDTherapy" width="128px" height="128px"
+                         class="h-20 w-20" />
                 </div>
                 <template v-for="link in navigationLinks" :key="link.path">
                     <li v-if="!link.children || link.children?.length === 0">
                         <NuxtLink :to="link.path"
-                                  :class="`text-text_secondary focus:text-text_secondary 
+                                  @click="closeSidebar"
+                                  :class="`text-text_secondary focus:text-text_secondary
                                   ${link.active ? 'ease-in duration-100 bg-gray-400/50 text-text_secondary' : ''}`">
                             {{ link.name }}
                         </NuxtLink>

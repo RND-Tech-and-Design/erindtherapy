@@ -1,25 +1,45 @@
 <script setup lang="ts">
-import { useRoute, useFetch } from 'nuxt/app';
 import { ref, computed } from 'vue';
+import { useRoute } from 'nuxt/app';
 import { transformLinks } from '~/helpers/util';
 import type { Post } from '~/types/post';
 
 const route = useRoute();
-const { data: bposts, status, error } = await useFetch(`https://www.erindtherapy.com/wp-json/wp/v2/posts?slug=${route.params.slug}`);
-const posts = computed(() => bposts.value as Post[] || []);
-const post = computed(() => posts.value[0] || null);
-const featuredImageUrl = computed(() => post.value?.jetpack_featured_media_url || '');
-const authorName = ref('Erin Dierickx'); // Assuming the author is the same for all posts or fetch it if needed
 
+// Ref for the author name
+const authorName = ref('Erin Dierickx');
+
+// Reactive state for loading post data
+const post = ref<Post | null>(null);
+
+// Function to load the JSON file dynamically based on the slug
+async function loadPost() {
+    try {
+        // Construct the dynamic path based on the slug
+        const slug = route.params.slug;
+        const data = await import(`~/json/blog/${slug}.json`);
+        post.value = data.default;
+    } catch (error) {
+        console.error(`Error loading post for slug: ${route.params.slug}`, error);
+    }
+}
+
+// Load the post data on component mount
+await loadPost();
+
+// Computed property to get the featured image or a placeholder
+const featuredImageUrl = computed(() => post.value?.jetpack_featured_media_url || '');
 </script>
 
 <template>
-    <div v-if="!error" class="container mx-auto p-4">
-   
-        <div v-if="status === 'pending'" class="text-center">
+    <div v-if="!post" class="container mx-auto p-4">
+        <div class="text-center">
             Loading...
         </div>
-        <article v-else v-if="post" class="prose lg:prose-xl mx-auto mt-8">
+    </div>
+
+    <div v-else class="container mx-auto p-4">
+        <article class="prose lg:prose-xl mx-auto mt-8">
             <!-- Featured Image -->
             <img :src="featuredImageUrl" :alt="post.title?.rendered"
                  class="w-full h-auto mb-6 rounded-lg shadow-lg mt-12" />
@@ -36,5 +56,6 @@ const authorName = ref('Erin Dierickx'); // Assuming the author is the same for 
             <div v-html="transformLinks(post.content?.rendered ?? '')" class="prose"></div>
         </article>
     </div>
+
     <Cta />
 </template>
