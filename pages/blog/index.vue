@@ -2,8 +2,13 @@
 import { extractTextWithoutAnchors } from '~/helpers/util';
 import type { Post } from '~/types/post';
 import rawPosts from '~/assets/json/posts.json';
+import { useRoute } from 'vue-router';
 
 const posts = rawPosts as Post[];
+//get optional url parameter for category
+const $route = useRoute();
+const category = $route.query.category;
+
 
 // Function to get the featured image URL or a placeholder
 function getFeaturedImage(post: Post) {

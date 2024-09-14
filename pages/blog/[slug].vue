@@ -1,56 +1,51 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { useRoute, useFetch } from 'nuxt/app';
-import { transformLinks } from '~/helpers/util';
-import type { Post } from '~/types/post';
+import { useRoute } from 'vue-router'
 
-const route = useRoute();
-const config = useRuntimeConfig(); 
-const authorName = ref('Erin Dierickx'); // Default author name
-
-// Fetch the post data from the server or client using useAsyncData
-const { data: post, pending: isLoading, error: hasError } = useFetch<Post>(`${config.public.siteBaseUrl}/blogposts/${route.params.slug}.json`);
-
-
-let bpost: Post = {} as Post; 
-
-// Watch for changes to the post data and update the author name
-watch(post, () => {
-    if (post.value) {
-        bpost = post.value as Post;
-    }
-}, { immediate: true });
-// Computed property for the featured image URL or a placeholder
-const featuredImageUrl = computed(() => bpost?.jetpack_featured_media_url || '');
-
+// Get the route parameters
+const route = useRoute()
+const { slug } = route.params
 </script>
+
 <template>
-    <div v-if="isLoading" class="container mx-auto p-4">
-        <div class="text-center">Loading...</div>
-    </div>
+    <main>
+        <ContentDoc>
+            <template v-slot="{ doc }">
+                    <Hero
+                          :hero-image="doc.heroImage"
+                          :enableOverlay="false">
 
-    <div v-else-if="hasError" class="container mx-auto p-4">
-        <div class="text-center text-red-500">Error loading post.
-            {{ hasError.message }}
-        </div>
-    </div>
+                        <div class="px-12 py-12 text-white bg-black bg-opacity-60 ">
+                            <h1 class="text-4xl font-bold">
+                                {{ doc.title }}
+                            </h1>
+                            <div class="flex items-center mt-4">
+                                <p class="text-sm">
+                                    {{ doc.author }} |
+                                    <span v-for="(category, index) in doc.categories" :key="index">
+                                        <NuxtLink
+                                                  :to="`/blog/?${category}`"
+                                                  class="hover: underline">
+                                             {{ category }}
+                                        </NuxtLink>
+                                        <span v-if="index < doc.categories.length - 1" class="mx-1">/</span>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </Hero>
 
-    <div v-else class="container mx-auto p-4">
-        <article class="prose lg:prose-xl mx-auto mt-8">
-            <!-- Featured Image -->
-            <img :src="featuredImageUrl" :alt="post?.title?.rendered"
-                 class="w-full h-auto mb-6 rounded-lg shadow-lg mt-12" />
+                    <div class="container mx-auto p-4">
+                        <article class="prose lg:prose-xl mx-auto mt-8">
+                            <ContentRenderer :value="doc" />
+                        </article>
+                    </div>
 
-            <!-- Post Title -->
-            <h1 class="text-4xl font-bold mb-4">{{ post?.title?.rendered }}</h1>
-
-            <!-- Post Meta -->
-            <div class="text-gray-600 text-sm mb-8">
-                <span>By {{ authorName }}</span>
-            </div>
-
-            <!-- Post Content -->
-            <div v-html="transformLinks(post?.content?.rendered ?? '')" class="prose"></div>
-        </article>
-    </div>
+            </template>
+            <template #not-found>
+                <h1>Document not found</h1>
+            </template>
+        </ContentDoc>
+    </main>
+    <cta></cta>
 </template>
+<!-- featured image from content markdown -->

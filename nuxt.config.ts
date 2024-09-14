@@ -45,7 +45,6 @@ export default defineNuxtConfig({
             autoprefixer: {},
         },
     },
-
     gtag: {
         id: 'G-XXXXXXXXXX' //! TODO  - add tag when production deployed
     },
