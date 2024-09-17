@@ -1,11 +1,3 @@
-<script setup lang="ts">
-import { useRoute } from 'vue-router'
-
-// Get the route parameters
-const route = useRoute()
-const { slug } = route.params
-</script>
-
 <template>
     <main>
         <ContentDoc>
