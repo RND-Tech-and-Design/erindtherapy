@@ -4,6 +4,12 @@ date: "2022-08-25"
 slug: "emotions-as-messengers"
 description: "Emotions promote connection with others, help us survive, and even lengthen our lifespans."
 author: "Erin Dierickx"
+categories:
+  - Resource
+  - Individual Therapy
+tags:
+  - Resource
+  - Individual Therapy
 heroImage: "/images/blog/emotions-as-messengers.webp"
 ---
 

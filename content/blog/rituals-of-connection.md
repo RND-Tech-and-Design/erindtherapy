@@ -7,7 +7,6 @@ author: "Erin Dierickx"
 categories:
   - Couples Therapy
   - Resource
-tags: []
 heroImage: "/images/blog/rituals-of-connection.webp"
 ---
 

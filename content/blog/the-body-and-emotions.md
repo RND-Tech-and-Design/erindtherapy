@@ -5,6 +5,9 @@ slug: "the-body-and-emotions"
 description: "Emotions are often held within our bodies, so the body is a great place to start in order to tap into our emotions and help us self-regulate."
 author: "Erin Dierickx"
 heroImage: "/images/blog/the-body-and-emotions.webp"
+categories:
+  - Resource
+  - Individual Therapy
 ---
 
 Emotions are often held within our bodies. So the body is a great place to start in order to tap into our emotions and help us self-regulate. Have you ever had the hairs on the back of your neck stand up? Or had goosebumps? Or maybe your stomach turns at a certain smell. These are just a few examples of the ways our bodies communicate needs before our minds even know them.

@@ -15,7 +15,7 @@ tags:
   - conflict
   - counseling
   - couples
-  - couples therapy
+  - Couples Therapy
 excerpt: "It is common for cycles of conflict to emerge in relationships. These patterns can show up around certain topics like money, sex, or parenting."
 ---
 

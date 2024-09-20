@@ -1,5 +1,5 @@
 ---
-title: "What is Couples Therapy?"
+title: "What is Couples-Therapy?"
 date: 2023-05-22T20:22:13Z
 slug: "what-is-couples-therapy"
 description: "Couples therapy helps build safety to name emotions, express needs, and understand what is happening for each partner during interactions."

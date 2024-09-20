@@ -7,6 +7,7 @@ author: "Erin Dierickx"
 heroImage: "/images/blog/how-to-handle-daily-doses-of-stress.webp"
 categories:
   - Resource
+  - Individual Therapy
 tags:
   - Stress
 ---

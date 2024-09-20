@@ -5,6 +5,9 @@ slug: "feeling-flooded"
 description: "Flooding is a physiological response, often related to conflict. It is emotionally overwhelming and makes listening to our partner difficult."
 author: "Erin Dierickx"
 heroImage: "/images/blog/feeling-flooded.webp"
+categories:
+  - Resource
+  - Individual Therapy
 ---
 
 ## What is flooding?

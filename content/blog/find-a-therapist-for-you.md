@@ -9,6 +9,8 @@ categories:
   - Couples Therapy
   - Family Therapy
   - Resource
+  - Counseling
+  - Individual Therapy
 tags:
   - Counseling
   - Individual Therapy

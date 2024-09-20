@@ -10,7 +10,7 @@ export const defaultDescription = `Expert Couples Therapy, Depression, Anxiety, 
 focusing on improving relationships and personal well-being, Seattle, Washington, ${therapyTitle} - Gottman Trained Level 3`;
 
 const keywords: string[] = [
-    'couples therapy',
+    'Couples-Therapy',
     'marriage counseling',
     'marathon therapy',
     'depression therapy',
