@@ -67,7 +67,7 @@ export default defineNuxtConfig({
         },
     },
     gtag: {
-        id: 'G-XXXXXXXXXX' //! TODO  - add tag when production deployed
+        id: 'GTM-56JT43X' //! TODO  - add tag when production deployed
     },
 
     compatibilityDate: '2024-08-24',
