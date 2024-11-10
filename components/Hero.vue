@@ -1,31 +1,22 @@
-
-
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps({
-    headline: {
-        type: String,
-        required: false,
-    },
+    headline: String,
     description: {
         type: String,
-        required: false,
         default: '',
     },
     enableOverlay: {
         type: Boolean,
-        required: false,
         default: true,
     },
     overlayClass: {
         type: String,
-        required: false,
         default: '',
     },
     heroHeight: {
         type: Number,
-        required: false,
         default: 0,
     },
     heroImage: {
@@ -35,20 +26,25 @@ const props = defineProps({
     },
 });
 
-const forceHeroHeight = props.heroHeight > 0
-    ? ref<string>(`min-h-[${props.heroHeight}vh]`)
-    : ref<string>('min-h-screen-50');
+const minHeightStyle = computed(() => ({
+    minHeight: `${props.heroHeight > 0 ? props.heroHeight : 50}vh`,
+}));
 
-const hasDescription = ref<boolean>(!!props.description);
-
+const hasDescription = computed(() => !!props.description);
 </script>
 
 <template>
-    <div :class="`hero bg-cover bg-center bg-no-repeat ${forceHeroHeight}`"
-         :style="{ backgroundImage: `url(${heroImage})` }">
-        <div v-if="enableOverlay" :class="`hero-overlay ${overlayClass} bg-opacity-60`"></div>
-        <div class="hero-content text-center text-neutral-content pt-12 ">
-            <div class="max-w-sm md:max-w-none ">
+    <div
+         class="hero bg-cover bg-center bg-no-repeat"
+         :style="{
+            backgroundImage: `url(${heroImage})`,
+            ...minHeightStyle,
+        }">
+        <div
+             v-if="enableOverlay"
+             :class="`hero-overlay ${overlayClass} bg-opacity-60`"></div>
+        <div class="hero-content text-center text-neutral-content pt-12">
+            <div class="max-w-sm md:max-w-none">
                 <h1 class="text-5xl font-bold text-white">
                     {{ headline }}
                 </h1>
@@ -62,7 +58,5 @@ const hasDescription = ref<boolean>(!!props.description);
 </template>
 
 <style lang="scss" scoped>
-.min-h-screen-50 {
-    min-height: 50vh;
-}
+
 </style>

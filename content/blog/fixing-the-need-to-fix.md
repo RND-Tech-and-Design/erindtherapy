@@ -10,6 +10,11 @@ tags:
   - Listening
 heroImage: "/images/blog/fixing-the-need-to-fix.webp"
 slug: "fixing-the-need-to-fix"
+sitemap:
+  loc: /blog/fixing-the-need-to-fix
+  lastmod: 2021-09-07
+  changefreq: yearly
+  priority: 0.8
 ---
 
 

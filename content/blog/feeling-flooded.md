@@ -8,6 +8,12 @@ heroImage: "/images/blog/feeling-flooded.webp"
 categories:
   - Resource
   - Individual Therapy
+sitemap:
+  loc: /blog/feeling-flooded
+  lastmod: 2022-07-21
+  changefreq: yearly
+  priority: 0.8
+  
 ---
 
 ## What is flooding?

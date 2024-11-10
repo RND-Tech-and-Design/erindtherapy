@@ -10,6 +10,11 @@ categories:
   - Individual Therapy
 tags:
   - Stress
+sitemap:
+  loc: /blog/how-to-handle-daily-doses-of-stress
+  lastmod: 2023-02-17
+  changefreq: yearly
+  priority: 0.8
 ---
 
 ## **Everyday Frustrations**

@@ -8,6 +8,11 @@ heroImage: "/images/blog/the-ways-we-love.webp"
 categories:
   - Couples Therapy
   - Resource
+sitemap:
+  loc: /blog/the-ways-we-love
+  lastmod: 2022-09-22
+  changefreq: yearly
+  priority: 0.8
 ---
 
 ## **What are love languages?**

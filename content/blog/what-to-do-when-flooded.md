@@ -5,6 +5,11 @@ slug: "what-to-do-when-flooded"
 description: "Steps to manage emotional flooding during conflict with your partner."
 author: "Erin Dierickx"
 heroImage: "/images/blog/what-to-do-when-flooded.webp"
+sitemap:
+  loc: /blog/what-to-do-when-flooded
+  lastmod: 2022-07-27
+  changefreq: yearly
+  priority: 0.8
 ---
 
 It is not uncommon to become [emotionally flooded](https://www.erindtherapy.com/2022/07/21/feeling-flooded/) during conflict with a partner. Without steps to respond to it, emotional injuries can occur. Developing a ritual with your partner around flooding can provide a reliable way to navigate these challenging moments.

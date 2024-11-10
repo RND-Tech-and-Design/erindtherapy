@@ -11,6 +11,11 @@ tags:
   - Therapy
 heroImage: "/images/blog/when-is-it-time-for-therapy.webp"
 slug: "when-is-it-time-for-therapy"
+sitemap:
+  loc: /blog/when-is-it-time-for-therapy
+  lastmod: 2021-07-15
+  changefreq: yearly
+  priority: 0.8
 ---
 
 The short answer: **anytime**. It is never too soon, never too late, and never not okay to attend therapy. But it can be hard to figure out when to prioritize the time, energy, and resources for it. Whether it's daunting to find a therapist or you’re unsure if it’s the right time, this post will help you decide if therapy might be a good option for you.

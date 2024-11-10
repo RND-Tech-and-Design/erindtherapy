@@ -10,6 +10,11 @@ tags:
   - Trauma
 heroImage: "/images/blog/can-trauma-be-cured.webp"
 slug: "can-trauma-be-cured"
+sitemap:
+  loc: /blog/can-trauma-be-cured
+  lastmod: 2021-08-01
+  changefreq: yearly
+  priority: 0.8
 ---
 
 

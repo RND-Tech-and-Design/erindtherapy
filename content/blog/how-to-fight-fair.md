@@ -13,6 +13,11 @@ tags:
   - Gottman
   - Relationships
 heroImage: "/images/blog/how-to-fight-fair.webp"
+sitemap:
+  loc: /blog/how-to-fight-fair
+  lastmod: 2021-09-10
+  changefreq: yearly
+  priority: 0.8
 ---
 
 One of the most common questions in couples therapy is: **How do we [fight fair](https://amzn.to/40A22ZW)?** Below are some frequently asked questions and practical advice on how to approach conflict, reduce emotional harm, and foster deeper connections.

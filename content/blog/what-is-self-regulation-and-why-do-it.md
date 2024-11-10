@@ -13,6 +13,11 @@ tags:
   - Yoga
 heroImage: "/images/blog/what-is-self-regulation-and-why-do-it.webp"
 slug: "what-is-self-regulation-and-why-do-it"
+sitemap:
+  loc: /blog/what-is-self-regulation-and-why-do-it
+  lastmod: 2021-07-26
+  changefreq: yearly
+  priority: 0.8
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 title: "Break the Cycle of Conflict"
-date: 2023-07-13T11:25:54
+date: 2023-07-13
 modified: 2023-07-13T11:25:55
 slug: "break-the-cycle-of-conflict"
 status: "publish"
@@ -17,6 +17,11 @@ tags:
   - couples
   - Couples Therapy
 excerpt: "It is common for cycles of conflict to emerge in relationships. These patterns can show up around certain topics like money, sex, or parenting."
+sitemap:
+  loc: /blog/break-the-cycle-of-conflict
+  lastmod: 2023-07-13
+  changefreq: yearly
+  priority: 0.8
 ---
 
 

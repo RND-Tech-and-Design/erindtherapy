@@ -10,6 +10,11 @@ tags:
   - Gottman
 heroImage: "/images/blog/how-humor-helps-with-conflict.webp"
 slug: "how-humor-helps-with-conflict"
+sitemap:
+  loc: /blog/how-humor-helps-with-conflict
+  lastmod: 2021-09-10
+  changefreq: yearly
+  priority: 0.8
 ---
 
 

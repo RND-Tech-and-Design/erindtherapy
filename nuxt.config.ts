@@ -19,6 +19,24 @@ export default defineNuxtConfig({
         url: 'https://erindtherapy.com',
     },
 
+    sitemap: {
+        strictNuxtContentPaths: true,
+        sitemaps: {
+            pages: {
+                // extend the nuxt:pages app source
+                includeAppSources: true,
+                // filter the URLs to only include pages
+                exclude: ['/blog/**'],
+            },
+            posts: {
+                // extend the nuxt:pages app source
+                includeAppSources: true,
+                // filter the URLs to only include pages
+                include: ['/blog/**'],
+            },
+        },
+    },
+
     build: {
         transpile: ["rxjs"],
     },
@@ -30,9 +48,10 @@ export default defineNuxtConfig({
     css: ['~/assets/css/main.scss'],
 
     modules: [
-        'nuxt-simple-sitemap', // https://nuxt.com/modules/simple-sitemap
-        'nuxt-icon', // https://nuxt.com/modules/icon https://icones.js.org/
-        'nuxt-simple-robots', // https://nuxtseo.com/robots/getting-started/installation //! TODO preview set NUXT_SITE_ENV=production when deployed
+        'nuxt-og-image',
+        '@nuxt/icon', // https://nuxt.com/modules/icon https://icones.js.org/
+        '@nuxtjs/sitemap', 
+        '@nuxtjs/robots',
         'nuxt-gtag', //https://nuxt.com/modules/gtag
         "nuxt-lodash",
         '@nuxt/image',

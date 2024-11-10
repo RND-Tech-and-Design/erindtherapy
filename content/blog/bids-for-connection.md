@@ -12,6 +12,11 @@ tags:
 featuredImage: "https://i0.wp.com/www.erindtherapy.com/wp-content/uploads/2022/02/Reach.png?fit=2240%2C1260&ssl=1"
 slug: "bids-for-connection"
 heroImage: "/images/blog/bids-for-connection.webp"
+sitemap:
+  loc: /blog/bids-for-connection
+  lastmod: 2022-03-04
+  changefreq: yearly
+  priority: 0.8
 ---
 
 # Bids for Connection

@@ -113,7 +113,11 @@ export const useNavigation = () => {
             }));
         }
 
-        const pages = groupPages(router.getRoutes(), router.currentRoute.value?.path);
+        const filteredRoutes = router.getRoutes().filter(route =>
+            !route.path.includes('/sitemap') &&
+            (typeof route.name === 'string' && !route.name.includes('sitemap'))
+        );
+        const pages = groupPages(filteredRoutes, router.currentRoute.value?.path);
 
         // Sort pages and their children if any
         pages.forEach(page => {

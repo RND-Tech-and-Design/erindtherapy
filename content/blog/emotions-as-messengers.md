@@ -11,6 +11,11 @@ tags:
   - Resource
   - Individual Therapy
 heroImage: "/images/blog/emotions-as-messengers.webp"
+sitemap:
+  loc: /blog/emotions-as-messengers
+  lastmod: 2022-08-25
+  changefreq: yearly
+  priority: 0.8
 ---
 
 ## What are emotions?

@@ -1,6 +1,6 @@
 ---
 title: "What is Couples-Therapy?"
-date: 2023-05-22T20:22:13Z
+date: 2023-05-22
 slug: "what-is-couples-therapy"
 description: "Couples therapy helps build safety to name emotions, express needs, and understand what is happening for each partner during interactions."
 author: "Erin Dierickx"
@@ -13,6 +13,11 @@ tags:
   - Gottman
   - Relationship
 heroImage: "/images/blog/what-is-couples-therapy.webp"
+sitemap:
+  loc: /blog/what-is-couples-therapy
+  lastmod: 2023-05-22
+  changefreq: yearly
+  priority: 0.8
 
 ---
 

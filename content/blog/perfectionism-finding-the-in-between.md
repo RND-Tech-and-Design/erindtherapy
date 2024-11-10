@@ -10,6 +10,11 @@ tags:
   - Perfectionism
 heroImage: "/images/blog/perfectionism-finding-the-in-between.webp"
 slug: "perfectionism-finding-the-in-between"
+sitemap:
+  loc: /blog/perfectionism-finding-the-in-between
+  lastmod: 2022-01-11
+  changefreq: yearly
+  priority: 0.8
 ---
 
 

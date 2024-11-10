@@ -11,6 +11,11 @@ tags:
   - Play
 heroImage: "https://www.erindtherapy.com/wp-content/uploads/2021/04/play_therapy-scaled.jpg"
 slug: "a-little-play-goes-a-long-way"
+sitemap:
+  loc: /blog/a-little-play-goes-a-long-way
+  lastmod: 2021-07-12
+  changefreq: yearly
+  priority: 0.8
 ---
 
 ## What is Play?

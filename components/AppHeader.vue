@@ -65,12 +65,8 @@ defineProps({
                 </ul>
 
                 <!-- Logo -->
-                <a href="/"
-                   class="absolute overflow-visible -top-4 md:top-6 ">
-                    <img src="/images/logos/icon.svg"
-                         alt="Logo"
-                         height="112px"
-                         width="112px" />
+                <a href="/" class="absolute overflow-visible -top-4 md:top-6 ">
+                    <img src="/images/logos/icon.svg" alt="Logo" height="112px" width="112px" />
                 </a>
             </div>
 

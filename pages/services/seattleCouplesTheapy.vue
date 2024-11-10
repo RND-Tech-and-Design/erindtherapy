@@ -9,10 +9,5 @@ definePageMeta({
 </script>
 
 <template>
-    <Hero headline="Seattle Couples Therapy" hero-image="/images/banner/about.webp" />
-
-    <section>
-        <p>This page will be displayed at the /services/couplesTherapy route.</p>
-        It is hidden from the nav
-    </section>
+    <CouplesTherapyCopy pageTitle="Seattle Couples Therapy"> </CouplesTherapyCopy>
 </template>

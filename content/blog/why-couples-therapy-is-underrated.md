@@ -13,6 +13,11 @@ tags:
   - Couples
 heroImage: "/images/blog/why-couples-therapy-is-underrated.webp"
 slug: "why-couples-therapy-is-underrated"
+sitemap:
+  loc: /blog/why-couples-therapy-is-underrated
+  lastmod: 2021-07-28
+  changefreq: yearly
+  priority: 0.8
 ---
 
 ## Recharge the Relationship

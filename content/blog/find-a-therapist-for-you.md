@@ -14,6 +14,11 @@ categories:
 tags:
   - Counseling
   - Individual Therapy
+sitemap:
+  loc: /blog/find-a-therapist-for-you
+  lastmod: 2022-10-24
+  changefreq: yearly
+  priority: 0.8
 ---
 
 So, you’ve decided to [start therapy](https://www.erindtherapy.com/2021/07/15/when-is-it-time-for-therapy/). The next step is finding a therapist who connects with you, understands your experiences, and meets your needs. Much like choosing a physician, dentist, or teacher, you have the **right** to select who you trust with your story. Below are some things to consider as you navigate how to [find the right therapist for you](https://www.erindtherapy.com/contact).

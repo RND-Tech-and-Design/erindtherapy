@@ -5,7 +5,7 @@
                 <Hero
                       :hero-image="doc.heroImage"
                       :enableOverlay="true"
-                      :heroHeight="65">
+                      :heroHeight="60">
 
                     <div class="px-12 py-12 text-white bg-black bg-opacity-60 ">
                         <h1 class="text-4xl font-bold">

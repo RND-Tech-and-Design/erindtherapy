@@ -1,6 +1,6 @@
 ---
 title: "Rituals of Connection"
-date: 2023-04-18T16:41:26Z
+date: 2023-04-18
 slug: "rituals-of-connection"
 description: "Rituals of connection are consistent ways to turn towards your partner, building intimacy and trust through everyday actions."
 author: "Erin Dierickx"
@@ -8,6 +8,11 @@ categories:
   - Couples Therapy
   - Resource
 heroImage: "/images/blog/rituals-of-connection.webp"
+sitemap:
+  loc: /blog/rituals-of-connection
+  lastmod: 2023-04-18
+  changefreq: yearly
+  priority: 0.8
 ---
 
 Rituals of connection are ways you and your partner can intentionally turn towards one another to consistently build intimacy. These reliable, often small moments range from informal daily interactions—like saying goodbye before work—to more formal celebrations like holidays or birthdays.

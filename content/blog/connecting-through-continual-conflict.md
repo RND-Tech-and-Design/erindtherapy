@@ -9,6 +9,11 @@ tags:
   - Couples Therapy
 heroImage: "/images/blog/connecting-through-continual-conflict.webp"
 slug: "connecting-through-continual-conflict"
+sitemap:
+  loc: /blog/connecting-through-continual-conflict
+  lastmod: 2021-09-16
+  changefreq: yearly
+  priority: 0.8
 ---
 
 
