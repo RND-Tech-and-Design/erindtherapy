@@ -17,6 +17,7 @@ export default defineNuxtConfig({
 
     site: {
         url: 'https://erindtherapy.com',
+        indexable: true,
     },
 
     sitemap: {
@@ -49,6 +50,7 @@ export default defineNuxtConfig({
 
     modules: [
         'nuxt-og-image',
+        'nuxt-schema-org',
         '@nuxt/icon', // https://nuxt.com/modules/icon https://icones.js.org/
         '@nuxtjs/sitemap', 
         '@nuxtjs/robots',
