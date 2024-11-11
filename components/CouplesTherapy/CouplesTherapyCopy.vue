@@ -89,7 +89,7 @@ const pageData = {
                 text: "Despite therapy having a reputation for talking about our problems, I believe therapy is equally a space to celebrate the strengths of your relationship and to have fun!  I help couples not just manage conflict, but also connect through it."
             },
             {
-                text: "I have completed Levels 1 and 2 of the Gottman Method training and incorporate these research-based interventions into our work to provide positive and efficient support."
+                text: "I have completed all 3 Levels of the Gottman Method training and incorporate these research-based interventions into our work to provide positive and efficient support."
             }]
 
         },

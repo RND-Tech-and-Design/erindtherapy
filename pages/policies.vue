@@ -35,10 +35,6 @@ const faqs = [
         answer: 'I do not accept insurance. However, I can provide a superbill, or proof of services at no cost for you to receive reimbursement from your insurance company if that is included in your plan. It is encouraged to double-check with your insurance company to ensure your benefits. Check out the Rates and Insurance page for specific questions to ask your insurance company about this option.'
     },
     {
-        question: 'How can I qualify for sliding scale spots?',
-        answer: 'I have a limited number of sliding scale spots. These spots are determined by financial need. The sliding scale price is $75 per session. When contacting me, please specify that you are interested.'
-    },
-    {
         question: 'Do we have to talk the whole session?',
         answer: 'Absolutely not! Sometimes it is great to try other methods of communicating. I find my clients’ talents inspiring and invite them to share their strengths in therapy. Are you a musician? Feel free to bring your instrument into the session! Are you a poet? The spoken (or written) word is always welcome per your comfortability. Are you taking up baking? Oh, how I wish I could try your delectable treats, but telehealth does offer a challenge with that one. You’re still welcome to show me your beautiful baked goods and describe the smells and tastes in great detail!'
     }

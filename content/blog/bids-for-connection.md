@@ -9,7 +9,6 @@ categories:
 tags:
   - Couples Therapy
   - Therapy
-featuredImage: "https://i0.wp.com/www.erindtherapy.com/wp-content/uploads/2022/02/Reach.png?fit=2240%2C1260&ssl=1"
 slug: "bids-for-connection"
 heroImage: "/images/blog/bids-for-connection.webp"
 sitemap:

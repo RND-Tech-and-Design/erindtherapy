@@ -25,7 +25,7 @@ const priceCards: PriceCard[] = [
     {
         id: 2,
         title: '50 minute Session',
-        price: '$175',
+        price: '$190',
         duration: '50 minutes',
         items: ['Individualized services', 'Explore coping skills', 'Gain tools and resources', 'Share your story'],
         bgClass: 'bg-secondary bg-opacity-50',
@@ -35,7 +35,7 @@ const priceCards: PriceCard[] = [
     {
         id: 3,
         title: '90 minute Session',
-        price: '$250',
+        price: '$275',
         duration: '90 minutes',
         items: ['Assess relationship strengths', 'Explore communication skills', 'Learn to manage conflict', 'Gain tools and resources'],
         bgClass: 'bg-accent bg-opacity-50',

@@ -10,8 +10,8 @@ defineProps<{
 </script>
 <template>
     <div class="join join-vertical w-full">
-        <div v-for="( item, index ) in   accordianContent" :key="index" :checked="index === 0"
-            class="collapse collapse-arrow join-item border border-base-300">
+        <div v-for="( item, index ) in accordianContent" :key="index" :checked="index === 0"
+             class="collapse collapse-arrow join-item border border-base-300">
 
             <input type="radio" name="accordian" />
             <div class="collapse-title text-xl font-medium bg-primary text-white checked:bg-accent">
@@ -23,4 +23,3 @@ defineProps<{
         </div>
     </div>
 </template>
-

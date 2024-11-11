@@ -9,7 +9,7 @@ tags:
   - Family
   - Parenting
   - Play
-heroImage: "https://www.erindtherapy.com/wp-content/uploads/2021/04/play_therapy-scaled.jpg"
+heroImage: "/images/blog/a-little-play-goes-a-long-way.webp"
 slug: "a-little-play-goes-a-long-way"
 sitemap:
   loc: /blog/a-little-play-goes-a-long-way

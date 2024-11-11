@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import { ref, onMounted, onUnmounted } from 'vue';
 import { type NavLink } from '~/composables/navigation';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/solid';
 
@@ -11,19 +11,55 @@ defineProps({
     },
 });
 
+const menuRef = ref<HTMLElement | null>(null);
+
+function handleClickOutside(event: Event) {
+    const menuElement = menuRef.value;
+    if (menuElement && !menuElement.contains(event.target as Node)) {
+        // Close all open <details> elements within the menu
+        const openDetails = menuElement.querySelectorAll('details[open]');
+        openDetails.forEach((detail) => {
+            (detail as HTMLDetailsElement).open = false;
+        });
+    }
+}
+
+function handleKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+        const menuElement = menuRef.value;
+        if (menuElement) {
+            const openDetails = menuElement.querySelectorAll('details[open]');
+            openDetails.forEach((detail) => {
+                (detail as HTMLDetailsElement).open = false;
+            });
+        }
+    }
+}
+
+onMounted(() => {
+    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+});
+
+onUnmounted(() => {
+    document.removeEventListener('click', handleClickOutside);
+    document.removeEventListener('keydown', handleKeyDown);
+});
 </script>
 
 <template>
     <header>
         <nav class="navbar bg-secondary text-neutral-content md:py-6 sm:py-0">
             <div class="navbar-start ">
+                <!-- Optional: Add content here -->
             </div>
             <div class="navbar-center flex-col">
 
                 <!-- Menu -->
-                <ul class="menu menu-horizontal disable-active px-1 hidden -mt-10 md:flex z-10">
+                <ul ref="menuRef" class="menu menu-horizontal disable-active px-1 hidden -mt-10 md:flex z-10">
+                    <!-- Menu Items without Children -->
                     <template v-for="link in navigationLinks" :key="link.path">
-                        <li v-if="!link.children || link.children?.length === 0"
+                        <li v-if="!link.children || link.children.length === 0"
                             :class="`join-item text-text_secondary ${link.active ? 'ease-in duration-100 border-t-[3px]' : 'pt-[3px]'}`"
                             style="color: white !important;">
                             <NuxtLink :to="link.path"
@@ -33,20 +69,22 @@ defineProps({
                             </NuxtLink>
                         </li>
                     </template>
+
+                    <!-- Menu Items with Children -->
                     <template v-for="link in navigationLinks" :key="link.path">
-                        <li v-if="link.children && link.children?.length > 0"
+                        <li v-if="link.children && link.children.length > 0"
                             :class="`${link.active ? 'ease-in duration-100 border-t-[3px]' : 'pt-[3px]'}`"
                             style="color: white !important;">
 
                             <details>
-                                <summary>
+                                <summary class="cursor-pointer select-none">
                                     {{ link.name }}
                                 </summary>
                                 <ul class="p-2 bg-secondary rounded-t-none">
-                                    <template v-for="child in link.children">
+                                    <template v-for="child in link.children" :key="child.path">
                                         <li>
                                             <NuxtLink :to="child.path"
-                                                      class="link whitespace-nowrap  focus:text-text_secondary "
+                                                      class="link whitespace-nowrap focus:text-text_secondary"
                                                       style="color: white !important;">
                                                 <Icon v-if="child.active"
                                                       name="ph:dot-outline-fill"
