@@ -16,8 +16,12 @@ const carouselItemId = getCarouselItemId(props.itemIndex);
     <div :id="carouselItemId" class="carousel-item">
         <div class="card w-64 md:w-96 bg-secondary shadow-xl image-full">
             <figure>
-                <img :src="carouselItem?.image"
-                     :alt="carouselItem?.altText" />
+                <NuxtImg
+                         layout="responsive"
+                         loading="lazy"
+                         placeholder
+                         :src="carouselItem?.image"
+                         :alt="carouselItem?.altText" />
             </figure>
             <div class="card-body">
                 <h2 class="card-title">{{ carouselItem?.title }}</h2>
@@ -35,6 +39,6 @@ const carouselItemId = getCarouselItemId(props.itemIndex);
                 </div>
             </div>
         </div>
-        
+
     </div>
 </template>

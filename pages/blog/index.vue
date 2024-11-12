@@ -89,7 +89,11 @@ function selectCategory(cat: string | null): string {
                               class="block overflow-hidden rounded-lg shadow-lg group">
                         <NuxtPicture
                                      :src="getFeaturedImage(filteredPosts[0])"
+                                     preload
                                      placeholder
+                                     layout="responsive"
+                                     sizes="1200px"
+                                     height="500"
                                      alt="Post Image"
                                      class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
                         <div class="p-4">
@@ -98,7 +102,7 @@ function selectCategory(cat: string | null): string {
                             </h2>
                             <p class="text-gray-600">
                                 {{ extractTextWithoutAnchors(`${filteredPosts[0].excerpt ?? filteredPosts[0].description
-                                ?? ""}`) }}
+                                    ?? ""}`) }}
                             </p>
                         </div>
                     </NuxtLink>

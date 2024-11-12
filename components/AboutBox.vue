@@ -38,8 +38,13 @@ const paragraphs = [
             <div class="relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
                 <div
                      class="relative mx-4 mt-4 h-80 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                    <img class="w-full h-full object-cover" src="/images/content/profile-home.webp"
-                         alt="profile-picture" />
+                    <NuxtImg class="w-full h-full object-cover"
+                             width="500"
+                             layout="responsive"
+                             preload
+                             placeholder
+                             src="/images/content/profile-home.webp"
+                             alt="profile-picture" />
                 </div>
                 <div class="p-6 text-center">
                     <h4
