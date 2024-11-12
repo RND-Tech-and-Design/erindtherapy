@@ -31,16 +31,17 @@ function closeSidebar() {
         <input id="main-drawer" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content">
             <AppHeader :navigationLinks="navigationLinks">
-                <label for="main-drawer" class="drawer-button btn btn-square btn-ghost md:hidden">
+                <label for="main-drawer" class="drawer-button btn btn-square btn-ghost lg:hidden">
                     <Bars3Icon class="h-6 w-6" />
                 </label>
             </AppHeader>
-            <div itemscope itemtype=”https://schema.org/Psychiatric”>
+            <div>
                 <slot />
             </div>
             <AppFooter :navigationLinks="navigationLinks" />
         </div>
         <div class="drawer-side z-50">
+
             <label for="main-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
 
             <ul class="menu p-4 w-80 min-h-full backdrop-blur-md bg-opacity-50 text-text_secondary">
@@ -88,5 +89,10 @@ function closeSidebar() {
 
 .drawer-toggle:checked~.drawer-side {
     display: grid;
+}
+
+html,
+body {
+    overflow-x: hidden;
 }
 </style>

@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 import { useAsyncData } from '#app';
 import { extractTextWithoutAnchors } from '~/helpers/util';
 import type { ParsedContent } from '@nuxt/content';
 
 // Get route and router instances
 const route = useRoute();
-const router = useRouter();
 
 // Fetch posts from the content/blog directory
 const { data: posts } = await useAsyncData('posts', () => queryContent('/blog').find());
@@ -56,7 +55,7 @@ function selectCategory(cat: string | null): string {
         <h1 class="text-4xl font-bold mb-8 text-center mt-8">
             {{ category ? `Posts in ${category}` : "All Blog Posts" }}
         </h1>
-        
+
         <!-- Categories Menu -->
         <div class="mb-8 text-center">
             <NuxtLink
@@ -88,10 +87,11 @@ function selectCategory(cat: string | null): string {
                     <NuxtLink
                               :to="`/blog/${filteredPosts[0].slug}`"
                               class="block overflow-hidden rounded-lg shadow-lg group">
-                        <img
-                             :src="getFeaturedImage(filteredPosts[0])"
-                             alt="Post Image"
-                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <NuxtPicture
+                                     :src="getFeaturedImage(filteredPosts[0])"
+                                     placeholder
+                                     alt="Post Image"
+                                     class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
                         <div class="p-4">
                             <h2 class="text-2xl font-bold mb-2 group-hover:underline">
                                 {{ filteredPosts[0].title }}
@@ -110,10 +110,12 @@ function selectCategory(cat: string | null): string {
                      :key="post._id"
                      class="bg-white overflow-hidden rounded-lg shadow-lg group">
                     <NuxtLink :to="`/blog/${post.slug}`" class="block">
-                        <img
-                             :src="getFeaturedImage(post)"
-                             alt="Post Image"
-                             class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <NuxtImg
+                                 placeholder
+                                 loading="lazy"
+                                 :src="getFeaturedImage(post)"
+                                 sizes="400px"
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
                         <div class="p-4">
                             <h2 class="text-xl font-bold mb-2 group-hover:underline">
                                 {{ post.title }}

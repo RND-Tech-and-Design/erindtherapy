@@ -13,6 +13,28 @@ export function extractTextWithoutAnchors(html:string) {
     return tempDiv.textContent || tempDiv.innerText || '';
 }
 
+export function trimTextToCharacterLengthOrNearestPeriod(text: string, charCount: number = 150): string {
+    // Return the original text if it's shorter than the character limit
+    if (text.length <= charCount) {
+        return text;
+    }
+
+    // Trim the text to the desired length
+    let trimmedText = text.slice(0, charCount);
+
+    // Look for the nearest period within the last 20 characters of the trimmed text
+    const lastPeriodIndex = trimmedText.lastIndexOf('.', charCount);
+
+    // If a period is found, trim up to that period
+    if (lastPeriodIndex !== -1 && lastPeriodIndex >= charCount - 20) {
+        trimmedText = trimmedText.slice(0, lastPeriodIndex + 1);
+    }
+
+    // Return the final trimmed text with ellipsis if it was cut off
+    return trimmedText.trim() + '...';
+}
+
+
 /**
  * Function to transform and clean up content by:
  * - Removing the entire anchor tag for the contact page.

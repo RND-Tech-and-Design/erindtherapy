@@ -64,7 +64,7 @@ const couplesSectionCardContent: SectionContent = {
 
         <SectionCard :content="couplesSectionCardContent" />
 
-        <Carousel :carouselItems="carouselItems"/>
+        <Carousel :carouselItems="carouselItems" />
 
         <SectionCard :content="individualSectionCardContent" />
 

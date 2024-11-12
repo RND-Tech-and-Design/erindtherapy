@@ -146,20 +146,29 @@ definePageMeta({
                                 <div data-netlify-recaptcha="true"></div>
 
                                 <div class="flex justify-end md:w-auto w-full">
-                                    <button type="submit"
+                                    <button
+                                            type="submit"
                                             :disabled="!formIsValid"
-                                            class="btn btn-primary text-text_secondary flex items-center md:w-auto w-full md:text-sm text-base">
-                                        <span>
-                                            <span v-if="formIsValid" class="mr-2 text-lg">
-                                                <Icon name="line-md:confirm-circle"></Icon>
-                                            </span>
-                                            <span v-else class="mr-2 text-lg">
-                                                <Icon name="line-md:alert-circle-loop"></Icon>
-                                            </span>
-                                            Submit
+                                            :aria-disabled="!formIsValid"
+                                            class="btn btn-primary text-text_secondary flex items-center justify-center md:w-auto w-full md:text-sm text-base">
+                                        <!-- Conditional Icon Rendering -->
+                                        <span class="mr-2 flex items-center">
+                                            <Icon
+                                                  v-if="formIsValid"
+                                                  name="line-md:confirm-circle"
+                                                  class="h-5 w-5 flex-shrink-0 relative top-0.5 mb-1"
+                                                  aria-hidden="true" />
+                                            <Icon
+                                                  v-else
+                                                  name="line-md:alert-circle-loop"
+                                                  class="h-5 w-5 flex-shrink-0 relative top-0.5"
+                                                  aria-hidden="true" />
                                         </span>
+                                        <!-- Button Text -->
+                                        <span>Submit</span>
                                     </button>
                                 </div>
+
                             </form>
                         </div>
                         <div v-else class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4" role="alert">
