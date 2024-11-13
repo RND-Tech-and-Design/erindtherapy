@@ -1,10 +1,13 @@
 
 <script setup lang="ts">
-import { populateHeader } from '~/composables/seoMeta';
 
-const route = useRoute();
-onMounted(() => populateHeader(route));
-watchEffect(() => populateHeader(route));
+
+useSchemaOrg([
+    defineWebSite({
+        name: 'ErinDTherapy.com',
+    }),
+    defineWebPage(),
+]);
 
 </script>
 

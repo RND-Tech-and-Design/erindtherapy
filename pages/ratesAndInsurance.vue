@@ -105,7 +105,7 @@ const providerQuestions: string[] = [
 
     <hr class="my-4">
 
-    <section class="max-w-4xl mx-auto p-6 flex flex-col gap-8 items-center md:mt-16 ">
+    <section class="max-w-4xl mx-auto md:p-6 flex flex-col gap-8 items-center md:mt-16 ">
         <InfoCard
                   v-for="(card, index) in paymentCards"
                   :key="index"

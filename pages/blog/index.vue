@@ -101,8 +101,9 @@ function selectCategory(cat: string | null): string {
                                 {{ filteredPosts[0].title }}
                             </h2>
                             <p class="text-gray-600">
-                                {{ extractTextWithoutAnchors(`${filteredPosts[0].excerpt ?? filteredPosts[0].description
-                                    ?? ""}`) }}
+                                {{
+                                extractTextWithoutAnchors(`${filteredPosts[0].excerpt ?? filteredPosts[0].description
+                                ?? ""}`) }}
                             </p>
                         </div>
                     </NuxtLink>
@@ -110,15 +111,16 @@ function selectCategory(cat: string | null): string {
 
                 <!-- Remaining Posts -->
                 <div
-                     v-for="(post, index) in filteredPosts.slice(1)"
+                     v-for="(post, _index) in filteredPosts.slice(1)"
                      :key="post._id"
                      class="bg-white overflow-hidden rounded-lg shadow-lg group">
                     <NuxtLink :to="`/blog/${post.slug}`" class="block">
                         <NuxtImg
                                  placeholder
                                  loading="lazy"
+                                 layout="responsive"
                                  :src="getFeaturedImage(post)"
-                                 sizes="400px"
+                                 sizes="700px"
                                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
                         <div class="p-4">
                             <h2 class="text-xl font-bold mb-2 group-hover:underline">

@@ -2,6 +2,14 @@
 import { resolve } from 'path'
 
 export default defineNuxtConfig({
+    schemaOrg: {
+        identity: {
+            type: 'Organization',
+            name: 'ErinDTherapy',
+            logo: '/logo.png',
+
+        }
+    },
     runtimeConfig: {
         public: {
             siteBaseUrl: process.env.NUXT_PUBLIC_SITE_BASE_URL || '',

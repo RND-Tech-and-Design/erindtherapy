@@ -45,7 +45,7 @@ const faqs = [
     <Hero headline="Policies & FAQs"
           hero-image="/images/banner/policies.webp"
           overlayClass="bg-complementary_secondary" />
-    <section class="max-w-4xl mx-auto p-6 flex flex-col gap-8 items-center md:mt-16 ">
+    <section class="max-w-4xl mx-auto pt-6 md:p-6 flex flex-col gap-8 items-center md:mt-16 ">
         <InfoCard
                   figureBackgroundClass="figure-background-cancel"
                   iconName="line-md:cancel"
@@ -67,7 +67,7 @@ const faqs = [
 
         <hr class="my-4">
 
-        <h2 class="text-4xl font-bold mt-8 mb-8 text-left">Frequently Asked Questions</h2>
+        <h2 class="text-4xl px-3 font-bold mt-8 mb-8 text-center">Frequently Asked Questions</h2>
 
         <div v-for="(faq, index) in faqs" :key="index" class="card w-5/6 bg-soft_off_white shadow-xl">
             <div class="card-body">
@@ -75,8 +75,8 @@ const faqs = [
                 <p class="text-xl">{{ faq.answer }}</p>
 
             </div>
-
         </div>
+        <br />
     </section>
     <Cta></Cta>
 </template>

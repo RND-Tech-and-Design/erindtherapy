@@ -5,7 +5,7 @@ import { ArrowRightIcon } from '@heroicons/vue/24/solid'
 
 <template>
     <section>
-        <div class="hero min-h-screen"
+        <div class="hero min-h-svh"
              style="background-image: url(/images/banner/home.webp);">
             <div class="hero-overlay bg-opacity-60"></div>
             <div class="hero-content text-center text-neutral-content mt-32 ">

@@ -35,7 +35,7 @@ function closeSidebar() {
                     <Bars3Icon class="h-6 w-6" />
                 </label>
             </AppHeader>
-            <div>
+            <div itemscope itemtype="https://schema.org/Psychiatric">
                 <slot />
             </div>
             <AppFooter :navigationLinks="navigationLinks" />
