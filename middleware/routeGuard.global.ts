@@ -4,7 +4,6 @@ export default defineNuxtRouteMiddleware((to) => {
     // Initialize the redirects map once for constant-time lookup
     const redirects = new Map([
 
-
         //PAGES
         ['/services', '/individualTherapy'],
         ['/media', '/about'],
@@ -50,7 +49,7 @@ export default defineNuxtRouteMiddleware((to) => {
     ]);
 
     const redirect =
-        redirects.get(to.path) || redirects.get(to.path + '/');
+        redirects.get(to.path) || redirects.get(to.path.replace('/', '') );
 
     if (redirect) {
         return navigateTo(redirect, { redirectCode: 301 });
