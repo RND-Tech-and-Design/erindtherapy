@@ -14,6 +14,7 @@ export default defineNuxtRouteMiddleware((to) => {
         ['/couples-therapy-seattle', '/services/seattleCouplesTherapy'],
         ['/marathon-therapy', '/services/marathonCouplesTherapy'],
         ['/marathon-couples-therapy-seattle', '/services/seattleMarathonCouplesTherapy'],
+        ['/marathon-couples-therapy-seattle/', '/services/seattleMarathonCouplesTherapy'],
         ['/marathon-couples-therapy-renton', '/services/rentonMarathonCouplesTherapy'], // Confirm this mapping
         ['/therapy-services-seattle', '/services/individualTherapySeattle'],
         ['/therapy-services-bellevue-washington', '/services/individualTherapyBellevue'],
@@ -49,7 +50,7 @@ export default defineNuxtRouteMiddleware((to) => {
     ]);
 
     const redirect =
-        redirects.get(to.path) || redirects.get(to.path.replace('/', '') );
+        redirects.get(to.path) || redirects.get(to.path + '/' );
 
     if (redirect) {
         return navigateTo(redirect, { redirectCode: 301 });
