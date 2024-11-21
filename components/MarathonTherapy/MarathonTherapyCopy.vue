@@ -10,7 +10,7 @@ const props = defineProps<{
 const pageStyle = {
     sectionMargins: 'py-20 md:py-32 mx-5 xl:mx-auto  xl:max-w-screen-lg 2xl:max-w-screen-xl',
     generalBgColor: "bg-complementary_neutral bg-opacity-10",
-    weeklySessions: '<NuxtLink to="/couplestherapy"class="text-accent hover:opacity-80  underline">weekly sessions</NuxtLink>',
+    weeklySessions: '<NuxtLink to="/couplestherapy" class="text-accent hover:opacity-80  underline">weekly sessions</NuxtLink>',
     checkMark: {
         iconName: 'material-symbols:check',
         iconColor: 'text-accent',
@@ -44,7 +44,7 @@ const pageData = {
                     text: `Marathon Couples Therapy is a growing, alternative approach to ${pageStyle.weeklySessions} that involves condensing couples therapy into 1–3 days. This offers you the time needed to address issues and revamp your relationship.`,
                 },
                 {
-                    text: "In this unique and growing therapy approach, you’ll meet with a highly trained therapist for either 1, 2, or 3 consecutive days, depending on your needs.",
+                    text: "In this unique and growing therapy approach, you'll meet with a highly trained therapist for either 1, 2, or 3 consecutive days, depending on your needs.",
                 },
             ]
 
