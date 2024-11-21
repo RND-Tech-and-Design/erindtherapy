@@ -40,31 +40,37 @@ const filteredPosts = computed(() => {
         <div v-if="filteredPosts && filteredPosts.length > 0">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-
                 <!-- Remaining Posts -->
                 <div
                      v-for="(post, _index) in filteredPosts"
                      :key="post._id"
                      class="bg-white overflow-hidden rounded-lg shadow-lg group">
-                    <NuxtLink :to="`/blog/${post.slug}`" class="block">
-                        <NuxtPicture
-                                     placeholder
-                                     loading="lazy"
-                                     :src="getFeaturedImage(post)"
-                                     sizes="400px"
+                    <LazyWrap>
+                        <template #placeholder>
+                            <div class="w-full h-48 bg-gray-200 animate-pulse"></div>
+                            <div class="p-4">
+                                <div class="h-6 bg-gray-300 rounded mb-2"></div>
+                                <div class="h-4 bg-gray-300 rounded"></div>
+                            </div>
+                        </template>
+
+                        <NuxtLink :to="`/blog/${post.slug}`" class="block">
+                            <NuxtImg placeholder loading="lazy" layout="responsive" :src="getFeaturedImage(post)"
+                                     sizes="700px"
                                      class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
-                        <div class="p-4">
-                            <h2 class="text-xl font-bold mb-2 group-hover:underline">
-                                {{ post.title }}
-                            </h2>
-                            <p class="text-gray-600">
-                                {{ trimTextToCharacterLengthOrNearestPeriod(
-                                extractTextWithoutAnchors(`${post.excerpt ?? post.description ?? ""}`)
-                                )
-                                }}
-                            </p>
-                        </div>
-                    </NuxtLink>
+                            <div class="p-4">
+                                <h2 class="text-xl font-bold mb-2 group-hover:underline">
+                                    {{ post.title }}
+                                </h2>
+                                <p class="text-gray-600">
+                                    {{ trimTextToCharacterLengthOrNearestPeriod(
+                                        extractTextWithoutAnchors(`${post.excerpt ?? post.description ?? ""}`)
+                                    )
+                                    }}
+                                </p>
+                            </div>
+                        </NuxtLink>
+                    </LazyWrap>
                 </div>
             </div>
         </div>

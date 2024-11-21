@@ -63,7 +63,7 @@ const couplesSectionCardContent: SectionContent = {
         <AboutBox />
 
         <SectionCard :content="couplesSectionCardContent" />
-
+        
         <Carousel :carouselItems="carouselItems" />
 
         <SectionCard :content="individualSectionCardContent" />

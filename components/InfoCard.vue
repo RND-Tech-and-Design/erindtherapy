@@ -50,4 +50,5 @@ $figure-backgrounds: 'cards', 'hsa', 'insurance', 'cancel';
         filter: blur(4px);
     }
 }
+
 </style>

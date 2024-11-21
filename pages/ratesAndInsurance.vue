@@ -171,34 +171,39 @@ onMounted(() => {
 
     <hr class="my-4">
 
-    <section class="max-w-4xl mx-auto md:p-6 flex flex-col gap-8 items-center md:mt-16 ">
+    <section class="max-w-6xl mx-auto py-16 px-6 flex flex-col gap-12 items-center">
         <InfoCard
                   v-for="(card, index) in paymentCards"
                   :key="index"
                   :figureBackgroundClass="card.figureBackgroundClass"
                   :iconName="card.iconName"
                   :title="card.title"
-                  :description="card.description">
-
+                  :description="card.description"
+                  class="w-full max-w-4xl bg-white shadow-md rounded-lg hover:shadow-lg transition-shadow duration-300">
+                  
+            <!-- Extra Content -->
             <template v-if="card.extraContentTemplates && card.extraContentTemplates.includes('insurance')">
-                <p class="pt-1">
-                    However, depending on your current health
-                    insurance provider, it is possible for services to be covered in full or in part. Please contact
-                    your provider to verify how your plan compensates you for psychotherapy services.
-                </p>
-                <p class="text-xl">
-                    <strong>
+                <div class="bg-gray-50 p-4 mt-4 rounded-md border border-gray-200">
+                    <p class="text-gray-700 leading-relaxed">
+                        However, depending on your current health insurance provider, it is possible for services to be
+                        covered in full or in part. Please contact your provider to verify how your plan compensates you
+                        for psychotherapy services.
+                    </p>
+                    <p class="text-lg font-semibold text-gray-900 mt-4">
                         A reimbursement superbill can be provided for free!
-                    </strong>
-                </p>
+                    </p>
 
-                <button class="mt-2 btn btn-secondary text-white" onclick="provider_questions_modal.showModal()">
-                    Provider Questions
-                    <Icon name="material-symbols:help-center-rounded" color="white" size="2em" />
-                </button>
+                    <button
+                            class="mt-4 px-6 py-2 bg-secondary text-white rounded-lg flex items-center gap-2 hover:bg-secondary-dark transition-colors"
+                            onclick="provider_questions_modal.showModal()">
+                        <Icon name="material-symbols:help-center-rounded" size="1.5em" />
+                        Provider Questions
+                    </button>
+                </div>
             </template>
         </InfoCard>
     </section>
+
 
     <Cta></Cta>
 

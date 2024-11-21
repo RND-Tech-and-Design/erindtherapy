@@ -56,7 +56,7 @@ onUnmounted(() => {
             <div class="navbar-center flex-col">
 
                 <!-- Menu -->
-                <ul ref="menuRef" class="menu menu-horizontal disable-active px-1 hidden -mt-10 lg:flex z-10">
+                <ul ref="menuRef" class="menu menu-horizontal disable-active px-1 hidden -mt-10 lg:flex z-20">
                     <!-- Menu Items without Children -->
                     <template v-for="link in navigationLinks" :key="link.path">
                         <li v-if="!link.children || link.children.length === 0"
@@ -103,13 +103,15 @@ onUnmounted(() => {
                 </ul>
 
                 <!-- Logo -->
-                <a href="/" class="absolute overflow-visible -top-4 lg:top-6 ">
+                <a href="/" class="absolute overflow-visible -top-4 lg:top-6 z-10 ">
                     <img src="/images/logos/icon.svg" alt="Logo" height="112px" width="112px" />
                 </a>
             </div>
 
             <div class="navbar-end ">
                 <NuxtLink to="https://erindtherapy.clientsecure.me/sign-in"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           class="btn btn-primary hidden text-text_secondary lg:flex mr-2 ">
                     <span class="flex items-center ">
                         <span class="mr-2 text-text_secondary">Client Portal</span>

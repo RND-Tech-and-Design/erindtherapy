@@ -42,41 +42,56 @@ const faqs = [
 </script>
 
 <template>
-    <Hero headline="Policies & FAQs"
+    <Hero
+          headline="Policies & FAQs"
           hero-image="/images/banner/policies.webp"
           overlayClass="bg-complementary_secondary" />
-    <section class="max-w-4xl mx-auto pt-6 md:p-6 flex flex-col gap-8 items-center md:mt-16 ">
-        <InfoCard
-                  figureBackgroundClass="figure-background-cancel"
-                  iconName="line-md:cancel"
-                  title="Cancellation Policy"
-                  description="">
 
-            <p>
-                If you are unable to attend a session, please cancel at least <span class="font-extrabold">48
-                    hours</span>
-                beforehand.
-
-                Otherwise, you will be charged for the full rate of the session.
-                <br />
-                <br />
-                Recurring cancellations or no-shows may result in loss of time slot.
-            </p>
-
-        </InfoCard>
-
-        <hr class="my-4">
-
-        <h2 class="text-4xl px-3 font-bold mt-8 mb-8 text-center">Frequently Asked Questions</h2>
-
-        <div v-for="(faq, index) in faqs" :key="index" class="card w-5/6 bg-soft_off_white shadow-xl">
-            <div class="card-body">
-                <h3 class="text-3xl font-semibold">{{ faq.question }}</h3>
-                <p class="text-xl">{{ faq.answer }}</p>
-
+    <!-- Cancellation Policy Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6 md:px-12 max-w-5xl">
+            <div class="mx-auto max-w-4xl flex flex-col items-center">
+                <InfoCard
+                          figureBackgroundClass="figure-background-cancel"
+                          iconName="line-md:cancel"
+                          title="Cancellation Policy"
+                          description="">
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        If you are unable to attend a session, please cancel at least
+                        <span class="font-extrabold">24 hours</span> beforehand.
+                        Otherwise, you will be charged for the full rate of the session.
+                        <br />
+                        <br />
+                        Recurring cancellations or no-shows may result in loss of time slot.
+                    </p>
+                </InfoCard>
             </div>
         </div>
-        <br />
     </section>
-    <Cta></Cta>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 md:px-12 max-w-5xl">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
+                Frequently Asked Questions
+            </h2>
+
+            <div class="grid grid-cols-1 gap-8">
+                <div
+                     v-for="(faq, index) in faqs"
+                     :key="index"
+                     class="bg-gray-50 shadow-md rounded-lg p-6 md:p-8 transition-transform duration-300 hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+                        {{ faq.question }}
+                    </h3>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        {{ faq.answer }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <Cta />
 </template>
