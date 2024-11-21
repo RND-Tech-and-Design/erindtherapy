@@ -77,6 +77,37 @@ const providerQuestions: string[] = [
     'What specific documents, if any, does my counselor need to provide for insurance purposes?',
 ];
 
+const modal = ref <HTMLDialogElement | null>(null);
+
+// Function to close the modal
+const closeModal = () => {
+    modal.value?.close();
+};
+
+onMounted(() => {
+    // Event handler for iframe messages
+    const handleMessage = (event:any) => {
+        // Validate the origin of the message
+        if (event.origin !== 'https://spwidget-erindtherapy.clientsecure.me') {
+            return;
+        }
+
+        const eventData = event?.data;
+        // Check if the message contains the expected data
+        if (eventData?.action === 'close' && eventData?.scope === "client-portal-iframe-to-origin") {
+            closeModal();
+        }
+    };
+
+    // Attach event listener
+    window.addEventListener('message', handleMessage);
+
+    // Cleanup listener on component unmount
+    onUnmounted(() => {
+        window.removeEventListener('message', handleMessage);
+    });
+});
+
 </script>
 
 <template>
@@ -97,7 +128,7 @@ const providerQuestions: string[] = [
                     <li v-for="item in priceCard.items" :key="item">{{ item }}</li>
                 </ul>
                 <NuxtLink
-                          to="https://erindtherapy.clientsecure.me/sign-in"
+                          onclick="booking_portal_modal.showModal()"
                           :class="priceCard.btnClass + ' text-white px-4 py-2 rounded hover:' + priceCard.hoverClass">
                     Book Now!
                 </NuxtLink>
@@ -172,6 +203,23 @@ const providerQuestions: string[] = [
             </div>
         </div>
     </dialog>
+
+    <dialog id="booking_portal_modal" ref="modal" class="modal">
+        <div class="modal-box w-full h-full md:w-10/12 lg:w-3/4 max-w-screen-lg">
+            <form method="dialog">
+                <button class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                        aria-label="Close">
+                </button>
+            </form>
+            <iframe class="w-full h-full border-0 " allowtransparency="true"
+                    src="https://erindtherapy.clientsecure.me/widget-redirect?scopeId=a369b4c9-25b3-444d-8978-af57c98e6307&amp;scopeGlobal=true&amp;applicationId=7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b&amp;channel=sp_website&amp;appearance=%7B%22fullScreen%22%3Atrue%7D">
+            </iframe>
+
+        </div>
+    </dialog>
+
+
+
 </template>
 
 <style scoped lang="scss">
