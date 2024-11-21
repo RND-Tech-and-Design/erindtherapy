@@ -77,16 +77,40 @@ const providerQuestions: string[] = [
     'What specific documents, if any, does my counselor need to provide for insurance purposes?',
 ];
 
-const modal = ref <HTMLDialogElement | null>(null);
+const modal = ref<HTMLDialogElement | null>(null);
 
 // Function to close the modal
 const closeModal = () => {
     modal.value?.close();
+    showIframe.value = false;
+};
+
+const iframeUrl = ref(
+    'https://erindtherapy.clientsecure.me/widget-redirect?scopeId=a369b4c9-25b3-444d-8978-af57c98e6307&scopeGlobal=true&applicationId=7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b&channel=sp_website&appearance=%7B%22fullScreen%22%3Atrue%7D'
+);
+const showIframe = ref(false);
+const iframeLoading = ref(true); // Tracks the iframe's loading state
+
+const toggleIframe = (event: any) => {
+    console.log('toggleIframe', event)
+    event.preventDefault();
+    showIframe.value = !showIframe.value;
+    console.log('toggleIframe value', showIframe.value)
+    // Reset iframeLoading state when opening
+    if (showIframe.value) {
+        iframeLoading.value = true;
+    }
+};
+
+const onIframeLoad = () => {
+    console.log('Iframe loaded');
+    iframeLoading.value = false; // Iframe has finished loading
 };
 
 onMounted(() => {
+
     // Event handler for iframe messages
-    const handleMessage = (event:any) => {
+    const handleMessage = (event: any) => {
         // Validate the origin of the message
         if (event.origin !== 'https://spwidget-erindtherapy.clientsecure.me') {
             return;
@@ -129,6 +153,7 @@ onMounted(() => {
                 </ul>
                 <NuxtLink
                           onclick="booking_portal_modal.showModal()"
+                          @click="toggleIframe"
                           :class="priceCard.btnClass + ' text-white px-4 py-2 rounded hover:' + priceCard.hoverClass">
                     Book Now!
                 </NuxtLink>
@@ -211,9 +236,17 @@ onMounted(() => {
                         aria-label="Close">
                 </button>
             </form>
-            <iframe class="w-full h-full border-0 " allowtransparency="true"
-                    src="https://erindtherapy.clientsecure.me/widget-redirect?scopeId=a369b4c9-25b3-444d-8978-af57c98e6307&amp;scopeGlobal=true&amp;applicationId=7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b&amp;channel=sp_website&amp;appearance=%7B%22fullScreen%22%3Atrue%7D">
-            </iframe>
+
+            <div v-if="!showIframe && iframeLoading"
+                 class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10">
+                <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-blue-500"></div>
+            </div>
+
+            <div id="iframe-container" v-if="showIframe" class="w-full h-full border-0">
+                <iframe @load="onIframeLoad" :src="iframeUrl" class="w-full h-full border-0" allowtransparency="true"
+                        sandbox="allow-scripts allow-forms allow-same-origin"></iframe>
+            </div>
+
 
         </div>
     </dialog>
