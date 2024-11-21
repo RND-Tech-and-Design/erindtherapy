@@ -87,7 +87,7 @@ function selectCategory(cat: string | null): string {
                     <NuxtLink
                               :to="`/blog/${filteredPosts[0].slug}`"
                               class="block overflow-hidden rounded-lg shadow-lg group">
-                        <div class="relative h-[350px] overflow-hidden">
+                        <div class="relative h-48 md:h-[350px] overflow-hidden">
                             <NuxtPicture
                                          :src="getFeaturedImage(filteredPosts[0])"
                                          preload
@@ -95,7 +95,7 @@ function selectCategory(cat: string | null): string {
                                          layout="responsive"
                                          sizes="1400px"
                                          alt="Post Image"
-                                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                                         class="absolute inset-0 w-full h-48 md:h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                         </div>
                         <div class="p-4">
                             <h2 class="text-2xl font-bold mb-2 group-hover:underline">
@@ -103,8 +103,8 @@ function selectCategory(cat: string | null): string {
                             </h2>
                             <p class="text-gray-600">
                                 {{
-                                    extractTextWithoutAnchors(`${filteredPosts[0].excerpt ?? filteredPosts[0].description
-                                        ?? ""}`) }}
+                                extractTextWithoutAnchors(`${filteredPosts[0].excerpt ?? filteredPosts[0].description
+                                ?? ""}`) }}
                             </p>
                         </div>
                     </NuxtLink>
