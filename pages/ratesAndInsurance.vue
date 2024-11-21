@@ -90,6 +90,7 @@ const iframeUrl = ref(
 );
 const showIframe = ref(false);
 const iframeLoading = ref(true); // Tracks the iframe's loading state
+const pageLoaded = ref(false); // Tracks the iframe's loading state
 
 const toggleIframe = (event: any) => {
     console.log('toggleIframe', event)
@@ -108,7 +109,7 @@ const onIframeLoad = () => {
 };
 
 onMounted(() => {
-
+    pageLoaded.value = true
     // Event handler for iframe messages
     const handleMessage = (event: any) => {
         // Validate the origin of the message
@@ -152,10 +153,17 @@ onMounted(() => {
                     <li v-for="item in priceCard.items" :key="item">{{ item }}</li>
                 </ul>
                 <NuxtLink
+                          v-if="pageLoaded"
                           onclick="booking_portal_modal.showModal()"
                           @click="toggleIframe"
                           :class="priceCard.btnClass + ' text-white px-4 py-2 rounded hover:' + priceCard.hoverClass">
                     Book Now!
+                </NuxtLink>
+
+                <NuxtLink
+                          v-if="!pageLoaded"
+                          :class="priceCard.btnClass + ' text-white px-4 py-2 rounded hover:' + priceCard.hoverClass">
+                    <icon name="svg-spinners:pulse" size="2em" class="flex-none min-w-8"></icon>
                 </NuxtLink>
             </div>
         </div>
@@ -229,17 +237,20 @@ onMounted(() => {
         </div>
     </dialog>
 
-    <dialog id="booking_portal_modal" ref="modal" class="modal">
-        <div class="modal-box w-full h-full md:w-10/12 lg:w-3/4 max-w-screen-lg">
+    <dialog id="booking_portal_modal" ref="modal" class="modal sm:h-full">
+        <div
+             class="modal-box max-h-screen md:[max-height:calc(100vh_-_5em)] w-full h-full md:w-10/12 lg:w-3/4 max-w-screen-lg ">
             <form method="dialog">
                 <button class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 focus:outline-none"
                         aria-label="Close">
                 </button>
             </form>
 
-            <div v-if="!showIframe && iframeLoading"
+            <div v-if="iframeLoading"
                  class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10">
-                <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-blue-500"></div>
+
+                <icon name="svg-spinners:3-dots-scale-middle" size="8em" class="flex-none min-w-8">
+                </icon>
             </div>
 
             <div id="iframe-container" v-if="showIframe" class="w-full h-full border-0">
