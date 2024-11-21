@@ -53,7 +53,7 @@ const faqs = [
                   description="">
 
             <p>
-                If you are unable to attend a session, please cancel at least <span class="font-extrabold">24
+                If you are unable to attend a session, please cancel at least <span class="font-extrabold">48
                     hours</span>
                 beforehand.
 

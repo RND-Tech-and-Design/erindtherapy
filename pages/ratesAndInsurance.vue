@@ -96,7 +96,9 @@ const providerQuestions: string[] = [
                 <ul class="mt-4 text-sm text-gray-600">
                     <li v-for="item in priceCard.items" :key="item">{{ item }}</li>
                 </ul>
-                <NuxtLink :class="priceCard.btnClass + ' text-white px-4 py-2 rounded hover:' + priceCard.hoverClass">
+                <NuxtLink
+                          to="https://erindtherapy.clientsecure.me/sign-in"
+                          :class="priceCard.btnClass + ' text-white px-4 py-2 rounded hover:' + priceCard.hoverClass">
                     Book Now!
                 </NuxtLink>
             </div>
@@ -133,7 +135,7 @@ const providerQuestions: string[] = [
             </template>
         </InfoCard>
     </section>
-    
+
     <Cta></Cta>
 
     <dialog id="provider_questions_modal" class="modal">
@@ -153,7 +155,8 @@ const providerQuestions: string[] = [
                 </p>
                 <div class="py-4 ml-2">
                     <div v-for="(question, index) in providerQuestions" :key="index" class="pt-2 pl-2 flex">
-                        <icon name="fluent:chat-bubbles-question-16-regular" size="2em" class="flex-none min-w-8"></icon>
+                        <icon name="fluent:chat-bubbles-question-16-regular" size="2em" class="flex-none min-w-8">
+                        </icon>
                         <span class="flex-auto pl-2 pt-1">
                             {{ question }}
                         </span>

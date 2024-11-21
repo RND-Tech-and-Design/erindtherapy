@@ -27,7 +27,7 @@ const bulletPointList: BulletPointList =
     },
     {
         link: '/ratesAndInsurance',
-        text: 'All 50-minute sessions are $109',
+        text: 'All 50-minute sessions are $190',
         color: `${pageStyle.FAQLinkColor}`
     },
     {
