@@ -46,5 +46,3 @@ The short answer is: it depends on your goals as a couple for therapy. However, 
 ## Something to know
 
 Something for couples to keep in mind (and anyone entering therapy in any capacity) is that it takes time. Change does not occur overnight. Especially behaviors that have been ingrained in us perhaps all our lives that we are just now understanding about ourselves. For a long-standing change to occur, it takes time to integrate new habits, ways of thinking, and relational patterns. Check in with your therapist about your progress as a couple. Express where you’d like to be, and what your needs are for this space. [Ready to start](https://www.erindtherapy.com/contact/)? Or have more questions? Reach out for a consult or intake session to start strengthening and healing your relationship now.
-
-*We use affiliate links on our website to help support and deliver well-researched content and resources.*

@@ -64,5 +64,3 @@ Our **basic needs** can greatly affect how we handle stressors. Ask yourself:
 - How much **caffeine** are you consuming?
 
 These simple factors can impact your **mood** and **reactivity**. Checking in on your own quality of life and making small adjustments can set you up for better **health** and **happiness**.
-
-> We use affiliate links on our website to help support and deliver well-researched content and resources.

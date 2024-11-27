@@ -114,7 +114,3 @@ Conflict often triggers past experiences. Exploring why you or your partner feel
 The goal is not to avoid conflict entirely but to learn **how** to address it constructively. The real problem is not your partner—it's the **pattern** of conflict. By working together to break the pattern, you can strengthen your connection and deepen your understanding of each other.
 
 For more insights or to explore therapy options, feel free to [contact me](/contact/).
-
---- 
-
-This revised Markdown structure improves flow, readability, and engagement by adding bolding for key terms, using lists and quotes to break up text, and emphasizing actionable steps.

@@ -71,7 +71,7 @@ onMounted(() => {
 
         <!-- Content -->
         <div class="hero-content text-center text-neutral-content pt-12">
-            <div class="max-w-sm md:max-w-none">
+            <div class="max-w-xs md:max-w-none">
                 <h1 class="text-5xl font-bold text-white">
                     {{ headline }}
                 </h1>

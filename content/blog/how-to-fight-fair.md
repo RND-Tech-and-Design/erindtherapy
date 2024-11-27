@@ -74,6 +74,3 @@ These simple but powerful phrases help guide the conversation back to healthy co
 No matter where you are in your relationship—whether it’s brand new or decades old—it’s never too late to learn the tools for effective communication. Therapy is a space to gain insight into what makes **your relationship** work.
 
 
----
-
-*We use affiliate links on our website to help support and deliver well-researched content and resources.*

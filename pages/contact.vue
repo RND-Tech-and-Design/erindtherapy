@@ -34,7 +34,7 @@ definePageMeta({
     <section>
         <Hero hero-image="/images/banner/contact.webp" :enableOverlay="false" class="pb-36 pt-19">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-8">
-                <div class=" flex flex-col col-span-1 ">
+                <div class="flex flex-col col-span-1 ">
                     <CardGlass title="Ready to make an appointment?" class="flex-grow" animation-delay="0.2s">
                         <template #content>
                             <p>
@@ -99,7 +99,7 @@ definePageMeta({
                                            name="name"
                                            v-model="name" />
                                     <span v-if="name === ''"
-                                          class="badge badge-warning text-base sm:text-sm p-2 sm:p-1 -ml-4">Required</span>
+                                          class="badge badge-warning text-base  text-xs sm:text-sm p-2 sm:p-1 -ml-20 md:-ml-4">Required</span>
                                 </label>
 
 
@@ -112,10 +112,10 @@ definePageMeta({
                                            name="email"
                                            v-model="email" />
                                     <span v-if="email === ''"
-                                          class="badge badge-warning text-base sm:text-sm p-2 sm:p-1 -ml-4">Required
+                                          class="badge badge-warning text-base text-xs sm:text-sm p-2 sm:p-1 -ml-20 md:-ml-4">Required
                                     </span>
                                     <span v-if="invalidEmail"
-                                          class="badge badge-error text-base sm:text-sm p-2 sm:p-1 -ml-4">Invalid
+                                          class="badge badge-error text-base text-xs sm:text-sm p-2 sm:p-1 -ml-20 md:-ml-4">Invalid
                                     </span>
                                 </label>
 

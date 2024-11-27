@@ -75,6 +75,3 @@ Look back at the rituals from your childhood or your family of origin. What purp
 
 Reflecting on past rituals can help inform what you and your partner need going forward. Keep in mind that rituals take time to develop. They may require some energy upfront, but over time, they will naturally integrate into your life, enhancing your relationship, family, and community connections.
 
----
-
-*We use affiliate links on our website to support and deliver well-researched content and resources.*
