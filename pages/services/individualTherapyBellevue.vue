@@ -10,6 +10,5 @@ definePageMeta({
 </script>
 
 <template>
-
     <IndividualTherapyCopy pageTitle="Bellevue Therapy Services"> </IndividualTherapyCopy>
 </template>

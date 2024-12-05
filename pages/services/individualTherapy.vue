@@ -8,6 +8,5 @@ definePageMeta({
 </script>
 
 <template>
-  
   <IndividualTherapyCopy> </IndividualTherapyCopy>
 </template>
