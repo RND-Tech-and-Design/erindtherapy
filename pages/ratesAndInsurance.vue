@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+import BookingPortalModalButton from '~/components/BookingPortalModalButton.vue';
 import type { PriceCard, PaymentCard } from '~/types/card';
 
 definePageMeta({
@@ -77,62 +78,6 @@ const providerQuestions: string[] = [
     'What specific documents, if any, does my counselor need to provide for insurance purposes?',
 ];
 
-const modal = ref<HTMLDialogElement | null>(null);
-
-// Function to close the modal
-const closeModal = () => {
-    modal.value?.close();
-    showIframe.value = false;
-};
-
-const iframeUrl = ref(
-    'https://erindtherapy.clientsecure.me/widget-redirect?scopeId=a369b4c9-25b3-444d-8978-af57c98e6307&scopeGlobal=true&applicationId=7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b&channel=sp_website&appearance=%7B%22fullScreen%22%3Atrue%7D'
-);
-const showIframe = ref(false);
-const iframeLoading = ref(true); // Tracks the iframe's loading state
-const pageLoaded = ref(false); // Tracks the iframe's loading state
-
-const toggleIframe = (event: any) => {
-    console.log('toggleIframe', event)
-    event.preventDefault();
-    showIframe.value = !showIframe.value;
-    console.log('toggleIframe value', showIframe.value)
-    // Reset iframeLoading state when opening
-    if (showIframe.value) {
-        iframeLoading.value = true;
-    }
-};
-
-const onIframeLoad = () => {
-    console.log('Iframe loaded');
-    iframeLoading.value = false; // Iframe has finished loading
-};
-
-onMounted(() => {
-    pageLoaded.value = true
-    // Event handler for iframe messages
-    const handleMessage = (event: any) => {
-        // Validate the origin of the message
-        if (event.origin !== 'https://spwidget-erindtherapy.clientsecure.me') {
-            return;
-        }
-
-        const eventData = event?.data;
-        // Check if the message contains the expected data
-        if (eventData?.action === 'close' && eventData?.scope === "client-portal-iframe-to-origin") {
-            closeModal();
-        }
-    };
-
-    // Attach event listener
-    window.addEventListener('message', handleMessage);
-
-    // Cleanup listener on component unmount
-    onUnmounted(() => {
-        window.removeEventListener('message', handleMessage);
-    });
-});
-
 </script>
 
 <template>
@@ -152,19 +97,10 @@ onMounted(() => {
                 <ul class="mt-4 text-sm text-gray-600">
                     <li v-for="item in priceCard.items" :key="item">{{ item }}</li>
                 </ul>
-                <NuxtLink
-                          v-if="pageLoaded"
-                          onclick="booking_portal_modal.showModal()"
-                          @click="toggleIframe"
-                          :class="priceCard.btnClass + ' text-white px-4 py-2 rounded hover:' + priceCard.hoverClass">
-                    Book Now!
-                </NuxtLink>
 
-                <NuxtLink
-                          v-if="!pageLoaded"
-                          :class="priceCard.btnClass + ' text-white px-4 py-2 rounded hover:' + priceCard.hoverClass">
-                    <icon name="svg-spinners:pulse" size="2em" class="flex-none min-w-8"></icon>
-                </NuxtLink>
+                <BookingPortalModalButton :buttonClass="priceCard.btnClass + ' text-white px-4 py-2 rounded hover:' + priceCard.hoverClass" >
+                    Book Now!
+                </BookingPortalModalButton>
             </div>
         </div>
     </section>
@@ -180,7 +116,7 @@ onMounted(() => {
                   :title="card.title"
                   :description="card.description"
                   class="w-full max-w-4xl bg-white shadow-md rounded-lg hover:shadow-lg transition-shadow duration-300">
-                  
+
             <!-- Extra Content -->
             <template v-if="card.extraContentTemplates && card.extraContentTemplates.includes('insurance')">
                 <div class="bg-gray-50 p-4 mt-4 rounded-md border border-gray-200">
@@ -203,8 +139,6 @@ onMounted(() => {
             </template>
         </InfoCard>
     </section>
-
-
     <Cta></Cta>
 
     <dialog id="provider_questions_modal" class="modal">
@@ -241,32 +175,6 @@ onMounted(() => {
             </div>
         </div>
     </dialog>
-
-    <dialog id="booking_portal_modal" ref="modal" class="modal sm:h-full">
-        <div
-             class="modal-box max-h-screen md:[max-height:calc(100vh_-_5em)] w-full h-full md:w-10/12 lg:w-3/4 max-w-screen-lg ">
-            <form method="dialog">
-                <button class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 focus:outline-none"
-                        aria-label="Close">
-                </button>
-            </form>
-
-            <div v-if="iframeLoading"
-                 class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10">
-
-                <icon name="svg-spinners:3-dots-scale-middle" size="8em" class="flex-none min-w-8">
-                </icon>
-            </div>
-
-            <div id="iframe-container" v-if="showIframe" class="w-full h-full border-0">
-                <iframe @load="onIframeLoad" :src="iframeUrl" class="w-full h-full border-0" allowtransparency="true"
-                        sandbox="allow-scripts allow-forms allow-same-origin"></iframe>
-            </div>
-
-
-        </div>
-    </dialog>
-
 
 
 </template>

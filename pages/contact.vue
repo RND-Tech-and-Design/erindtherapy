@@ -43,11 +43,10 @@ definePageMeta({
                         </template>
 
                         <template #action>
-                            <NuxtLink to="https://erindtherapy.clientsecure.me/widget/service?channel=sp_website"
-                                      class="btn btn-primary text-text_secondary flex items-center" target="_blank">
-                                <span class="mr-2">Request Appointment</span>
-                                <ArrowTopRightOnSquareIcon class="h-6 w-6" />
-                            </NuxtLink>
+                            <BookingPortalModalButton
+                                                      buttonClass="btn btn-primary text-text_secondary flex items-center">
+                                Request Appointment
+                            </BookingPortalModalButton>
                         </template>
                     </CardGlass>
                 </div>
