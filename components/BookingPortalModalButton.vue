@@ -32,7 +32,6 @@ const toggleIframe = (event: any) => {
 };
 
 const onIframeLoad = () => {
-    console.log('Iframe loaded');
     iframeLoading.value = false; // Iframe has finished loading
     showIframe.value = true;
 };
